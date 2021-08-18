@@ -1,0 +1,11 @@
+npm i 
+npm start
+
+Home Page : "/"
+PE1 : "/PE1"
+PE2 : "/PE2"
+PE3 : "/PE3"
+PE4 : "/PE4"
+PE5 : "/PE5"
+PE6 : "/PE6"
+PE7 : "/PE7"
