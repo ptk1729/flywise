@@ -3,26 +3,26 @@ import flywiseLogo from "../assets/flywiseLogo.png";
 import "../App.css";
 import TopBarButtons from "./TopBarButtons";
 import {
-  Divider,
-  makeStyles,
+  // Divider,
+  // makeStyles,
   Grid,
   AppBar,
   useMediaQuery,
   useTheme,
 } from "@material-ui/core";
 
-const useStyles = makeStyles((them) => ({
-  divider: {
-    width: "1920px",
-  },
-}));
+// const useStyles = makeStyles((them) => ({
+//   divider: {
+//     width: "1920px",
+//   },
+// }));
 
 function TopBar(props) {
   const handlePrep = () => {
     console.log("Test Prep clicked");
   };
 
-  const classes = useStyles();
+  // const classes = useStyles();
 
   const handleProfileEvaluation = () => {
     console.log("Profile Evaluation clicked");

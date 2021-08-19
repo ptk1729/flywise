@@ -100,7 +100,7 @@ function PE4(props) {
                 style={{
                   fontSize: "24px",
                   lineHeight: "30px",
-                  lineHeight: "25px",
+                  // lineHeight: "25px",
                 }}
               >
                 C.G.P.A*

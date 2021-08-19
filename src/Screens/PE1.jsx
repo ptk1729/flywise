@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState } from "react";
 import TopBar from "../components/TopBar";
 import c1 from "../assets/c1.png";
@@ -5,7 +6,7 @@ import c2 from "../assets/c2.png";
 import c3 from "../assets/c3.png";
 import c4 from "../assets/c4.png";
 import flag from "../assets/flag.png";
-import { Grid, useTheme, useMediaQuery, Button } from "@material-ui/core";
+import { Grid, useTheme, useMediaQuery } from "@material-ui/core";
 import SelectionBoxes from "../components/SelectionBoxes";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
@@ -64,7 +65,7 @@ function PE1(props) {
     return res;
   };
   useEffect(() => {
-    if (isSelected() == -1) path = "/PE1";
+    if (isSelected() === -1) path = "/PE1";
     else {
       path = "/PE2/" + data[isSelected()].name;
     }

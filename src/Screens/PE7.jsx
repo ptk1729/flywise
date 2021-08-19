@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { Grid, useTheme, useMediaQuery } from "@material-ui/core";
-import SelectionBoxes from "../components/SelectionBoxes3";
+import React from "react";
+import { Grid } from "@material-ui/core";
+// import SelectionBoxes from "../components/SelectionBoxes3";
 import TopBar from "../components/TopBar";
-import { Container } from "@material-ui/core";
+// import { Container } from "@material-ui/core";
 
 function PE7(props) {
-  const theme = useTheme();
-  const isMatch = useMediaQuery(theme.breakpoints.down("xs"));
+  // const theme = useTheme();
+  // const isMatch = useMediaQuery(theme.breakpoints.down("xs"));
 
   return (
     <>
