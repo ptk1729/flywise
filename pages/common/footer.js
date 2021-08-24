@@ -2,12 +2,13 @@ import { Box, Button, Flex, GridItem, Image, Link, Text } from '@chakra-ui/react
 import React from 'react';
 
 function Footer() {
+	let date = new Date();
 	return (
 		<GridItem bg="rgba(230, 246, 255, 1)" rowSpan={12} colSpan={12}>
-			<Flex p={[ '1rem', '1rem', '2rem', '3rem', '4rem' ]} justifyContent="space-between">
-				<Image maxH="4rem" alt="logo" src="\images\logo.svg" />
+			<Flex p={[ '1rem', '1rem', '2rem', '3rem', '4rem' ]} flexDirection={{base:'column', md:"row"}} justifyContent="space-between">
+				<Image maxH="4rem" alt="logo" src="/images/logo.svg" />
 				<Box>
-					<Flex>
+					<Flex justifyContent="space-evenly">
 						{[
 							{ link: 'Home', to: '/' },
 							{ link: 'About', to: '/' },
@@ -16,7 +17,18 @@ function Footer() {
 							{ link: 'Products', to: '/' }
 						].map((i, idx) => (
 							<Button
-								mx="2"
+								my={{base:"2", md:"2"}}
+								mx={{base:"0", md:"4"}}
+								// ={{base:"1", md:"4"}}
+								_hover={{
+									color:"black",
+									bg:"blue.100"
+
+								}}
+								_focus={{
+									color:"white",
+									bg:"blue.400"
+								}}
 								color="rgba(29, 29, 29, 1)"
 								colorScheme="blackAlpha"
 								variant="ghost"
@@ -54,7 +66,7 @@ function Footer() {
 			</Flex>
 			<hr />
 			<Text textAlign="center" color="rgba(153, 153, 153, 1)" py="8">
-				Copyright © 2021{' '}
+				Copyright © {new Date().getFullYear()}
 			</Text>
 		</GridItem>
 	);

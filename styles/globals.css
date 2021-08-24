@@ -15,3 +15,7 @@ a {
 * {
   box-sizing: border-box;
 }
+.bottom-outline{
+  border-bottom: 2px solid black;
+  border-radius: 0;
+}

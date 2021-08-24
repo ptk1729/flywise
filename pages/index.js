@@ -217,7 +217,7 @@ export default function Home() {
 							))}
 						</Box>
 
-						<Image p="16" alt="desk" src="\images\computer_desk.png" />
+						<Image p="16" alt="desk" src="/images/computer_desk.png" />
 					</Flex>
 				</GridItem>
 				<GridItem
@@ -352,7 +352,7 @@ export default function Home() {
 				>
 					<Center>
 						<Flex flexDirection={{ md: 'row', base: 'column' }}>
-							<Image maxW="25rem" maxH="70vh" p="16" alt="desk" src="\images\person_board.png" />
+							<Image maxW="25rem" maxH="70vh" p="16" alt="desk" src="/images/person_board.png" />
 							<Box mt={[ '2', '4', '8', '16', '16' ]} ml={[ '2', '4', '8', '16', '32' ]}>
 								<Heading mt="16" textAlign="left" mb="4">
 									Do you worry about
@@ -394,7 +394,7 @@ export default function Home() {
 					].map((i, idx) => (
 						<Center w="100%" key={idx}>
 							<Flex mx="2" w={["80%", "30rem", "30rem", "35rem", "40rem"]} rounded="xl" my="4" p="4" bg="rgba(246, 247, 248, 1)">
-								<Image mt="1" alt="arrow" src="\images\right_arrow.png" maxH="1rem" />
+								<Image mt="1" alt="arrow" src="/images/right_arrow.png" maxH="1rem" />
 								<Text>
 									{i}
 								</Text>

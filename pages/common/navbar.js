@@ -15,35 +15,116 @@ import {
 	useColorModeValue,
 	Stack,
 	Image,
-	Center
+	Center,
+	Popover,
+	PopoverTrigger,
+	Portal,
+	PopoverContent,
+	PopoverHeader,
+	PopoverCloseButton,
+	PopoverBody,
+	PopoverFooter,
+	Text
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
-
+import NLink from 'next/link';
+import React from 'react';
 const Links = [
 	{ link: 'Test Prep', to: '/' },
 	{ link: 'Profile Evaluation', to: '/' },
 	{ link: 'Services', to: '/' },
-	{ link: 'Mentors', to: '/' },
-	{ link: 'Destinations', to: '/' },
-	{ link: 'Courses', to: '/' }
+	{ link: 'Mentors', to: '/' }
+	// { link: 'Destinations', to: '/destinations' },
+	// { link: 'Courses', to: '/' }
 ];
 
 const NavLink = props => (
-	<Link
-		px={2}
-		py={1}
-		rounded={'md'}
-		_hover={{
-			textDecoration: 'none',
-			bg: useColorModeValue('gray.200', 'gray.700')
-		}}
-		href={props.to}
-	>
-		{props.link}
-	</Link>
+	<NLink href={props.to}>
+		<Link
+			className={props.link === props.outline ? `bottom-outline` : ``}
+			px={2}
+			py={1}
+			color={props.link === props.outline ? `blackAlpha.900` : `blackAlpha.700`}
+			roundedTop={'md'}
+			_hover={{
+				textDecoration: 'none',
+				bg: useColorModeValue('gray.200', 'gray.700')
+			}}
+		>
+			{props.link}
+		</Link>
+	</NLink>
 );
 
-export default function Navbar() {
+const AllNavLinks = ({outline}) => {
+	const initRef = React.useRef();
+	
+	return (
+	<React.Fragment>
+		{Links.map((link, idx) => <NavLink outline={outline} to={link.to} link={link.link} key={idx} />)}
+		<Popover placement="bottom" closeOnBlur={true} initialFocusRef={initRef}>
+			{({ isOpen, onClose }) => (
+				<React.Fragment>
+					<PopoverTrigger>
+						<Link
+							className={`bottom-outline`}
+							px={2}
+							py={1}
+							color={`blackAlpha.900`}
+							roundedTop={'md'}
+							_hover={{
+								textDecoration: 'none'
+								// bg: useColorModeValue('gray.200', 'gray.700')
+							}}
+						>
+							Destination
+						</Link>
+					</PopoverTrigger>
+					<Portal>
+						<PopoverContent h="5rem" w="25rem">
+							{/* <PopoverHeader>This is the header</PopoverHeader> */}
+							{/* <PopoverCloseButton /> */}
+							<PopoverBody>
+								<HStack justifyContent="space-evenly">
+									{[ 'usa', 'australia', 'canada', 'uk' ].map((i, idx) => (
+										<NLink _hover={{ cursor: 'pointer' }} key={idx} href={`/destinations/${i}`}>
+											<Box>
+												<Image maxH="3rem" src={`/images/${i}_flag.png`} alt="country" />
+												<Text textAlign="center" fontSize="xs">
+													{i.toLocaleUpperCase()}
+												</Text>
+											</Box>
+										</NLink>
+									))}
+								</HStack>
+								{/* <Button mt={4} colorScheme="blue" onClick={onClose} ref={initRef}>
+													Close
+												</Button> */}
+							</PopoverBody>
+							{/* <PopoverFooter>This is the footer</PopoverFooter> */}
+						</PopoverContent>
+					</Portal>
+				</React.Fragment>
+			)}
+		</Popover>
+		<NLink href={'/'}>
+			<Link
+				// className={props.link === props.outline ? `bottom-outline` : ``}
+				px={2}
+				py={1}
+				color={`blackAlpha.700`}
+				roundedTop={'md'}
+				_hover={{
+					textDecoration: 'none',
+					bg: useColorModeValue('gray.200', 'gray.700')
+				}}
+			>
+				Courses
+			</Link>
+		</NLink>
+	</React.Fragment>
+)};
+export default function Navbar({ outline }) {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 
 	return (
@@ -60,13 +141,12 @@ export default function Navbar() {
 					<Box>
 						<Image alt="logo" src="/images/logo.svg" />
 					</Box>
-					
 				</HStack>
-        <Center>
-						<HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
-							{Links.map((link, idx) => <NavLink to={link.to} link={link.link} key={idx} />)}
-						</HStack>
-					</Center>
+				<Center>
+					<HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
+						<AllNavLinks outline={outline} />
+					</HStack>
+				</Center>
 				<Flex alignItems={'center'}>
 					<Button
 						variant={'solid'}
@@ -82,7 +162,7 @@ export default function Navbar() {
 						_focus={{
 							bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
 						}}
-            _active={{
+						_active={{
 							bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
 						}}
 						mr={4}
@@ -92,29 +172,13 @@ export default function Navbar() {
 					>
 						Contact Us
 					</Button>
-					{/* <Menu>
-						<MenuButton as={Button} rounded={'full'} variant={'link'} cursor={'pointer'} minW={0}>
-							<Avatar
-								size={'sm'}
-								src={
-									'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-								}
-							/>
-						</MenuButton>
-						<MenuList>
-							<MenuItem>Link 1</MenuItem>
-							<MenuItem>Link 2</MenuItem>
-							<MenuDivider />
-							<MenuItem>Link 3</MenuItem>
-						</MenuList>
-					</Menu> */}
 				</Flex>
 			</Flex>
 
 			{isOpen ? (
 				<Box pb={4} display={{ md: 'none' }}>
 					<Stack as={'nav'} spacing={4}>
-						{Links.map((link, idx) => <NavLink to={link.to} link={link.link} key={idx} />)}
+					<AllNavLinks outline={outline} />
 					</Stack>
 				</Box>
 			) : null}
