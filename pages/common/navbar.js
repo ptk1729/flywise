@@ -31,7 +31,7 @@ import NLink from 'next/link';
 import React from 'react';
 const Links = [
 	{ link: 'Test Prep', to: '/' },
-	{ link: 'Profile Evaluation', to: '/' },
+	{ link: 'Profile Evaluation', to: '/pe' },
 	{ link: 'Services', to: '/' },
 	{ link: 'Mentors', to: '/' }
 	// { link: 'Destinations', to: '/destinations' },
@@ -67,7 +67,7 @@ const AllNavLinks = ({outline}) => {
 				<React.Fragment>
 					<PopoverTrigger>
 						<Link
-							className={`bottom-outline`}
+							className={outline === "Destinations"?`bottom-outline`:``}
 							px={2}
 							py={1}
 							color={`blackAlpha.900`}

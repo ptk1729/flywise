@@ -7,7 +7,7 @@ export default function Home() {
 	return (
 		<Box>
 			<title>Flywise</title>
-			<Navbar />
+			<Navbar outline="" />
 			<Grid overflow="hidden" maxW="100vw" templateRows="repeat(12, 1fr)" templateColumns="repeat(12, 1fr)">
 				<GridItem
 					p={[ '0.4rem', '1rem', '2rem', '3rem', '4rem' ]}
