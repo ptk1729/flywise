@@ -36,6 +36,15 @@ function USA() {
         'Take part in their holidays and traditions.',
         'Consistent Hard work and dedication.'
     ];
+	
+	let faqs = [
+		'Do we need to show our COVID-19 vaccination certificate for admission?',
+		'What are the deadlines to submit vaccination proof?',
+		'Will students get self-isolated for 7 days after reaching the USA?',
+		'Can I enroll for full course online study From abroad?',
+		'Can I stay in the USA with an expired Visa?',
+		'How can I request a travel signature to return to the U.S. in Fall 2021?'
+	];
 	let country_guide_text =
 		"The United States of America (the U.S.A. or USA), often known as the United States (U.S. or US) or America, is a country largely located in North America. It is made up of 50 states, a federal district, five major unincorporated territories, 326 Indian reservations, and some minor holdings. At 3.8 million square miles (9.8 million square kilometers), it is the world's third or fourth-largest country by overall area.";
 	const countryGuide = useRef(null);
@@ -223,14 +232,7 @@ function USA() {
 					<Heading my={[ '2', '4', '8', '16', '16' ]} textAlign="center">
 						FAQs
 					</Heading>
-					{[
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course'
-					].map((i, idx) => (
+					{faqs.map((i, idx) => (
 						<Center w="100%" key={idx}>
 							<Flex
 								mx="2"

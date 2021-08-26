@@ -38,6 +38,14 @@ function UK() {
 		'Take part in their holidays and traditions.',
 		'Consistent Hard work and dedication.'
 	];
+	let faqs = [
+		'Do students tend to work part-time during their studies?',
+		'What is the living cost while studying in UK.?',
+		'What are UK student halls?',
+		'Will I get homework like in High School?',
+		'Will I get language support if I am still working on improving my language?',
+		'What happens during freshers’ week?'
+	];
 	let country_guide_text =
 		"The UK is a country in northeastern Europe, Includes the island of Ireland and many smaller islands within the British isles. Nominal GDP ranks the United Kingdom as the world's fifth-largest economy, but purchasing power parity ranks it 10th largest. During the 19th and early 20th centuries, the United Kingdom was the world's leading power.";
 	const countryGuide = useRef(null);
@@ -225,14 +233,7 @@ function UK() {
 					<Heading my={[ '2', '4', '8', '16', '16' ]} textAlign="center">
 						FAQs
 					</Heading>
-					{[
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course'
-					].map((i, idx) => (
+					{faqs.map((i, idx) => (
 						<Center w="100%" key={idx}>
 							<Flex
 								mx="2"

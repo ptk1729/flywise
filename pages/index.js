@@ -58,7 +58,7 @@ export default function Home() {
 						Learn more about the services we offer{' '}
 					</Text>
 
-					<Flex flexDirection={{ base: 'column', md: 'row' }} pt="3rem" justifyContent="space-evenly">
+					<Flex px="8" flexDirection={{ base: 'column', md: 'row' }} pt="3rem" justifyContent="space-evenly">
 						<Center>
 							<Box
 								minH="70vh"
@@ -70,7 +70,10 @@ export default function Home() {
 								bg="white"
 								boxShadow="0px 0px 50px 23px rgba(220, 220, 220, 0.25)"
 							>
+								<Center>
+
 								<Image mb="4" maxH="40%" src="/images/landing_card1.svg" alt="main" />
+								</Center>
 								<Heading my="4" fontSize="xl">
 									Pre-Admission support
 								</Heading>
@@ -82,12 +85,12 @@ export default function Home() {
 									'SOP & LOR',
 									'Application assistance'
 								].map((i, idx) => (
-									<Flex key={idx}>
-										<Image src="/images/tick.svg" alt="tick" />
-										<Text color="rgba(13, 179, 251, 1)" fontWeight="600">
-											{i}
-										</Text>
-									</Flex>
+									<Flex alignItems="flex-start" key={idx}>
+									<Image mt="2" src="/images/tick.svg" alt="tick" />
+									<Text color="rgba(13, 179, 251, 1)" fontWeight="600">
+										{i}
+									</Text>
+								</Flex>
 								))}
 							</Box>
 						</Center>
@@ -102,7 +105,10 @@ export default function Home() {
 								bg="white"
 								boxShadow="0px 0px 50px 23px rgba(220, 220, 220, 0.25)"
 							>
+								<Center>
+
 								<Image mb="4" maxH="40%" src="/images/landing_card2.svg" alt="main" />
+								</Center>
 								<Heading my="4" fontSize="xl">
 									Post-Admission support
 								</Heading>
@@ -113,8 +119,8 @@ export default function Home() {
 									'Roommate matching',
 									'Pre departure guidance'
 								].map((i, idx) => (
-									<Flex key={idx}>
-										<Image src="/images/tick.svg" alt="tick" />
+									<Flex alignItems="flex-start" key={idx}>
+										<Image mt="2" src="/images/tick.svg" alt="tick" />
 										<Text color="rgba(13, 179, 251, 1)" fontWeight="600">
 											{i}
 										</Text>
@@ -129,11 +135,14 @@ export default function Home() {
 								my="4"
 								maxH="558px"
 								maxW="425.03px"
-								p={[ '2', '4', '8', '16', '16' ]}
+								px={[ '2', '4', '8', '16', '16' ]}
 								bg="white"
 								boxShadow="0px 0px 50px 23px rgba(220, 220, 220, 0.25)"
 							>
-								<Image mb="4" maxH="40%" src="/images/landing_card3.svg" alt="main" />
+								<Center>
+
+								<Image  maxH="38%" src="/images/landing_card3.svg" alt="main" />
+								</Center>
 								<Heading my="4" fontSize="xl">
 									Abroad career support
 								</Heading>
@@ -144,8 +153,8 @@ export default function Home() {
 									'Interview training',
 									'Job referrals at top tech companies'
 								].map((i, idx) => (
-									<Flex key={idx}>
-										<Image src="/images/tick.svg" alt="tick" />
+									<Flex alignItems="flex-start" key={idx}>
+										<Image mt="2" src="/images/tick.svg" alt="tick" />
 										<Text color="rgba(13, 179, 251, 1)" fontWeight="600">
 											{i}
 										</Text>

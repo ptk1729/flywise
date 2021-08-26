@@ -40,6 +40,14 @@ function Canada() {
 	];
 	let country_guide_text =
 		"Canada is a North American country. Spanning 9.98 million square kilometers (3.85 million square miles), its ten provinces and three territories reach from the Atlantic to the Pacific and northward into the Arctic Ocean. Places of interest include Niagara Falls, Stanley park, and Old Quebec.";
+	let faqs = [
+						'Do I need to submit translated proof of vaccination? ',
+						'What happens if I do not submit proof of vaccination status by the deadline?',
+						'Are there any specific scholarships for international students?   ',
+						'Will I be able to take online classes and keep my immigration status active?',
+						'What are the requirements for admission into Canadian universities?',
+						'I currently live in a country that I am not a citizen of. Where should I apply for a study permit in my country of citizenship or my country of residence?'
+					];
 	const countryGuide = useRef(null);
 	const topUni = useRef(null);
 	const student = useRef(null);
@@ -225,14 +233,7 @@ function Canada() {
 					<Heading my={[ '2', '4', '8', '16', '16' ]} textAlign="center">
 						FAQs
 					</Heading>
-					{[
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course'
-					].map((i, idx) => (
+					{faqs.map((i, idx) => (
 						<Center w="100%" key={idx}>
 							<Flex
 								mx="2"

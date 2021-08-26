@@ -38,6 +38,19 @@ function Australia() {
 	];
 	let country_guide_text =
 		"Australia is the world's largest island and smallest continent with beautiful beaches and amazing national parks of Australia has something for everyone many international students travel around Australia using their student visa which is a great opportunity other than that Australia is rich in culture which will make you fall in love with this beautiful country more";
+	let faqs = [
+		' Can students work during their studies in Australia?',
+
+		'Which English language tests are accepted by Australian institutions?',
+
+		'What are the accommodation options available in Australia? ',
+
+		' what are some interesting facts about Australian universities?',
+
+		'Can students work during studies in Australia? ',
+
+		'What all things i should carry with me according to climate conditions there?'
+	];
 	const countryGuide = useRef(null);
 	const topUni = useRef(null);
 	const student = useRef(null);
@@ -223,14 +236,7 @@ function Australia() {
 					<Heading my={[ '2', '4', '8', '16', '16' ]} textAlign="center">
 						FAQs
 					</Heading>
-					{[
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course'
-					].map((i, idx) => (
+					{faqs.map((i, idx) => (
 						<Center w="100%" key={idx}>
 							<Flex
 								mx="2"
