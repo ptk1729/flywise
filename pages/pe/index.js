@@ -73,11 +73,36 @@ function One() {
 		axios({
 			url: 'https://flywisebackend.herokuapp.com/api/user/add',
 			method: 'POST',
-			data: formData
+			headers: {
+				contentType: 'applications/json'
+			},
+			// body: formData
+			data: {
+				whichCountry: country,
+				courses: course,
+				GreQuantScore: greQuant,
+				GreVerbalScore: greVerbal,
+				ielts_toefl: ieltsToefl,
+				GreTraining: greTraining,
+				workExperience: workEx,
+				noofbacklogs: backlogs,
+				cgpa: cgpa,
+				college: clgUni,
+				budget: budget,
+				fund: fundMasters,
+				name: username,
+				email: userEmail,
+				mobileNo: userPhone,
+				session: session
+			}
 		})
 			.then(res => {
-				console.log(res);
-				setSuccess(true);
+				console.log(res.data.error);
+				if (res.data.error === 'ALl fields required') {
+					setError(true);
+				} else {
+					setSuccess(true);
+				}
 			})
 			.catch(err => {
 				console.log(err);
@@ -135,7 +160,11 @@ function One() {
 										key={idx}
 									>
 										<Center>
-											<Image maxH="135px" src={`images/${i.toLocaleLowerCase()}_flag.png`} alt="country" />
+											<Image
+												maxH="135px"
+												src={`images/${i.toLocaleLowerCase()}_flag.png`}
+												alt="country"
+											/>
 										</Center>
 										<Text
 											transition="all 0.2s ease-out"
@@ -974,7 +1003,7 @@ function One() {
 							<Center>
 								<Button
 									isLoading={loading}
-									isDisabled={loading || success || !tnC || !userEmail || !userPhone || !username}
+									isDisabled={loading || !tnC || !userEmail || !userPhone || !username}
 									mt="16"
 									color="white"
 									px="8"
