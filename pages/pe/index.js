@@ -7,7 +7,6 @@ import {
 	Grid,
 	GridItem,
 	Heading,
-	// HStack,
 	Image,
 	Input,
 	Link,
@@ -18,20 +17,19 @@ import {
 	Text,
 	VStack
 } from '@chakra-ui/react';
+import axios from 'axios';
 import React, { useState } from 'react';
 import Navbar from '../common/navbar';
 
 function One() {
-	const grid1 = [ 60 ];
-	const grid2 = [ 60, 60, 60, 30, 30 ];
-	const grid3 = [ 60, 60, 60, 30, 30 ];
-	const grid4 = [ 60, 60, 45, , 15 ];
-	const grid5 = [ 60, 60, 45, 24, 12 ];
+	const [ loading, setLoading ] = useState(false);
+	const [ success, setSuccess ] = useState(false);
+	const [ error, setError ] = useState(false);
 
 	const [ country, setCountry ] = useState('USA');
-	const [ course, setCourse ] = useState(0);
+	const [ course, setCourse ] = useState('MS Computer science / Software engineering (Intensive coding)');
 	const [ pe, setPe ] = useState(1);
-	const [ training, setTraining ] = useState('yes');
+	const [ greTraining, setGreTraining ] = useState('yes');
 	const [ session, setSession ] = useState('Spring 2022');
 	const [ greQuant, setGreQuant ] = useState('');
 	const [ greVerbal, setGreVerbal ] = useState('');
@@ -42,10 +40,52 @@ function One() {
 	const [ clgUni, setClgUni ] = useState('');
 	const [ budget, setBudget ] = useState('Under 20 Lakhs');
 	const [ fundMasters, setFundMasters ] = useState('');
+	const [ tnC, setTnC ] = useState(false);
 
 	const [ username, setUsername ] = useState('');
 	const [ userEmail, setUserEmail ] = useState('');
 	const [ userPhone, setUserPhone ] = useState('');
+
+	function evaluateProfilePost(e) {
+		e.preventDefault();
+		setLoading(true);
+		setSuccess(false);
+		setError(false);
+		let formData = new FormData();
+
+		formData.append('whichCountry', country);
+		formData.append('courses', course);
+		formData.append('GreQuantScore', greQuant);
+		formData.append('GreVerbalScore', greVerbal);
+		formData.append('ielts_toefl', ieltsToefl);
+		formData.append('GreTraining', greTraining);
+		formData.append('workExperience', workEx);
+		formData.append('noofbacklogs', backlogs);
+		formData.append('cgpa', cgpa);
+		formData.append('college', clgUni);
+		formData.append('budget', budget);
+		formData.append('fund', fundMasters);
+		formData.append('name', username);
+		formData.append('email', userEmail);
+		formData.append('mobileNo', userPhone);
+		formData.append('session', session);
+
+		axios({
+			url: 'https://flywisebackend.herokuapp.com/api/user/add',
+			method: 'POST',
+			data: formData
+		})
+			.then(res => {
+				console.log(res);
+				setSuccess(true);
+			})
+			.catch(err => {
+				console.log(err);
+				setError(true);
+			})
+			.finally(() => setLoading(false));
+	}
+
 	return (
 		<Box>
 			<title>Profile Evaluation</title>
@@ -95,7 +135,7 @@ function One() {
 										key={idx}
 									>
 										<Center>
-											<Image maxH="135px" src={`/images/${i}_flag.png`} alt="country" />
+											<Image maxH="135px" src={`images/${i.toLocaleLowerCase()}_flag.png`} alt="country" />
 										</Center>
 										<Text
 											transition="all 0.2s ease-out"
@@ -113,18 +153,33 @@ function One() {
 						))}
 						<GridItem rowSpan={12} colSpan={15}>
 							<Center>
-								<Button
-									mt="16"
-									color="white"
-									px="8"
-									mb="4"
-									bg="rgba(13, 179, 251, 1)"
-									_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
-									_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
-									onClick={() => setPe(2)}
-								>
-									Next
-								</Button>
+								<Flex>
+									{/* <Button
+										mt="16"
+										color="white"
+										px="8"
+										mb="4"
+										bg="rgba(13, 179, 251, 1)"
+										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
+										onClick={() => setPe(1)}
+									>
+										Previous
+									</Button> */}
+									<Button
+										mt="16"
+										color="white"
+										px="8"
+										mb="4"
+										bg="rgba(13, 179, 251, 1)"
+										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
+										onClick={() => setPe(2)}
+										ml="4"
+									>
+										Next
+									</Button>
+								</Flex>
 							</Center>
 						</GridItem>{' '}
 					</React.Fragment>
@@ -154,7 +209,7 @@ function One() {
 						].map((i, idx) => (
 							<GridItem
 								id="griditem"
-								onClick={() => setCourse(idx)}
+								onClick={() => setCourse(i)}
 								my="4"
 								key={idx}
 								px={[ '4rem', '3rem', '2rem', '0rem', '0rem' ]}
@@ -168,7 +223,7 @@ function One() {
 										// mx="10%"
 										transition="all 0.3s"
 										bg={
-											idx === course ? (
+											i === course ? (
 												'linear-gradient(311.3deg, #6ADBDB 0%, #0DB3FB 97.24%)'
 											) : (
 												'linear-gradient(0deg, #FFFFFF 0%, #FFFFFF 97.24%)'
@@ -176,7 +231,7 @@ function One() {
 										}
 										rounded="lg"
 										p="4"
-										border={idx === course ? '4px solid rgba(13, 179, 251, 1)' : '4px solid white'}
+										border={i === course ? '4px solid rgba(13, 179, 251, 1)' : '4px solid white'}
 										_hover={{ boxShadow: 'base' }}
 										boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)"
 										key={idx}
@@ -186,7 +241,7 @@ function One() {
 												mt="4"
 												maxH="4rem"
 												src={
-													idx === course ? (
+													i === course ? (
 														`/images/course_icon_white.png`
 													) : (
 														`/images/course_icon.png`
@@ -198,7 +253,7 @@ function One() {
 										<Text
 											h="6rem"
 											transition="all 0.2s ease-out"
-											color={idx === course ? 'white' : 'black'}
+											color={i === course ? 'white' : 'black'}
 											textAlign="center"
 											fontSize="lg"
 											fontWeight="normal"
@@ -213,7 +268,34 @@ function One() {
 						))}
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Button
+								<Flex>
+									<Button
+										mt="16"
+										color="white"
+										px="8"
+										mb="4"
+										bg="rgba(13, 179, 251, 1)"
+										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
+										onClick={() => setPe(1)}
+									>
+										Previous
+									</Button>
+									<Button
+										mt="16"
+										color="white"
+										px="8"
+										mb="4"
+										bg="rgba(13, 179, 251, 1)"
+										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
+										onClick={() => setPe(3)}
+										ml="4"
+									>
+										Next
+									</Button>
+								</Flex>
+								{/* <Button
 									mt="16"
 									color="white"
 									px="8"
@@ -224,7 +306,7 @@ function One() {
 									_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
 								>
 									Next
-								</Button>
+								</Button> */}
 							</Center>
 						</GridItem>{' '}
 					</React.Fragment>
@@ -347,7 +429,7 @@ function One() {
 									Do you need GRE/IELTS/TOEFL training?
 								</Heading>
 							</Flex>
-							<RadioGroup mt="2" onChange={setTraining} value={training} defaultValue="yes">
+							<RadioGroup mt="2" onChange={setGreTraining} value={greTraining} defaultValue="yes">
 								<Stack spacing={2}>
 									<Radio size="lg" value="yes" colorScheme="blue">
 										Yes
@@ -363,7 +445,35 @@ function One() {
 						</GridItem>
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Button
+								<Flex>
+									<Button
+										mt="16"
+										color="white"
+										px="8"
+										mb="4"
+										bg="rgba(13, 179, 251, 1)"
+										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
+										onClick={() => setPe(2)}
+									>
+										Previous
+									</Button>
+									<Button
+										isDisabled={!greQuant || !greVerbal || !ieltsToefl}
+										mt="16"
+										color="white"
+										px="8"
+										mb="4"
+										bg="rgba(13, 179, 251, 1)"
+										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
+										onClick={() => setPe(4)}
+										ml="4"
+									>
+										Next
+									</Button>
+								</Flex>
+								{/* <Button
 									mt="8"
 									color="white"
 									px="8"
@@ -374,7 +484,7 @@ function One() {
 									_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
 								>
 									Next
-								</Button>
+								</Button> */}
 							</Center>
 						</GridItem>{' '}
 					</React.Fragment>
@@ -513,7 +623,35 @@ function One() {
 						</GridItem>
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Button
+								<Flex>
+									<Button
+										mt="16"
+										color="white"
+										px="8"
+										mb="4"
+										bg="rgba(13, 179, 251, 1)"
+										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
+										onClick={() => setPe(3)}
+									>
+										Previous
+									</Button>
+									<Button
+										isDisabled={!workEx || !clgUni || !cgpa || !backlogs}
+										mt="16"
+										color="white"
+										px="8"
+										mb="4"
+										bg="rgba(13, 179, 251, 1)"
+										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
+										onClick={() => setPe(5)}
+										ml="4"
+									>
+										Next
+									</Button>
+								</Flex>
+								{/* <Button
 									mt="8"
 									color="white"
 									px="8"
@@ -524,7 +662,7 @@ function One() {
 									_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
 								>
 									Next
-								</Button>
+								</Button> */}
 							</Center>
 						</GridItem>{' '}
 					</React.Fragment>
@@ -591,16 +729,22 @@ function One() {
 							</Flex>
 						</GridItem>
 						<GridItem rowSpan={15} colSpan={15}>
-						
-								<Flex>
-									<Heading textAlign="center" ml={{ base: '4', md: '4' }} pb="4" pt="4" fontSize="2xl" fontWeight="500">
-										How are you going to fund your Master’s?
-									</Heading>
-									<Heading fontSize="3xl" fontWeight="500" color="red">
-										*
-									</Heading>
-								</Flex>
-							
+							<Flex>
+								<Heading
+									textAlign="center"
+									ml={{ base: '4', md: '4' }}
+									pb="4"
+									pt="4"
+									fontSize="2xl"
+									fontWeight="500"
+								>
+									How are you going to fund your Master’s?
+								</Heading>
+								<Heading fontSize="3xl" fontWeight="500" color="red">
+									*
+								</Heading>
+							</Flex>
+
 							<Center>
 								<Input
 									ml={{ base: '4', md: '4' }}
@@ -616,7 +760,35 @@ function One() {
 						</GridItem>{' '}
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Button
+								<Flex>
+									<Button
+										mt="16"
+										color="white"
+										px="8"
+										mb="4"
+										bg="rgba(13, 179, 251, 1)"
+										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
+										onClick={() => setPe(4)}
+									>
+										Previous
+									</Button>
+									<Button
+										isDisabled={!fundMasters}
+										mt="16"
+										color="white"
+										px="8"
+										mb="4"
+										bg="rgba(13, 179, 251, 1)"
+										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
+										onClick={() => setPe(6)}
+										ml="4"
+									>
+										Next
+									</Button>
+								</Flex>
+								{/* <Button
 									mt="16"
 									color="white"
 									px="8"
@@ -627,7 +799,7 @@ function One() {
 									onClick={() => setPe(6)}
 								>
 									Next
-								</Button>
+								</Button> */}
 							</Center>
 						</GridItem>{' '}
 					</React.Fragment>
@@ -707,7 +879,34 @@ function One() {
 						))}
 						<GridItem rowSpan={12} colSpan={15}>
 							<Center>
-								<Button
+								<Flex>
+									<Button
+										mt="16"
+										color="white"
+										px="8"
+										mb="4"
+										bg="rgba(13, 179, 251, 1)"
+										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
+										onClick={() => setPe(5)}
+									>
+										Previous
+									</Button>
+									<Button
+										mt="16"
+										color="white"
+										px="8"
+										mb="4"
+										bg="rgba(13, 179, 251, 1)"
+										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
+										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
+										onClick={() => setPe(7)}
+										ml="4"
+									>
+										Next
+									</Button>
+								</Flex>
+								{/* <Button
 									mt="16"
 									color="white"
 									px="8"
@@ -718,7 +917,7 @@ function One() {
 									onClick={() => setPe(7)}
 								>
 									Next
-								</Button>
+								</Button> */}
 							</Center>
 						</GridItem>{' '}
 					</React.Fragment>
@@ -742,12 +941,15 @@ function One() {
 									bg="rgba(240, 240, 240, 1)"
 									maxW="20em"
 									placeholder="Name"
+									type="text"
 								/>
 								<Input
 									// ml={{ base: '4', md: '4' }}
+									type="email"
 									value={userEmail}
 									onChange={e => setUserEmail(e.target.value)}
 									py="3"
+									errorBorderColor="red.600"
 									focusBorderColor="#25BAFB"
 									bg="rgba(240, 240, 240, 1)"
 									maxW="20em"
@@ -763,7 +965,7 @@ function One() {
 									maxW="20em"
 									placeholder="Phone number"
 								/>
-								<Checkbox color="#828282">
+								<Checkbox onChange={() => setTnC(!tnC)} value={tnC} color="#828282">
 									I agree to all the <Link color="#0DB3FB">Terms and Conditions</Link>
 								</Checkbox>
 							</VStack>
@@ -771,6 +973,8 @@ function One() {
 						<GridItem rowSpan={12} colSpan={15}>
 							<Center>
 								<Button
+									isLoading={loading}
+									isDisabled={loading || success || !tnC || !userEmail || !userPhone || !username}
 									mt="16"
 									color="white"
 									px="8"
@@ -778,11 +982,21 @@ function One() {
 									bg="rgba(13, 179, 251, 1)"
 									_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
 									_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
-									// onClick={() => setPe(2)}
+									onClick={evaluateProfilePost}
 								>
 									View Profile Evavluation Report
 								</Button>
 							</Center>
+							{error && (
+								<Text textAlign="center" textSize={'md'} color="red.600">
+									There was an error Please try again.
+								</Text>
+							)}
+							{success && (
+								<Text textAlign="center" textSize={'md'} color="green.600">
+									Profile submitted, please wait for our response.
+								</Text>
+							)}
 						</GridItem>{' '}
 					</React.Fragment>
 				)}

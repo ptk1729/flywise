@@ -1,4 +1,5 @@
 import { Box, Button, Center, Flex, Grid, GridItem, Heading, HStack, Image, Text } from '@chakra-ui/react';
+import Link from 'next/link';
 import Footer from './common/footer';
 import Navbar from './common/navbar';
 export default function Home() {
@@ -21,27 +22,29 @@ export default function Home() {
 							platform that travels with you till you land your dream job
 						</Heading>
 					</Heading>
-					<Button
-						variant={'solid'}
-						size={'md'}
-						color="white"
-						fontWeight="semibold"
-						px="6"
-						bg="linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)"
-						_hover={{
-							bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-						}}
-						_focus={{
-							bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-						}}
-						_active={{
-							bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-						}}
-						mt="16"
-						rounded="full"
-					>
-						Free Profile Evaluation
-					</Button>
+					<Link href="/pe">
+						<Button
+							variant={'solid'}
+							size={'md'}
+							color="white"
+							fontWeight="semibold"
+							px="6"
+							bg="linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)"
+							_hover={{
+								bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
+							}}
+							_focus={{
+								bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
+							}}
+							_active={{
+								bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
+							}}
+							mt="16"
+							rounded="full"
+						>
+							Free Profile Evaluation
+						</Button>
+					</Link>
 				</GridItem>
 				<GridItem rowSpan={12} colSpan={[ 12, 12, 6, 6, 6 ]} bg={bg}>
 					<Image src="/images/landing_1.svg" alt="main" />
@@ -71,8 +74,7 @@ export default function Home() {
 								boxShadow="0px 0px 50px 23px rgba(220, 220, 220, 0.25)"
 							>
 								<Center>
-
-								<Image mb="4" maxH="40%" src="/images/landing_card1.svg" alt="main" />
+									<Image mb="4" maxH="40%" src="/images/landing_card1.svg" alt="main" />
 								</Center>
 								<Heading my="4" fontSize="xl">
 									Pre-Admission support
@@ -86,11 +88,11 @@ export default function Home() {
 									'Application assistance'
 								].map((i, idx) => (
 									<Flex alignItems="flex-start" key={idx}>
-									<Image mt="2" src="/images/tick.svg" alt="tick" />
-									<Text color="rgba(13, 179, 251, 1)" fontWeight="600">
-										{i}
-									</Text>
-								</Flex>
+										<Image mt="2" src="/images/tick.svg" alt="tick" />
+										<Text color="rgba(13, 179, 251, 1)" fontWeight="600">
+											{i}
+										</Text>
+									</Flex>
 								))}
 							</Box>
 						</Center>
@@ -106,8 +108,7 @@ export default function Home() {
 								boxShadow="0px 0px 50px 23px rgba(220, 220, 220, 0.25)"
 							>
 								<Center>
-
-								<Image mb="4" maxH="40%" src="/images/landing_card2.svg" alt="main" />
+									<Image mb="4" maxH="40%" src="/images/landing_card2.svg" alt="main" />
 								</Center>
 								<Heading my="4" fontSize="xl">
 									Post-Admission support
@@ -140,8 +141,7 @@ export default function Home() {
 								boxShadow="0px 0px 50px 23px rgba(220, 220, 220, 0.25)"
 							>
 								<Center>
-
-								<Image  maxH="38%" src="/images/landing_card3.svg" alt="main" />
+									<Image maxH="38%" src="/images/landing_card3.svg" alt="main" />
 								</Center>
 								<Heading my="4" fontSize="xl">
 									Abroad career support
@@ -402,11 +402,16 @@ export default function Home() {
 						'When will I have access to my course'
 					].map((i, idx) => (
 						<Center w="100%" key={idx}>
-							<Flex mx="2" w={["80%", "30rem", "30rem", "35rem", "40rem"]} rounded="xl" my="4" p="4" bg="rgba(246, 247, 248, 1)">
+							<Flex
+								mx="2"
+								w={[ '80%', '30rem', '30rem', '35rem', '40rem' ]}
+								rounded="xl"
+								my="4"
+								p="4"
+								bg="rgba(246, 247, 248, 1)"
+							>
 								<Image mt="1" alt="arrow" src="/images/right_arrow.png" maxH="1rem" />
-								<Text>
-									{i}
-								</Text>
+								<Text>{i}</Text>
 							</Flex>
 						</Center>
 					))}
