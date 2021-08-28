@@ -16,12 +16,12 @@ function Faq({ faq }) {
 					<AccordionButton _focus={{boxShadow:"none"}} rounded="lg" bg="#F6F7F8" _hover={{bg:"#F6F7F8"}}>
 						<AccordionIcon w={8} h={8} color="#23BAFB" />{' '}
 						{/* <Image mt="1" alt="arrow" src="/images/right_arrow.png" maxH="1rem" /> */}
-						<Box w="50rem" flex="1" textAlign="left">
+						<Box w={{base:"20rem", md:"50rem"}} flex="1" textAlign="left">
 							{faq.ques}
 						</Box>
 					</AccordionButton>
 				</h2>
-				<AccordionPanel maxW="50rem" pb={4}>
+				<AccordionPanel maxW={{base:"20rem", md:"50rem"}} pb={4}>
 					{faq.ans}
 				</AccordionPanel>
 			</AccordionItem>

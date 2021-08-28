@@ -757,7 +757,9 @@ function One() {
 								))}{' '}
 							</Flex>
 						</GridItem>
-						<GridItem rowSpan={15} colSpan={15}>
+						<GridItem rowSpan={12} colSpan={15}>
+							<Center>
+
 							<Flex>
 								<Heading
 									textAlign="center"
@@ -766,13 +768,14 @@ function One() {
 									pt="4"
 									fontSize="2xl"
 									fontWeight="500"
-								>
+									>
 									How are you going to fund your Master’s?
 								</Heading>
 								<Heading fontSize="3xl" fontWeight="500" color="red">
 									*
 								</Heading>
 							</Flex>
+									</Center>
 
 							<Center>
 								<Input
@@ -783,7 +786,7 @@ function One() {
 									focusBorderColor="#25BAFB"
 									bg="rgba(240, 240, 240, 1)"
 									maxW="20em"
-									placeholder="Enter score"
+									placeholder="Education Loan, etc..."
 								/>
 							</Center>
 						</GridItem>{' '}
@@ -1013,7 +1016,7 @@ function One() {
 									_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
 									onClick={evaluateProfilePost}
 								>
-									View Profile Evavluation Report
+									View Profile Evaluation Report
 								</Button>
 							</Center>
 							{error && (

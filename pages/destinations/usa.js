@@ -114,8 +114,8 @@ function USA() {
 							'translate(0,-8rem)',
 							'translate(0,-10rem)',
 							'translate(0,-16rem)',
-							'translate(0,-24rem)',
-							'translate(0,-32rem)'
+							'translate(0,-20rem)',
+							'translate(0,-28rem)'
 						]}
 						zIndex="20"
 						pl="12"

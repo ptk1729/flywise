@@ -1,19 +1,48 @@
-import { Box, Button, Center, Flex, Grid, GridItem, Heading, HStack, Image, Text } from '@chakra-ui/react';
+import { Accordion, Box, Button, Center, Flex, Grid, GridItem, Heading, HStack, Image, Text } from '@chakra-ui/react';
 import Link from 'next/link';
+import Faq from './common/faqs';
 import Footer from './common/footer';
 import Navbar from './common/navbar';
 export default function Home() {
 	// let bg = 'red';
 	let bg = 'transparent';
+	let faqs = [
+		{
+			ques: 'When will I have access to my course',
+			ans: `When will I have access to my course`
+		},
+		{
+			ques: 'When will I have access to my course',
+			ans: `When will I have access to my course`
+		},
+		{
+			ques: 'When will I have access to my course',
+			ans: `When will I have access to my course`
+		},
+		{
+			ques: 'When will I have access to my course',
+			ans: `When will I have access to my course`
+		},
+		{
+			ques: 'When will I have access to my course',
+			ans: `When will I have access to my course`
+		},
+		{
+			ques: 'When will I have access to my course',
+			ans: `When will I have access to my course`
+		}
+	];
 	return (
 		<Box>
 			<title>Flywise</title>
 			<Navbar outline="" />
 			<Grid overflow="hidden" maxW="100vw" templateRows="repeat(12, 1fr)" templateColumns="repeat(12, 1fr)">
 				<GridItem
-					p={[ '0.4rem', '1rem', '2rem', '3rem', '4rem' ]}
+					py={[ '0.4rem', '1rem', '2rem', '3rem', '4rem' ]}
+					pl={[ '0.4rem', '1rem', '3rem', '6rem', '12rem' ]}
+					pr={[ '0.4rem', '1rem', '1rem', '2rem', '3rem' ]}
 					rowSpan={12}
-					colSpan={[ 12, 12, 6, 6, 6 ]}
+					colSpan={[ 12, 12, 7, 7, 7 ]}
 					bg={bg}
 				>
 					<Heading fontSize={[ 'xl', '2xl', '3xl', '4xl', '5xl' ]}>
@@ -22,7 +51,7 @@ export default function Home() {
 							platform that travels with you till you land your dream job
 						</Heading>
 					</Heading>
-					<Link href="/pe">
+					<Link href="/profile-evaluation" passHref>
 						<Button
 							variant={'solid'}
 							size={'md'}
@@ -46,10 +75,16 @@ export default function Home() {
 						</Button>
 					</Link>
 				</GridItem>
-				<GridItem rowSpan={12} colSpan={[ 12, 12, 6, 6, 6 ]} bg={bg}>
-					<Image src="/images/landing_1.svg" alt="main" />
+				<GridItem
+					pr={[ '0.4rem', '1rem', '3rem', '6rem', '12rem' ]}
+					rowSpan={12}
+					colSpan={[ 12, 12, 5, 5, 5 ]}
+					bg={bg}
+				>
+					<Image mt="16" src="/images/landing_1.svg" alt="main" />
 				</GridItem>
 				<GridItem
+					px={[ '0.4rem', '1rem', '3rem', '6rem', '10rem' ]}
 					rowSpan={12}
 					colSpan={12}
 					bg={'linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)'}
@@ -65,7 +100,7 @@ export default function Home() {
 						<Center>
 							<Box
 								minH="70vh"
-								w={{ base: '80%', md: '30rem' }}
+								w={{ base: '80%', md: '24rem' }}
 								my="4"
 								maxH="558px"
 								maxW="425.03px"
@@ -99,7 +134,7 @@ export default function Home() {
 						<Center>
 							<Box
 								minH="70vh"
-								w={{ base: '80%', md: '30rem' }}
+								w={{ base: '80%', md: '24rem' }}
 								my="4"
 								maxH="558px"
 								maxW="425.03px"
@@ -132,7 +167,7 @@ export default function Home() {
 						<Center>
 							<Box
 								minH="70vh"
-								w={{ base: '80%', md: '30rem' }}
+								w={{ base: '80%', md: '24rem' }}
 								my="4"
 								maxH="558px"
 								maxW="425.03px"
@@ -169,7 +204,7 @@ export default function Home() {
 					p={[ '1.5rem', '3rem', '4rem', '8rem', '15rem' ]}
 					rowSpan={12}
 					colSpan={12}
-					backgroundImage="url(/images/paperplane.png)"
+					// backgroundImage="url(/images/paperplane.png)"
 				>
 					<Box h="100%" w="100%">
 						<Heading fontSize={[ '2xl', '2xl', '3xl', '4xl', '4xl' ]} my="4" textAlign="center">
@@ -232,6 +267,8 @@ export default function Home() {
 				<GridItem
 					rowSpan={12}
 					colSpan={12}
+					px={[ '0.4rem', '1rem', '3rem', '6rem', '12rem' ]}
+
 					// bg={'linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)'}
 				>
 					<Heading my={[ '2', '4', '8', '16', '16' ]} textAlign="center">
@@ -357,6 +394,7 @@ export default function Home() {
 					rowSpan={12}
 					colSpan={12}
 					// colSpan={{base: 12, md:6}}
+					mt="16"
 					bg={'linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)'}
 				>
 					<Center>
@@ -387,34 +425,14 @@ export default function Home() {
 				<GridItem
 					rowSpan={12}
 					colSpan={12}
+					pb="4rem"
 					// colSpan={{base: 12, md:6}}
 					// bg={'linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)'}
 				>
 					<Heading my={[ '2', '4', '8', '16', '16' ]} textAlign="center">
 						Have Any Questions?
 					</Heading>
-					{[
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course',
-						'When will I have access to my course'
-					].map((i, idx) => (
-						<Center w="100%" key={idx}>
-							<Flex
-								mx="2"
-								w={[ '80%', '30rem', '30rem', '35rem', '40rem' ]}
-								rounded="xl"
-								my="4"
-								p="4"
-								bg="rgba(246, 247, 248, 1)"
-							>
-								<Image mt="1" alt="arrow" src="/images/right_arrow.png" maxH="1rem" />
-								<Text>{i}</Text>
-							</Flex>
-						</Center>
-					))}
+					<Accordion allowToggle>{faqs.map((faq, idx) => <Faq key={idx} faq={faq} />)}</Accordion>
 				</GridItem>
 				<Footer />
 			</Grid>
