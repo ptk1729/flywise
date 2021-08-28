@@ -1,4 +1,5 @@
 import {
+	Accordion,
 	Box,
 	Center,
 	Flex,
@@ -14,6 +15,7 @@ import {
 	UnorderedList
 } from '@chakra-ui/react';
 import React, { useRef } from 'react';
+import Faq from '../common/faqs';
 import Footer from '../common/footer';
 import Navbar from '../common/navbar';
 
@@ -24,7 +26,6 @@ function UK() {
 	let img_flag = '/images/uk_flag.png';
 	let title = 'Flywise - Study in UK';
 	let main_title = 'Study in UK';
-	
 
 	let topUnis = [
 		'University of Derby',
@@ -39,12 +40,33 @@ function UK() {
 		'Consistent Hard work and dedication.'
 	];
 	let faqs = [
-		'Do students tend to work part-time during their studies?',
-		'What is the living cost while studying in UK.?',
-		'What are UK student halls?',
-		'Will I get homework like in High School?',
-		'Will I get language support if I am still working on improving my language?',
-		'What happens during freshers’ week?'
+		{
+			ques: 'Do students tend to work part-time during their studies?',
+			ans:
+				'A part-time job is a great way to cover your study expenses and depending on how well-paid the job is, you can earn some pocket money as well.'
+		},
+		{
+			ques: 'What is the living cost while studying in UK.?',
+			ans:
+				'In popular cities like London, monthly living costs can easily jump over 1,500 EUR (1,360 GBP). In smaller towns, you can get by with a budget of 700–1,200 EUR (635–1,040 GBP) per month.'
+		},
+		{
+			ques: 'What are UK student halls?',
+			ans:
+				'UK student halls or halls of  residence provides students a living accommodation with all necessary facilities. First year students prefer to live in studeng halls.'
+		},
+		{
+			ques: 'Will I get homework like in High School?',
+			ans: `Although college students don't have work due every day, they have a lot more important essays and tests than in high school.`
+		},
+		{
+			ques: 'Will I get language support if I am still working on improving my language?',
+			ans: `you can still study abroad in a country even if you have no prior knowledge of that country's language or cultural norms.`
+		},
+		{
+			ques: 'What happens during freshers’ week?',
+			ans: `Traditionally, freshers' week, often referred to as welcome week is an incredibly busy time, filled with social events, fairs and the completion of important administrative tasks.`
+		}
 	];
 	let country_guide_text =
 		"The UK is a country in northeastern Europe, Includes the island of Ireland and many smaller islands within the British isles. Nominal GDP ranks the United Kingdom as the world's fifth-largest economy, but purchasing power parity ranks it 10th largest. During the 19th and early 20th centuries, the United Kingdom was the world's leading power.";
@@ -233,21 +255,7 @@ function UK() {
 					<Heading my={[ '2', '4', '8', '16', '16' ]} textAlign="center">
 						FAQs
 					</Heading>
-					{faqs.map((i, idx) => (
-						<Center w="100%" key={idx}>
-							<Flex
-								mx="2"
-								w={[ '80%', '30rem', '30rem', '35rem', '40rem' ]}
-								rounded="xl"
-								my="4"
-								p="4"
-								bg="rgba(246, 247, 248, 1)"
-							>
-								<Image mt="1" alt="arrow" src="/images/right_arrow.png" maxH="1rem" />
-								<Text>{i}</Text>
-							</Flex>
-						</Center>
-					))}
+					<Accordion allowToggle>{faqs.map((faq, idx) => <Faq key={idx} faq={faq} />)}</Accordion>
 				</GridItem>
 				<Footer />
 			</Grid>

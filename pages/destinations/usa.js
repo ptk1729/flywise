@@ -1,4 +1,5 @@
 import {
+	Accordion,
 	Box,
 	Center,
 	Flex,
@@ -14,6 +15,7 @@ import {
 	UnorderedList
 } from '@chakra-ui/react';
 import React, { useRef } from 'react';
+import Faq from '../common/faqs';
 import Footer from '../common/footer';
 import Navbar from '../common/navbar';
 
@@ -24,26 +26,44 @@ function USA() {
 	let img_flag = '/images/usa_flag.png';
 	let title = 'Flywise - Study in USA';
 	let main_title = 'Study in USA';
-    let topUnis = [
-        'University of Illinois',
-        'Texas A&M University',
-        'Arizona State University',
-        'Lowa State University',
-        'University of Colorado Boulder.'
-    ];
-    let student_life_tips = [
-        'The topography and climate of America differ greatly.',
-        'Take part in their holidays and traditions.',
-        'Consistent Hard work and dedication.'
-    ];
-	
+	let topUnis = [
+		'University of Illinois',
+		'Texas A&M University',
+		'Arizona State University',
+		'Lowa State University',
+		'University of Colorado Boulder.'
+	];
+	let student_life_tips = [
+		'The topography and climate of America differ greatly.',
+		'Take part in their holidays and traditions.',
+		'Consistent Hard work and dedication.'
+	];
+
 	let faqs = [
-		'Do we need to show our COVID-19 vaccination certificate for admission?',
-		'What are the deadlines to submit vaccination proof?',
-		'Will students get self-isolated for 7 days after reaching the USA?',
-		'Can I enroll for full course online study From abroad?',
-		'Can I stay in the USA with an expired Visa?',
-		'How can I request a travel signature to return to the U.S. in Fall 2021?'
+		{
+			ques: 'Do we need to show our COVID-19 vaccination certificate for admission?',
+			ans: `Yes as an international student it is necessary for you to show your covid vaccine certificate at the time of admission.`
+		},
+		{
+			ques: 'What are the deadlines to submit vaccination proof?',
+			ans: `Yes as an international student it is necessary for you to show your covid vaccine certificate at the time of admission.`
+		},
+		{
+			ques: 'Will students get self-isolated for 7 days after reaching the USA?',
+			ans: `Yes as an international student it is necessary for you to show your covid vaccine certificate at the time of admission.`
+		},
+		{
+			ques: 'Can I enroll for full course online study From abroad?',
+			ans: `Yes as an international student it is necessary for you to show your covid vaccine certificate at the time of admission.`
+		},
+		{
+			ques: 'Can I stay in the USA with an expired Visa?',
+			ans: `Yes as an international student it is necessary for you to show your covid vaccine certificate at the time of admission.`
+		},
+		{
+			ques: 'How can I request a travel signature to return to the U.S. in Fall 2021?',
+			ans: `Yes as an international student it is necessary for you to show your covid vaccine certificate at the time of admission.`
+		}
 	];
 	let country_guide_text =
 		"The United States of America (the U.S.A. or USA), often known as the United States (U.S. or US) or America, is a country largely located in North America. It is made up of 50 states, a federal district, five major unincorporated territories, 326 Indian reservations, and some minor holdings. At 3.8 million square miles (9.8 million square kilometers), it is the world's third or fourth-largest country by overall area.";
@@ -232,21 +252,7 @@ function USA() {
 					<Heading my={[ '2', '4', '8', '16', '16' ]} textAlign="center">
 						FAQs
 					</Heading>
-					{faqs.map((i, idx) => (
-						<Center w="100%" key={idx}>
-							<Flex
-								mx="2"
-								w={[ '80%', '30rem', '30rem', '35rem', '40rem' ]}
-								rounded="xl"
-								my="4"
-								p="4"
-								bg="rgba(246, 247, 248, 1)"
-							>
-								<Image mt="1" alt="arrow" src="/images/right_arrow.png" maxH="1rem" />
-								<Text>{i}</Text>
-							</Flex>
-						</Center>
-					))}
+					<Accordion allowToggle>{faqs.map((faq, idx) => <Faq key={idx} faq={faq} />)}</Accordion>
 				</GridItem>
 				<Footer />
 			</Grid>
