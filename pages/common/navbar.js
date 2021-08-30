@@ -6,7 +6,7 @@ import {
 	IconButton,
 	Button,
 	useDisclosure,
-	useColorModeValue,
+	// useColorModeValue,
 	Stack,
 	Image,
 	Center,
@@ -23,7 +23,7 @@ import React from 'react';
 const Links = [
 	{ link: 'Test Prep', to: '/' },
 	{ link: 'Profile Evaluation', to: '/profile-evaluation' },
-	{ link: 'Services', to: '/' },
+	{ link: 'Services', to: '#services' },
 	{ link: 'Mentors', to: '/' }
 	// { link: 'Destinations', to: '/destinations' },
 	// { link: 'Courses', to: '/' }
@@ -71,9 +71,7 @@ const AllNavLinks = ({ outline }) => {
 										`1px solid rgba(41, 82, 134,0)`
 									)
 								}
-								color={
-									outline === 'Destinations' ? `rgba(41, 82, 134,1)` : `blackAlpha.700`
-								}
+								color={outline === 'Destinations' ? `rgba(41, 82, 134,1)` : `blackAlpha.700`}
 								roundedTop={'md'}
 								_hover={{
 									textDecoration: 'none',
@@ -143,13 +141,6 @@ export default function Navbar({ outline }) {
 	return (
 		<Box boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)" px={4}>
 			<Flex h={32} alignItems={'center'} justifyContent={'space-between'}>
-				<IconButton
-					size={'md'}
-					icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-					aria-label={'Open Menu'}
-					display={{ md: 'none' }}
-					onClick={isOpen ? onClose : onOpen}
-				/>
 				<HStack spacing={8} alignItems={'center'}>
 					<Box>
 						<NextLink href="/">
@@ -171,16 +162,18 @@ export default function Navbar({ outline }) {
 							color="white"
 							fontWeight="semibold"
 							px="6"
-							bg="linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)"
-							_hover={{
-								bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-							}}
-							_focus={{
-								bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-							}}
-							_active={{
-								bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-							}}
+							id="gradient-anim"
+							// transform=""
+							// bg="linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)"
+							// _hover={{
+							// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
+							// }}
+							// _focus={{
+							// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
+							// }}
+							// _active={{
+							// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
+							// }}
 							mr={4}
 							rounded="full"
 
@@ -190,6 +183,13 @@ export default function Navbar({ outline }) {
 						</Button>
 					</NextLink>
 				</Flex>
+				<IconButton
+					size={'md'}
+					icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+					aria-label={'Open Menu'}
+					display={{ md: 'none' }}
+					onClick={isOpen ? onClose : onOpen}
+				/>
 			</Flex>
 
 			{isOpen ? (

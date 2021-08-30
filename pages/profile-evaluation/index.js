@@ -10,6 +10,11 @@ import {
 	Image,
 	Input,
 	Link,
+	NumberDecrementStepper,
+	NumberIncrementStepper,
+	NumberInput,
+	NumberInputField,
+	NumberInputStepper,
 	Progress,
 	Radio,
 	RadioGroup,
@@ -35,7 +40,7 @@ function One() {
 	const [ greVerbal, setGreVerbal ] = useState('');
 	const [ ieltsToefl, setIeltsToefl ] = useState('');
 	const [ workEx, setWorkEx ] = useState('');
-	const [ cgpa, setCgpa ] = useState('');
+	const [ cgpa, setCgpa ] = useState(0);
 	const [ backlogs, setBacklogs ] = useState('');
 	const [ clgUni, setClgUni ] = useState('');
 	const [ budget, setBudget ] = useState('Under 20 Lakhs');
@@ -117,12 +122,18 @@ function One() {
 			<Navbar outline="Profile Evaluation" />
 			<Progress boxShadow="md" color="#0DB3FB" bg="#B8E1F3" h="2" value={pe / 7 * 100} />
 
-			<Grid overflow="hidden" maxW="100vw" templateRows="repeat(12, 1fr)" templateColumns="repeat(15, 1fr)">
+			<Grid
+				px={{ base: '', md: '3rem' }}
+				overflow="hidden"
+				maxW="100vw"
+				templateRows="repeat(12, 1fr)"
+				templateColumns="repeat(15, 1fr)"
+			>
 				{pe === 1 && (
 					<React.Fragment>
 						{' '}
 						<GridItem
-							p={[ '0.4rem', '1rem', '2rem', '3rem', '4rem' ]}
+							py={[ '0.4rem', '1rem', '2rem', '3rem', '3rem' ]}
 							rowSpan={12}
 							colSpan={15}
 							// bg={bg}
@@ -135,11 +146,11 @@ function One() {
 							<GridItem
 								id="griditem"
 								onClick={() => setCountry(i)}
-								my="8"
+								my="6"
 								key={idx}
 								px={[ '4rem', '3rem', '2rem', '0rem', '0rem' ]}
 								rowSpan={15}
-								colSpan={[ 30, 30, 15, , 3 ]}
+								colSpan={[ 30, 30, 6, 3, 3 ]}
 								// bg={bg}
 							>
 								<Center>
@@ -414,7 +425,6 @@ function One() {
 								maxW="50%"
 								placeholder="Enter score"
 								type="number"
-
 							/>
 						</GridItem>
 						<GridItem
@@ -574,14 +584,19 @@ function One() {
 							colSpan={[ 15, 15, 7, 7, 7 ]}
 							// bg={bg}
 						>
-							<Flex>
-								<Heading pb="4" fontSize="3xl" fontWeight="500">
-									Undergrad(B.tech) College/University*
-								</Heading>
-								<Heading fontSize="3xl" fontWeight="500" color="red">
+							<Text pb="4" fontSize="3xl" fontWeight="500">
+								Undergrad (B.tech) College/University
+								<Link
+									textDecoration="none"
+									_hover={{ textDecoration: 'none' }}
+									fontSize="3xl"
+									fontWeight="500"
+									color="red"
+								>
 									*
-								</Heading>
-							</Flex>
+								</Link>{' '}
+							</Text>
+
 							{/* <Text
 								color="rgba(125, 125, 125, 1)"
 								py="4"
@@ -624,6 +639,7 @@ function One() {
 								bg="rgba(240, 240, 240, 1)"
 								maxW="50%"
 								placeholder="Enter score"
+								type="number"
 							/>
 						</GridItem>
 						<GridItem
@@ -643,16 +659,25 @@ function One() {
 									*
 								</Heading>
 							</Flex>
-
-							<Input
+							<NumberInput
 								value={cgpa}
-								onChange={e => setCgpa(e.target.value)}
-								py="6"
+								onChange={e => setCgpa(e)}
+								step={0.1}
+								defaultValue={0}
+								min={5}
+								max={10}
+								// py="6"
 								focusBorderColor="#25BAFB"
 								bg="rgba(240, 240, 240, 1)"
 								maxW="50%"
-								placeholder="Enter score"
-							/>
+								placeholder="Enter CGPA"
+							>
+								<NumberInputField />
+								<NumberInputStepper>
+									<NumberIncrementStepper />
+									<NumberDecrementStepper />
+								</NumberInputStepper>
+							</NumberInput>
 						</GridItem>
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
@@ -715,7 +740,7 @@ function One() {
 						</GridItem>
 						<GridItem rowSpan={12} colSpan={15}>
 							<Flex mx="8" justifyContent="space-between" flexDirection={{ base: 'column', md: 'row' }}>
-								{[ 'Under 20 Lakhs', '25 - 35 Lakhs', 'Above 35 Lakhs', 'Other' ].map((i, idx) => (
+								{[ 'Under 25 Lakhs', '25 - 35 Lakhs', 'Above 35 Lakhs', 'Other' ].map((i, idx) => (
 									<Box
 										my="4"
 										onClick={() => setBudget(i)}
@@ -763,23 +788,22 @@ function One() {
 						</GridItem>
 						<GridItem rowSpan={12} colSpan={15}>
 							<Center>
-
-							<Flex>
-								<Heading
-									textAlign="center"
-									ml={{ base: '4', md: '4' }}
-									pb="4"
-									pt="4"
-									fontSize="2xl"
-									fontWeight="500"
+								<Flex>
+									<Heading
+										textAlign="center"
+										ml={{ base: '4', md: '4' }}
+										pb="4"
+										pt="4"
+										fontSize="2xl"
+										fontWeight="500"
 									>
-									How are you going to fund your Master’s?
-								</Heading>
-								<Heading fontSize="3xl" fontWeight="500" color="red">
-									*
-								</Heading>
-							</Flex>
-									</Center>
+										How are you going to fund your Master’s?
+									</Heading>
+									<Heading fontSize="3xl" fontWeight="500" color="red">
+										*
+									</Heading>
+								</Flex>
+							</Center>
 
 							<Center>
 								<Input
@@ -798,6 +822,7 @@ function One() {
 							<Center>
 								<Flex>
 									<Button
+										className="sticky"
 										mt="16"
 										color="white"
 										px="8"

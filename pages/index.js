@@ -1,4 +1,18 @@
-import { Accordion, Box, Button, Center, Flex, Grid, GridItem, Heading, HStack, Image, Text } from '@chakra-ui/react';
+import {
+	Accordion,
+	Box,
+	Button,
+	Center,
+	Flex,
+	Grid,
+	GridItem,
+	Heading,
+	HStack,
+	Image,
+	Stack,
+	Text,
+	VStack
+} from '@chakra-ui/react';
 import Link from 'next/link';
 import FaqList from './common/faqs';
 import Footer from './common/footer';
@@ -58,16 +72,17 @@ export default function Home() {
 							color="white"
 							fontWeight="semibold"
 							px="6"
-							bg="linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)"
-							_hover={{
-								bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-							}}
-							_focus={{
-								bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-							}}
-							_active={{
-								bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-							}}
+							id="gradient-anim"
+							// bg="linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)"
+							// _hover={{
+							// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
+							// }}
+							// _focus={{
+							// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
+							// }}
+							// _active={{
+							// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
+							// }}
 							mt="16"
 							rounded="full"
 						>
@@ -89,115 +104,82 @@ export default function Home() {
 					colSpan={12}
 					bg={'linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)'}
 				>
-					<Heading pt="3rem" fontSize="5xl" textShadow="0px 2px 5px rgba(0,0,0,0.4)" textAlign="center">
+					<Heading
+						id="services"
+						pt="3rem"
+						fontSize="5xl"
+						textShadow="0px 2px 5px rgba(0,0,0,0.4)"
+						textAlign="center"
+					>
 						What we offer
 					</Heading>
 					<Text textAlign="center" color="gray.500">
 						Learn more about the services we offer{' '}
 					</Text>
-
-					<Flex px="8" flexDirection={{ base: 'column', md: 'row' }} pt="3rem" justifyContent="space-evenly">
-						<Center>
-							<Box
-								minH="70vh"
-								w={{ base: '80%', md: '24rem' }}
-								my="4"
-								maxH="558px"
-								maxW="425.03px"
-								p={[ '2', '4', '8', '16', '16' ]}
-								bg="white"
-								boxShadow="0px 0px 50px 23px rgba(220, 220, 220, 0.25)"
-							>
-								<Center>
-									<Image mb="4" maxH="40%" src="/images/landing_card1.svg" alt="main" />
-								</Center>
-								<Heading my="4" fontSize="xl">
-									Pre-Admission support
-								</Heading>
-								{[
+					<Stack direction={{ base: 'column', md: 'row' }} spacing={{ base: '4', md: '8' }}>
+						{[
+							{
+								title: 'Pre-Admission support',
+								image: '/images/landing_card1.svg',
+								texts: [
 									'Free profile evaluation',
 									'Test preparation',
 									'Course selection',
 									'University selection',
 									'SOP & LOR',
 									'Application assistance'
-								].map((i, idx) => (
-									<Flex alignItems="flex-start" key={idx}>
-										<Image mt="2" src="/images/tick.svg" alt="tick" />
-										<Text color="rgba(13, 179, 251, 1)" fontWeight="600">
-											{i}
-										</Text>
-									</Flex>
-								))}
-							</Box>
-						</Center>
-						<Center>
-							<Box
-								minH="70vh"
-								w={{ base: '80%', md: '24rem' }}
-								my="4"
-								maxH="558px"
-								maxW="425.03px"
-								p={[ '2', '4', '8', '16', '16' ]}
-								bg="white"
-								boxShadow="0px 0px 50px 23px rgba(220, 220, 220, 0.25)"
-							>
-								<Center>
-									<Image mb="4" maxH="40%" src="/images/landing_card2.svg" alt="main" />
-								</Center>
-								<Heading my="4" fontSize="xl">
-									Post-Admission support
-								</Heading>
-								{[
+								]
+							},
+							{
+								title: 'Post-Admission support',
+								image: '/images/landing_card2.svg',
+								texts: [
 									'VISA assistance',
 									'Loan assistance',
 									'Forex',
 									'Roommate matching',
 									'Pre departure guidance'
-								].map((i, idx) => (
-									<Flex alignItems="flex-start" key={idx}>
-										<Image mt="2" src="/images/tick.svg" alt="tick" />
-										<Text color="rgba(13, 179, 251, 1)" fontWeight="600">
-											{i}
-										</Text>
-									</Flex>
-								))}
-							</Box>
-						</Center>
-						<Center>
-							<Box
-								minH="70vh"
-								w={{ base: '80%', md: '24rem' }}
-								my="4"
-								maxH="558px"
-								maxW="425.03px"
-								px={[ '2', '4', '8', '16', '16' ]}
-								bg="white"
-								boxShadow="0px 0px 50px 23px rgba(220, 220, 220, 0.25)"
-							>
-								<Center>
-									<Image maxH="38%" src="/images/landing_card3.svg" alt="main" />
-								</Center>
-								<Heading my="4" fontSize="xl">
-									Abroad career support
-								</Heading>
-								{[
+								]
+							},
+							{
+								title: 'Abroad career support',
+								image: '/images/landing_card3.svg',
+								texts: [
 									'Profile building',
 									'Test preparation',
 									'Professional networking',
 									'Interview training',
 									'Job referrals at top tech companies'
-								].map((i, idx) => (
-									<Flex alignItems="flex-start" key={idx}>
-										<Image mt="2" src="/images/tick.svg" alt="tick" />
-										<Text color="rgba(13, 179, 251, 1)" fontWeight="600">
-											{i}
-										</Text>
-									</Flex>
-								))}
-							</Box>
-						</Center>
-					</Flex>
+								]
+							}
+						].map((service, idx) => (
+							<Center key={idx}>
+								<Box
+									minH="70vh"
+									w={{ base: '80%', md: '24rem' }}
+									my="4"
+									maxH="558px"
+									maxW="425.03px"
+									p={[ '2', '4', '8', '16', '16' ]}
+									bg="white"
+									boxShadow="0px 0px 50px 23px rgba(220, 220, 220, 0.25)"
+								>
+									<Center>
+										<Image mb="4" maxH="40%" src={service.image} alt="main" />
+									</Center>
+									<Heading my="4" fontSize="xl" />
+									{service.texts.map((i, idx) => (
+										<Flex alignItems="flex-start" key={idx}>
+											<Image mt="2" src="/images/tick.svg" alt="tick" />
+											<Text color="rgba(13, 179, 251, 1)" fontWeight="600">
+												{i}
+											</Text>
+										</Flex>
+									))}
+								</Box>
+							</Center>
+						))}
+					</Stack>
 				</GridItem>
 				<GridItem
 					backgroundRepeat="no-repeat"
@@ -210,7 +192,46 @@ export default function Home() {
 						<Heading fontSize={[ '2xl', '2xl', '3xl', '4xl', '4xl' ]} my="4" textAlign="center">
 							Watch this video to better understand how Flywise helps students in their Career
 						</Heading>
+
 						<Box
+							display={[ 'none', 'inset', 'none', 'none', 'none' ]}
+							border="8px"
+							borderColor="rgba(66, 134, 211, 1)"
+							rounded="3xl"
+							boxShadow="xl"
+							overflow="hidden"
+						>
+							<iframe
+								width={'100%'}
+								height={240}
+								src="https://www.youtube.com/embed/eSythjoTlss"
+								title="YouTube video player"
+								frameBorder={0}
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowFullScreen
+							/>
+						</Box>
+
+						<Box
+							display={[ 'inset', 'none', 'inset', 'none', 'none' ]}
+							border="8px"
+							borderColor="rgba(66, 134, 211, 1)"
+							rounded="3xl"
+							boxShadow="xl"
+							overflow="hidden"
+						>
+							<iframe
+								width={'100%'}
+								height={200}
+								src="https://www.youtube.com/embed/eSythjoTlss"
+								title="YouTube video player"
+								frameBorder={0}
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowFullScreen
+							/>
+						</Box>
+						<Box
+							display={[ 'none', 'none', 'none', 'inset', 'inset' ]}
 							border="8px"
 							borderColor="rgba(66, 134, 211, 1)"
 							rounded="3xl"
@@ -261,7 +282,7 @@ export default function Home() {
 							))}
 						</Box>
 
-						<Image p="16" alt="desk" src="/images/computer_desk.png" />
+						<Image p={{ base: '8', md: '32' }} alt="desk" src="/images/computer_desk.png" />
 					</Flex>
 				</GridItem>
 				<GridItem
@@ -290,7 +311,8 @@ export default function Home() {
 							<Heading
 								textAlign="center"
 								color="white"
-								fontSize={[ 'md', '2xl', '2xl', '3xl', '4xl' ]}
+								fontSize={[ 'md', '2xl', '2xl', '2xl', '3xl' ]}
+								px={[ '2', '1', '2', '3', '4' ]}
 								py={[ '2', '4', '8', '16', '16' ]}
 							>
 								Real experienced mentors
@@ -325,7 +347,8 @@ export default function Home() {
 							<Heading
 								textAlign="center"
 								color="white"
-								fontSize={[ 'md', '2xl', '2xl', '3xl', '4xl' ]}
+								fontSize={[ 'md', '2xl', '2xl', '2xl', '3xl' ]}
+								px={[ '2', '1', '2', '3', '4' ]}
 								py={[ '2', '4', '8', '16', '16' ]}
 							>
 								Admit from right top University
@@ -347,7 +370,8 @@ export default function Home() {
 							<Heading
 								textAlign="center"
 								color="white"
-								fontSize={[ 'md', '2xl', '2xl', '3xl', '4xl' ]}
+								fontSize={[ 'md', '2xl', '2xl', '2xl', '3xl' ]}
+								px={[ '2', '1', '2', '3', '4' ]}
 								py={[ '2', '4', '8', '16', '16' ]}
 							>
 								Land your dream job abroad!
@@ -382,8 +406,10 @@ export default function Home() {
 							<Heading
 								textAlign="center"
 								color="white"
-								fontSize={[ 'md', '2xl', '2xl', '3xl', '4xl' ]}
+								fontSize={[ 'md', '2xl', '2xl', '2xl', '3xl' ]}
+								// px={[]}
 								py={[ '2', '4', '8', '16', '16' ]}
+								px={[ '2', '1', '2', '3', '4' ]}
 							>
 								Best professional network in a foreign land
 							</Heading>
@@ -414,7 +440,7 @@ export default function Home() {
 										{i}{' '}
 									</Text>
 								))}
-								<Text my="16" fontWeight="400">
+								<Text maxW={{ base: '', md: '70%' }} my="16" fontWeight="400">
 									Don’t worry, We guide you to sail through all these hurdles and live your dream life
 									abroad!
 								</Text>
@@ -432,7 +458,7 @@ export default function Home() {
 					<Heading my={[ '2', '4', '8', '16', '16' ]} textAlign="center">
 						Have Any Questions?
 					</Heading>
-					<FaqList faqs ={ faqs} />
+					<FaqList faqs={faqs} />
 				</GridItem>
 				<Footer />
 			</Grid>
