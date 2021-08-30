@@ -1,30 +1,42 @@
 import {
+	Accordion,
 	AccordionButton,
 	AccordionIcon,
 	AccordionItem,
 	AccordionPanel,
 	Box,
-	Center,
+	Center
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useState } from 'react';
 
-function Faq({ faq }) {
+function FaqList({ faqs }) {
+	const [ faqState, setFaqState] = useState(faqs ? faqs : [ { ques: '', ans: '' } ]);
+
 	return (
 		<Center>
-			<AccordionItem border="1px solid #d6d6d6" rounded="lg" bg="#F6F7F8" my="4">
-				<h2>
-					<AccordionButton _focus={{boxShadow:"none"}} rounded="lg" bg="#F6F7F8" _hover={{bg:"#F6F7F8"}}>
-						<AccordionIcon w={8} h={8} color="#23BAFB" />{' '}
-						{/* <Image mt="1" alt="arrow" src="/images/right_arrow.png" maxH="1rem" /> */}
-						<Box w={{base:"20rem", md:"50rem"}} flex="1" textAlign="left">
-							{faq.ques}
-						</Box>
-					</AccordionButton>
-				</h2>
-				<AccordionPanel maxW={{base:"20rem", md:"50rem"}} pb={4}>
-					{faq.ans}
-				</AccordionPanel>
-			</AccordionItem>
+			<Accordion allowToggle>
+				{faqState.map((faq, idx) => (
+					<AccordionItem key={idx} border="1px solid #d6d6d6" rounded="lg" bg="#F6F7F8" my="4">
+						<h2>
+							<AccordionButton
+								_focus={{ boxShadow: 'none' }}
+								rounded="lg"
+								bg="#F6F7F8"
+								_hover={{ bg: '#F6F7F8' }}
+							>
+								<AccordionIcon w={8} h={8} color="#23BAFB" />{' '}
+								{/* <Image mt="1" alt="arrow" src="/images/right_arrow.png" maxH="1rem" /> */}
+								<Box w={{ base: '20rem', md: '50rem' }} flex="1" textAlign="left">
+									{faq.ques ? faq.ques : ''}
+								</Box>
+							</AccordionButton>
+						</h2>
+						<AccordionPanel maxW={{ base: '20rem', md: '50rem' }} pb={4}>
+							{faq.ans ? faq.ans : ''}
+						</AccordionPanel>
+					</AccordionItem>
+				))}
+			</Accordion>
 
 			{/* <Flex
 				mx="2"
@@ -41,4 +53,4 @@ function Faq({ faq }) {
 	);
 }
 
-export default Faq;
+export default FaqList;

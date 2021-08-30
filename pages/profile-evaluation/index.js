@@ -382,6 +382,7 @@ function One() {
 								bg="rgba(240, 240, 240, 1)"
 								maxW="50%"
 								placeholder="Enter score"
+								type="number"
 							/>
 						</GridItem>
 						<GridItem
@@ -412,6 +413,8 @@ function One() {
 								bg="rgba(240, 240, 240, 1)"
 								maxW="50%"
 								placeholder="Enter score"
+								type="number"
+
 							/>
 						</GridItem>
 						<GridItem
@@ -433,7 +436,7 @@ function One() {
 							<Text
 								color="rgba(125, 125, 125, 1)"
 								py="4"
-							>{`Please write "Not taken yet" if you are yet to take GRE and "Not applicable" if you don't want to take GRE test`}</Text>
+							>{`Please write "Not taken yet" if you are yet to take IELTS/TOEFL and "Not applicable" if you don't want to take GRE test`}</Text>
 							<Input
 								value={ieltsToefl}
 								onChange={e => setIeltsToefl(e.target.value)}
@@ -442,6 +445,7 @@ function One() {
 								bg="rgba(240, 240, 240, 1)"
 								maxW="50%"
 								placeholder="Enter score"
+								type="number"
 							/>
 						</GridItem>
 						<GridItem

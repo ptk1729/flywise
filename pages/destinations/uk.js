@@ -15,6 +15,7 @@ import {
 	UnorderedList
 } from '@chakra-ui/react';
 import React, { useRef } from 'react';
+import FaqList from '../common/faqs';
 import Faq from '../common/faqs';
 import Footer from '../common/footer';
 import Navbar from '../common/navbar';
@@ -255,7 +256,8 @@ function UK() {
 					<Heading my={[ '2', '4', '8', '16', '16' ]} textAlign="center">
 						FAQs
 					</Heading>
-					<Accordion allowToggle>{faqs.map((faq, idx) => <Faq key={idx} faq={faq} />)}</Accordion>
+					<FaqList faqs={faqs} />
+
 				</GridItem>
 				<Footer />
 			</Grid>

@@ -1,6 +1,6 @@
 import { Accordion, Box, Button, Center, Flex, Grid, GridItem, Heading, HStack, Image, Text } from '@chakra-ui/react';
 import Link from 'next/link';
-import Faq from './common/faqs';
+import FaqList from './common/faqs';
 import Footer from './common/footer';
 import Navbar from './common/navbar';
 export default function Home() {
@@ -432,7 +432,7 @@ export default function Home() {
 					<Heading my={[ '2', '4', '8', '16', '16' ]} textAlign="center">
 						Have Any Questions?
 					</Heading>
-					<Accordion allowToggle>{faqs.map((faq, idx) => <Faq key={idx} faq={faq} />)}</Accordion>
+					<FaqList faqs ={ faqs} />
 				</GridItem>
 				<Footer />
 			</Grid>
