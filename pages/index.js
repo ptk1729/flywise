@@ -123,7 +123,7 @@ export default function Home() {
 								image: '/images/landing_card1.svg',
 								texts: [
 									'Free profile evaluation',
-									'Test preparation',
+									'Career roadmap',
 									'Course selection',
 									'University selection',
 									'SOP & LOR',

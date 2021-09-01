@@ -39,12 +39,12 @@ function One() {
 	const [ greQuant, setGreQuant ] = useState('');
 	const [ greVerbal, setGreVerbal ] = useState('');
 	const [ ieltsToefl, setIeltsToefl ] = useState('');
-	const [ workEx, setWorkEx ] = useState('');
+	const [ workEx, setWorkEx ] = useState('less than 2 years');
 	const [ cgpa, setCgpa ] = useState(0);
 	const [ backlogs, setBacklogs ] = useState('');
 	const [ clgUni, setClgUni ] = useState('');
 	const [ budget, setBudget ] = useState('Under 20 Lakhs');
-	const [ fundMasters, setFundMasters ] = useState('');
+	const [ fundMasters, setFundMasters ] = useState('Secured Loan');
 	const [ tnC, setTnC ] = useState(false);
 
 	const [ username, setUsername ] = useState('');
@@ -282,9 +282,9 @@ function One() {
 												maxH="4rem"
 												src={
 													i === course ? (
-														`/images/course_icon_white.png`
+														`/images/course_icon_white${idx+1}.png`
 													) : (
-														`/images/course_icon.png`
+														`/images/course_icon${idx+1}.png`
 													)
 												}
 												alt="country"
@@ -566,7 +566,20 @@ function One() {
 								color="rgba(125, 125, 125, 1)"
 								py="4"
 							>{`Please write "Not taken yet" if you are yet to take GRE and "Not applicable" if you don't want to take GRE test`}</Text> */}
-							<Input
+							<RadioGroup mt="2" onChange={setWorkEx} value={workEx} defaultValue="less than 2 years">
+								<Stack spacing={2}>
+									<Radio size="lg" value="no" colorScheme="blue">
+										No experience
+									</Radio>
+									<Radio size="lg" value="less than 2 years" colorScheme="blue">
+										Yes, less than 2 years
+									</Radio>
+									<Radio size="lg" value="more than 2 years" colorScheme="blue">
+										More than 2 years
+									</Radio>
+								</Stack>
+							</RadioGroup>
+							{/* <Input
 								value={workEx}
 								onChange={e => setWorkEx(e.target.value)}
 								py="6"
@@ -574,7 +587,7 @@ function One() {
 								bg="rgba(240, 240, 240, 1)"
 								maxW="50%"
 								placeholder="Enter score"
-							/>
+							/> */}
 						</GridItem>
 						<GridItem
 							// id="griditem"
@@ -789,7 +802,7 @@ function One() {
 						<GridItem rowSpan={12} colSpan={15}>
 							<Center>
 								<Flex>
-									<Heading
+									<Text
 										textAlign="center"
 										ml={{ base: '4', md: '4' }}
 										pb="4"
@@ -797,16 +810,32 @@ function One() {
 										fontSize="2xl"
 										fontWeight="500"
 									>
-										How are you going to fund your Master’s?
-									</Heading>
-									<Heading fontSize="3xl" fontWeight="500" color="red">
-										*
-									</Heading>
+										How are you going to fund your Master’s?<Link
+											fontSize="3xl"
+											fontWeight="500"
+											color="red"
+										>
+											*
+										</Link>
+									</Text>
 								</Flex>
 							</Center>
 
 							<Center>
-								<Input
+								<RadioGroup mt="2" onChange={setFundMasters} value={fundMasters} defaultValue="Secured Loan">
+									<Stack spacing={2}>
+										<Radio size="lg" value="Secured Loan" colorScheme="blue">
+											Secured Loan
+										</Radio>
+										<Radio size="lg" value="Unsecured Loan" colorScheme="blue">
+											Unsecured Loan
+										</Radio>
+										<Radio size="lg" value="Self/Parent Funded" colorScheme="blue">
+											Self/Parent Funded
+										</Radio>
+									</Stack>
+								</RadioGroup>
+								{/* <Input
 									ml={{ base: '4', md: '4' }}
 									value={fundMasters}
 									onChange={e => setFundMasters(e.target.value)}
@@ -815,7 +844,7 @@ function One() {
 									bg="rgba(240, 240, 240, 1)"
 									maxW="20em"
 									placeholder="Education Loan, etc..."
-								/>
+								/> */}
 							</Center>
 						</GridItem>{' '}
 						<GridItem rowSpan={15} colSpan={15}>
