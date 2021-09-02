@@ -140,6 +140,7 @@ export default function Navbar({ outline }) {
 
 	return (
 		<Box boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)" px={4}>
+			<title>{outline}</title>
 			<Flex px={["5","10","20","30","40"]} h={32} alignItems={'center'} justifyContent={'space-between'}>
 				<HStack spacing={8} alignItems={'center'}>
 					<Box>
