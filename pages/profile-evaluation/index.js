@@ -52,7 +52,6 @@ function One() {
 	const [ userPhone, setUserPhone ] = useState('');
 	function isEmail(email) {
 		let regexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
 		return regexp.test(String(email).toLowerCase());
 	}
 	function evaluateProfilePost(e) {

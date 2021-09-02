@@ -134,31 +134,43 @@ function Canada() {
 						<Heading color="white">{main_title}</Heading>
 					</HStack>
 				</GridItem>
-				<GridItem bg="linear-gradient(90.23deg, #002541 0%, #002541 101.14%)" rowSpan="3" colSpan="12">
-					<HStack px="2" w="100%" justifyContent="space-around" py="8">
-						<Link
-							onClick={handleCountry}
-							color="white"
-							fontSize={{ base: 'md', md: '2xl' }}
-							roundedTop="md"
-						>
-							COUNTRY GUIDE
-						</Link>
-						<Link onClick={handleTopUni} color="white" fontSize={{ base: 'md', md: '2xl' }} roundedTop="md">
-							TOP UNIVERSITIES
-						</Link>
-						<Link
-							onClick={handleStudentLife}
-							color="white"
-							fontSize={{ base: 'md', md: '2xl' }}
-							roundedTop="md"
-						>
-							STUDENT LIFE
-						</Link>
-						<Link onClick={handleFaqs} color="white" fontSize={{ base: 'md', md: '2xl' }} roundedTop="md">
-							FAQS
-						</Link>
-					</HStack>
+				<GridItem w="100%" bg="linear-gradient(90.23deg, #002541 0%, #002541 101.14%)" rowSpan="3" colSpan="12">
+					<Center>
+						<HStack px="2" spacing={[ '2', '4', '12', '16', '20' ]} py="8">
+							<Link
+								onClick={handleCountry}
+								color="white"
+								fontSize={{ base: 'md', md: '2xl' }}
+								roundedTop="md"
+							>
+								COUNTRY GUIDE
+							</Link>
+							<Link
+								onClick={handleTopUni}
+								color="white"
+								fontSize={{ base: 'md', md: '2xl' }}
+								roundedTop="md"
+							>
+								TOP UNIVERSITIES
+							</Link>
+							<Link
+								onClick={handleStudentLife}
+								color="white"
+								fontSize={{ base: 'md', md: '2xl' }}
+								roundedTop="md"
+							>
+								STUDENT LIFE
+							</Link>
+							<Link
+								onClick={handleFaqs}
+								color="white"
+								fontSize={{ base: 'md', md: '2xl' }}
+								roundedTop="md"
+							>
+								FAQS
+							</Link>
+						</HStack>
+					</Center>
 				</GridItem>
 
 				<GridItem ref={countryGuide} rowSpan="12" colSpan="12">
