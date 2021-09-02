@@ -50,7 +50,11 @@ function One() {
 	const [ username, setUsername ] = useState('');
 	const [ userEmail, setUserEmail ] = useState('');
 	const [ userPhone, setUserPhone ] = useState('');
+	function isEmail(email) {
+		let regexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
+		return regexp.test(String(email).toLowerCase());
+	}
 	function evaluateProfilePost(e) {
 		e.preventDefault();
 		setLoading(true);
@@ -282,9 +286,9 @@ function One() {
 												maxH="4rem"
 												src={
 													i === course ? (
-														`/images/course_icon_white${idx+1}.png`
+														`/images/course_icon_white${idx + 1}.png`
 													) : (
-														`/images/course_icon${idx+1}.png`
+														`/images/course_icon${idx + 1}.png`
 													)
 												}
 												alt="country"
@@ -822,7 +826,12 @@ function One() {
 							</Center>
 
 							<Center>
-								<RadioGroup mt="2" onChange={setFundMasters} value={fundMasters} defaultValue="Secured Loan">
+								<RadioGroup
+									mt="2"
+									onChange={setFundMasters}
+									value={fundMasters}
+									defaultValue="Secured Loan"
+								>
 									<Stack spacing={2}>
 										<Radio size="lg" value="Secured Loan" colorScheme="blue">
 											Secured Loan
@@ -1025,6 +1034,7 @@ function One() {
 								<Input
 									// ml={{ base: '4', md: '4' }}
 									value={username}
+									// type="text"
 									onChange={e => setUsername(e.target.value)}
 									py="3"
 									focusBorderColor="#25BAFB"
@@ -1064,7 +1074,7 @@ function One() {
 							<Center>
 								<Button
 									isLoading={loading}
-									isDisabled={loading || !tnC || !userEmail || !userPhone || !username}
+									isDisabled={loading || !tnC || !isEmail(userEmail) || !userPhone || !username}
 									mt="16"
 									color="white"
 									px="8"

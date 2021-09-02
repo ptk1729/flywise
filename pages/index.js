@@ -116,6 +116,9 @@ export default function Home() {
 					<Text textAlign="center" color="gray.500">
 						Learn more about the services we offer{' '}
 					</Text>
+					<Center>
+
+					
 					<Stack direction={{ base: 'column', md: 'row' }} spacing={{ base: '4', md: '8' }}>
 						{[
 							{
@@ -179,7 +182,7 @@ export default function Home() {
 								</Box>
 							</Center>
 						))}
-					</Stack>
+					</Stack></Center>
 				</GridItem>
 				<GridItem
 					backgroundRepeat="no-repeat"
