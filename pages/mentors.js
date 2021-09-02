@@ -168,7 +168,7 @@ function MentorCard({ mentor }) {
 	return (
 		<VStack py="8" spacing="8">
 			<Center>
-				<Image maxH="4rem" src={`/images/mentors/${mentor.name.replaceAll(' ', '')}.png`} alt={mentor.name} />
+				<Image maxH="4rem" src={`/images/mentors/${mentor.name.toString().replaceAll(' ', '')}.png`} alt={mentor.name} />
 			</Center>
 			<Heading px="4" fontSize={[ 'lg', 'lg', 'xl', 'xl', 'xl' ]} textAlign="center">
 				{mentor.name}
@@ -179,7 +179,7 @@ function MentorCard({ mentor }) {
 			<Flex px="4" justifyContent="space-between" alignItems="center">
 				<Image
 					mx="4"
-					src={`/images/mentors/${mentor.uni.replaceAll(' ', '')}.png`}
+					src={`/images/mentors/${mentor.uni.toString().replaceAll(' ', '')}.png`}
 					alt={mentor.uni}
 					maxH="3rem"
 				/>
