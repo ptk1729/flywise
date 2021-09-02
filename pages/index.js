@@ -258,7 +258,7 @@ export default function Home() {
 					bg={'linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)'}
 				>
 					<Flex flexDirection={{ md: 'row', base: 'column' }}>
-						<Box mt={[ '2', '4', '8', '16', '32' ]} ml={[ '2', '4', '8', '16', '32' ]}>
+						<Box mt={[ '2', '4', '8', '16', '32' ]} ml={[ '2', '4', '8', '16', '32' ]}  pl={[ '1', '1', '2', '4', '20' ]}>
 							<Heading my="16" textAlign="center" mt="4">
 								We are specialized in below fields, fly with us!
 							</Heading>
@@ -282,7 +282,7 @@ export default function Home() {
 							))}
 						</Box>
 
-						<Image p={{ base: '8', md: '32' }} alt="desk" src="/images/computer_desk.png" />
+						<Image  mr={[ '2', '4', '8', '16', '32' ]} py={{ base: '8', md: '32' }} alt="desk" src="/images/computer_desk.png" />
 					</Flex>
 				</GridItem>
 				<GridItem
@@ -425,7 +425,7 @@ export default function Home() {
 				>
 					<Center>
 						<Flex flexDirection={{ md: 'row', base: 'column' }}>
-							<Image maxW="25rem" maxH="70vh" p="16" alt="desk" src="/images/person_board.png" />
+							<Image maxW="25rem" maxH="70vh" p="16"  ml={[ '2', '4', '8', '16', '32' ]} alt="desk" src="/images/person_board.png" />
 							<Box mt={[ '2', '4', '8', '16', '16' ]} ml={[ '2', '4', '8', '16', '32' ]}>
 								<Heading mt="16" textAlign="left" mb="4">
 									Do you worry about

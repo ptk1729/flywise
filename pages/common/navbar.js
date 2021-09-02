@@ -24,7 +24,7 @@ const Links = [
 	{ link: 'Test Prep', to: '/' },
 	{ link: 'Profile Evaluation', to: '/profile-evaluation' },
 	{ link: 'Services', to: '#services' },
-	{ link: 'Mentors', to: '/' }
+	{ link: 'Mentors', to: '/mentors' }
 	// { link: 'Destinations', to: '/destinations' },
 	// { link: 'Courses', to: '/' }
 ];
