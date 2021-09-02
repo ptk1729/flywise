@@ -128,7 +128,7 @@ function Mentors() {
 						<Flex
 							flexDirection={{ base: 'column', md: 'row' }}
 							zIndex="auto"
-							transform={{ base: 'translate(0,0)', md: 'translate(0,6.5rem)' }}
+							transform={{ base: 'translate(0,0)', md: 'translate(0,5rem)' }}
 						>
 							{[
 								{ text: 'Guidance & Training', image: 'images/guidance.png' },
@@ -140,7 +140,7 @@ function Mentors() {
 									_hover={{ boxShadow: 'xl', transform: 'scale(1.05)' }}
 									transition="all 0.3s"
 									mx="8"
-									my="8"
+									my={{ base: '6', md: '0' }}
 									rounded="2xl"
 									py="8"
 									key={idx}
@@ -150,7 +150,7 @@ function Mentors() {
 									<Center>
 										<Image maxH="64px" px="8" src={box.image} alt={box.text} />
 									</Center>
-									<Text color="white" fontSize="lg" fontWeight="600" textAlign="center" px="8">
+									<Text mt="4" color="white" fontSize="lg" fontWeight="600" textAlign="center" px="8">
 										{box.text}{' '}
 									</Text>
 								</Box>
