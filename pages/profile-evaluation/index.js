@@ -147,9 +147,9 @@ function One() {
 						</GridItem>
 						{[ 'USA', 'Australia', 'Canada', 'UK', 'Other' ].map((i, idx) => (
 							<GridItem
-								id="griditem"
 								onClick={() => setCountry(i)}
-								my="6"
+								mt="4"
+								mb={i === 'Other' ? '32' : '6'}
 								key={idx}
 								px={[ '4rem', '3rem', '2rem', '0rem', '0rem' ]}
 								rowSpan={15}
@@ -196,7 +196,7 @@ function One() {
 						))}
 						<GridItem rowSpan={12} colSpan={15}>
 							<Center>
-								<Flex>
+								<Flex position="fixed" bottom="5vh">
 									{/* <Button
 										mt="16"
 										color="white"
@@ -218,7 +218,8 @@ function One() {
 										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
 										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
 										onClick={() => setPe(2)}
-										ml="4"
+										// ml="4"
+										// transformOrigin="100% 100%"
 									>
 										Next
 									</Button>
@@ -253,7 +254,8 @@ function One() {
 							<GridItem
 								id="griditem"
 								onClick={() => setCourse(i)}
-								my="4"
+								mt="4"
+								mb={i === 'Other' ? '32' : '6'}
 								key={idx}
 								px={[ '4rem', '3rem', '2rem', '0rem', '0rem' ]}
 								rowSpan={15}
@@ -311,7 +313,7 @@ function One() {
 						))}
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Flex>
+								<Flex position="fixed" bottom="5vh">
 									<Button
 										mt="16"
 										color="white"
@@ -464,6 +466,7 @@ function One() {
 						<GridItem
 							// key={i}
 							// id="griditem"
+							mb={{ base: '32', md: '4' }}
 							py={2}
 							px={[ '4rem', '3rem', '2rem', '3rem', '4rem' ]}
 							rowSpan={7}
@@ -491,7 +494,7 @@ function One() {
 						</GridItem>
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Flex>
+								<Flex position="fixed" bottom="5vh">
 									<Button
 										mt="16"
 										color="white"
@@ -662,19 +665,18 @@ function One() {
 							// key={i}
 							// id="griditem"
 							py={8}
+							mb="20"
 							px={[ '4rem', '3rem', '2rem', '3rem', '4rem' ]}
 							rowSpan={7}
 							colSpan={[ 15, 15, 7, 7, 7 ]}
 							// bg={bg}
 						>
-							<Flex>
-								<Heading pb="4" fontSize="3xl" fontWeight="500">
-									C.G.P.A
-								</Heading>
-								<Heading fontSize="3xl" fontWeight="500" color="red">
+							<Text pb="4" fontSize="3xl" fontWeight="500">
+								C.G.P.A<Link fontSize="3xl" fontWeight="500" color="red">
 									*
-								</Heading>
-							</Flex>
+								</Link>
+							</Text>
+
 							<NumberInput
 								value={cgpa}
 								onChange={e => setCgpa(e)}
@@ -697,7 +699,7 @@ function One() {
 						</GridItem>
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Flex>
+								<Flex position="fixed" bottom="5vh">
 									<Button
 										mt="16"
 										color="white"
@@ -745,7 +747,7 @@ function One() {
 					<React.Fragment>
 						{' '}
 						<GridItem
-							p={[ '0.4rem', '1rem', '2rem', '2rem', '2rem' ]}
+							pt={[ '0.4rem', '1rem', '2rem', '2rem', '2rem' ]}
 							rowSpan={12}
 							colSpan={15}
 							// bg={bg}
@@ -802,7 +804,7 @@ function One() {
 								))}{' '}
 							</Flex>
 						</GridItem>
-						<GridItem rowSpan={12} colSpan={15}>
+						<GridItem mb={{ base: '28', md: '0' }} rowSpan={12} colSpan={15}>
 							<Center>
 								<Flex>
 									<Text
@@ -857,13 +859,13 @@ function One() {
 						</GridItem>{' '}
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Flex>
+								<Flex position="fixed" bottom="1vh">
 									<Button
 										className="sticky"
 										mt="16"
 										color="white"
 										px="8"
-										mb="4"
+										// mb="4"
 										bg="rgba(13, 179, 251, 1)"
 										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
 										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
@@ -906,19 +908,16 @@ function One() {
 					<React.Fragment>
 						{' '}
 						<GridItem
-							p={[ '0.4rem', '1rem', '2rem', '3rem', '4rem' ]}
+							p={[ '0.4rem', '1rem', '2rem', '2rem', '2rem' ]}
 							rowSpan={12}
 							colSpan={15}
 							// bg={bg}
 						>
-							<Flex>
-								<Heading ml={{ base: '4', md: '0' }} pb="4" fontSize="3xl" fontWeight="500">
-									Which session are you applying for?
-								</Heading>
-								<Heading fontSize="3xl" fontWeight="500" color="red">
+							<Text ml={{ base: '4', md: '0' }} pb="4" textAlign="center" fontSize="3xl" fontWeight="500">
+								Which session are you applying for?<Link fontSize="3xl" fontWeight="500" color="red">
 									*
-								</Heading>
-							</Flex>
+								</Link>
+							</Text>
 						</GridItem>
 						{[ 'Spring 2022', 'Fall 2022', 'Spring 2023', 'Fall 2023', 'Other' ].map((i, idx) => (
 							<GridItem
@@ -977,7 +976,7 @@ function One() {
 						))}
 						<GridItem rowSpan={12} colSpan={15}>
 							<Center>
-								<Flex>
+								<Flex position="fixed" bottom="5vh">
 									<Button
 										mt="16"
 										color="white"
@@ -1044,6 +1043,7 @@ function One() {
 								/>
 								<Input
 									// ml={{ base: '4', md: '4' }}
+									isInvalid={userEmail.length > 0 ? !isEmail(userEmail) : false}
 									type="email"
 									value={userEmail}
 									onChange={e => setUserEmail(e.target.value)}

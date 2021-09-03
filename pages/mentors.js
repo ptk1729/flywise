@@ -1,4 +1,5 @@
-import { Box, Center, Flex, Grid, GridItem, Heading, Image, Link, Text, VStack } from '@chakra-ui/react';
+import { StarIcon } from '@chakra-ui/icons';
+import { Box, Center, Flex, Grid, GridItem, Heading, Image, Link, Text, VStack, Button } from '@chakra-ui/react';
 import React from 'react';
 import Footer from './common/footer';
 import Navbar from './common/navbar';
@@ -80,7 +81,7 @@ const MENTORS = [
 function Mentors() {
 	return (
 		<Box>
-            {/* <title></title> */}
+			{/* <title></title> */}
 			<Navbar outline="Mentors" />
 			<Grid
 				bg="rgba(247, 247, 250, 1)"
@@ -177,7 +178,82 @@ function Mentors() {
 						<MentorCard mentor={mentor} />
 					</GridItem>
 				))}{' '}
+				<GridItem py="8" colSpan="12" bg="white" rowSpan="12">
+					<Heading textAlign="center">Testimonials</Heading>
+				</GridItem>
+				{[
+					{
+						name: 'shubbham singh',
+						stars: 5,
+						avatar: 'avatar1',
+						text:
+							'“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”'
+					},
+					{
+						name: 'shubbham singh',
+						stars: 4,
+						avatar: 'avatar2',
+						text:
+							'“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”'
+					},
+					{
+						name: 'shubbham singh',
+						stars: 4,
+						avatar: 'avatar2',
+						text:
+							'“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”'
+					}
+				].map((testimonial, idx) => (
+					<GridItem
+						bg="white"
+						// boxShadow="base"
+						// _hover={{ boxShadow: 'lg' }}
+						transition="all 0.2s"
+						// rounded="md"
+						pb="16"
+						px="8"
+						key={idx}
+						colSpan={[ '12', '12', '12', '4', '4' ]}
+						rowSpan={[ '12', '12', '6', '6', '6' ]}
+					>
+						<Flex mx="8" mt="8">
+							<Image
+								transform="translate(2rem, -0.8rem)"
+								alt="avatar"
+								maxH="4rem"
+								src={`/images/mentors/${testimonial.avatar}.png`}
+							/>
+							<Box>
+								<Flex pl="10" pb="2">
+									{[ 1, 2, 3, 4, 5 ].map((i, idx) => (
+										<StarIcon
+											mx="0.5"
+											key={idx}
+											color={i <= testimonial.stars ? '#EAD628' : '#C4C4C4'}
+										/>
+									))}
+								</Flex>
+								<Box rounded="lg" px="6" pb="8" bg="rgba(230, 246, 255, 1)">
+									<Text pl="4" fontWeight="600" fontSize="lg" pt="4">
+										{testimonial.name}
+									</Text>
+									<Text my="2">{testimonial.text}</Text>
+								</Box>
+							</Box>
+						</Flex>
+
+					</GridItem>
+				))}
+				<GridItem px="16" pb="10" colSpan="12" bg="white" rowSpan="2">
+					<Flex justifyContent="flex-end">
+						<Button _focus={{boxShadow:"none"}} mx="1" id="gradient-anim" textAlign="center" px="3" h="2" />
+						<Button _focus={{boxShadow:"none"}} mx="1" id="gradient-anim" textAlign="center" px="20" h="2" />
+						<Button _focus={{boxShadow:"none"}} mx="1" id="gradient-anim" textAlign="center" px="3" h="2" />
+						<Button _focus={{boxShadow:"none"}} mx="1" id="gradient-anim" textAlign="center" px="3" h="2" />
+					</Flex>
+				</GridItem>
 			</Grid>
+
 			<Footer />
 		</Box>
 	);
@@ -189,7 +265,13 @@ function MentorCard({ mentor }) {
 	return (
 		<VStack py="8" spacing="8">
 			<Center>
+				{/* <Flex> */}
+
 				<Image maxH="4rem" src={`/images/mentors/${mentor.image}.png`} alt={mentor.name} />
+				<Link target="_blank" rounded="full" transform="translate(-1rem, 1.1rem)" href="/mentors">
+					<Image maxH="2rem" src={`/images/mentors/linkedin.png`} alt={mentor.name} />
+				</Link>
+				{/* </Flex> */}
 			</Center>
 			<Heading px="4" fontSize={[ 'lg', 'lg', 'xl', 'xl', 'xl' ]} textAlign="center">
 				{mentor.name}

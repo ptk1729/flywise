@@ -6,7 +6,8 @@ import {
 	IconButton,
 	Button,
 	useDisclosure,
-	// useColorModeValue,
+	ModalOverlay,
+	Modal,
 	Stack,
 	Image,
 	Center,
@@ -59,6 +60,9 @@ const AllNavLinks = ({ outline }) => {
 			<Popover placement="bottom" closeOnBlur={true} initialFocusRef={initRef}>
 				{({ isOpen, onClose }) => (
 					<React.Fragment>
+						<Modal isOpen={isOpen}>
+							<ModalOverlay zIndex="1" />
+						</Modal>
 						<PopoverTrigger>
 							<Link
 								// className={outline === 'Destinations' ? `bottom-outline` : ``}
@@ -82,7 +86,7 @@ const AllNavLinks = ({ outline }) => {
 								Destination
 							</Link>
 						</PopoverTrigger>
-						<Portal>
+						<Portal zIndex="2">
 							<PopoverContent h="5rem" w="25rem">
 								{/* <PopoverHeader>This is the header</PopoverHeader> */}
 								{/* <PopoverCloseButton /> */}
@@ -113,7 +117,7 @@ const AllNavLinks = ({ outline }) => {
 					</React.Fragment>
 				)}
 			</Popover>
-			<NavLink outline={''} to={'/'} link={'Courses'} />
+			<NavLink outline={''} to={'#courses'} link={'Courses'} />
 			{/* <NLink href={}>
 				<Link
 					// className={props.link === props.outline ? `bottom-outline` : ``}
@@ -141,7 +145,7 @@ export default function Navbar({ outline }) {
 	return (
 		<Box boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)" px={4}>
 			<title>{outline}</title>
-			<Flex px={["5","10","20","30","40"]} h={32} alignItems={'center'} justifyContent={'space-between'}>
+			<Flex px={[ '5', '10', '20', '30', '40' ]} h={32} alignItems={'center'} justifyContent={'space-between'}>
 				<HStack spacing={8} alignItems={'center'}>
 					<Box>
 						<NextLink href="/">

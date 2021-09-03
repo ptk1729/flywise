@@ -65,6 +65,20 @@ export default function Home() {
 							platform that travels with you till you land your dream job
 						</Heading>
 					</Heading>
+					{/* <Heading fontSize={[ 'xl', '2xl', '3xl', '3xl', '4xl' ]}>
+						India’s best overseas education platform
+						<Heading fontSize={[ 'xl', '2xl', '3xl', '3xl', '4xl' ]} color="#0DB3FB">
+							that travels with you till you land your dream job
+						</Heading>
+					</Heading>
+					<Text my="4">
+						Why do we go abroad? To study more, land on a good job, earn enough, and settle for a good life.
+						Right? Most of us dream of achieving this instantly as soon as we get an admission. But the real
+						journey starts when you land abroad.
+					</Text>
+					<Text my="4">
+						We, at Flywise, want to make that journey as smooth as possible till you settle yourself well.
+					</Text> */}
 					<Link href="/profile-evaluation" passHref>
 						<Button
 							variant={'solid'}
@@ -117,72 +131,71 @@ export default function Home() {
 						Learn more about the services we offer{' '}
 					</Text>
 					<Center>
-
-					
-					<Stack direction={{ base: 'column', md: 'row' }} spacing={{ base: '4', md: '8' }}>
-						{[
-							{
-								title: 'Pre-Admission support',
-								image: '/images/landing_card1.svg',
-								texts: [
-									'Free profile evaluation',
-									'Career roadmap',
-									'Course selection',
-									'University selection',
-									'SOP & LOR',
-									'Application assistance'
-								]
-							},
-							{
-								title: 'Post-Admission support',
-								image: '/images/landing_card2.svg',
-								texts: [
-									'VISA assistance',
-									'Loan assistance',
-									'Forex',
-									'Roommate matching',
-									'Pre departure guidance'
-								]
-							},
-							{
-								title: 'Abroad career support',
-								image: '/images/landing_card3.svg',
-								texts: [
-									'Profile building',
-									'Test preparation',
-									'Professional networking',
-									'Interview training',
-									'Job referrals at top tech companies'
-								]
-							}
-						].map((service, idx) => (
-							<Center key={idx}>
-								<Box
-									minH="70vh"
-									w={{ base: '80%', md: '24rem' }}
-									my="4"
-									maxH="558px"
-									maxW="425.03px"
-									p={[ '2', '4', '8', '16', '16' ]}
-									bg="white"
-									boxShadow="0px 0px 50px 23px rgba(220, 220, 220, 0.25)"
-								>
-									<Center>
-										<Image mb="4" maxH="40%" src={service.image} alt="main" />
-									</Center>
-									<Heading my="4" fontSize="xl" />
-									{service.texts.map((i, idx) => (
-										<Flex alignItems="flex-start" key={idx}>
-											<Image mt="2" src="/images/tick.svg" alt="tick" />
-											<Text color="rgba(13, 179, 251, 1)" fontWeight="600">
-												{i}
-											</Text>
-										</Flex>
-									))}
-								</Box>
-							</Center>
-						))}
-					</Stack></Center>
+						<Stack direction={{ base: 'column', md: 'row' }} spacing={{ base: '4', md: '8' }}>
+							{[
+								{
+									title: 'Pre-Admission support',
+									image: '/images/landing_card1.svg',
+									texts: [
+										'Free profile evaluation',
+										'Career roadmap',
+										'Course selection',
+										'University selection',
+										'SOP & LOR',
+										'Application assistance'
+									]
+								},
+								{
+									title: 'Post-Admission support',
+									image: '/images/landing_card2.svg',
+									texts: [
+										'VISA assistance',
+										'Loan assistance',
+										'Forex',
+										'Roommate matching',
+										'Pre departure guidance'
+									]
+								},
+								{
+									title: 'Abroad career support',
+									image: '/images/landing_card3.svg',
+									texts: [
+										'Profile building',
+										'Test preparation',
+										'Professional networking',
+										'Interview training',
+										'Job referrals at top tech companies'
+									]
+								}
+							].map((service, idx) => (
+								<Center key={idx}>
+									<Box
+										minH="70vh"
+										w={{ base: '80%', md: '24rem' }}
+										my="4"
+										maxH="558px"
+										maxW="425.03px"
+										p={[ '2', '4', '8', '16', '16' ]}
+										bg="white"
+										boxShadow="0px 0px 50px 23px rgba(220, 220, 220, 0.25)"
+									>
+										<Center>
+											<Image mb="4" maxH="40%" src={service.image} alt="main" />
+										</Center>
+										<Heading my="4" fontSize="xl" />
+										{service.texts.map((i, idx) => (
+											<Flex alignItems="flex-start" key={idx}>
+												<Image mt="2" src="/images/tick.svg" alt="tick" />
+												<Text color="rgba(13, 179, 251, 1)" fontWeight="600">
+													{i}
+												</Text>
+											</Flex>
+										))}
+									</Box>
+								</Center>
+							))}
+						</Stack>
+					</Center>
 				</GridItem>
 				<GridItem
 					backgroundRepeat="no-repeat"
@@ -261,7 +274,11 @@ export default function Home() {
 					bg={'linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)'}
 				>
 					<Flex flexDirection={{ md: 'row', base: 'column' }}>
-						<Box mt={[ '2', '4', '8', '16', '32' ]} ml={[ '2', '4', '8', '16', '32' ]}  pl={[ '1', '1', '2', '4', '20' ]}>
+						<Box
+							mt={[ '2', '4', '8', '16', '32' ]}
+							ml={[ '2', '4', '8', '16', '32' ]}
+							pl={[ '1', '1', '2', '4', '20' ]}
+						>
 							<Heading my="16" textAlign="center" mt="4">
 								We are specialized in below fields, fly with us!
 							</Heading>
@@ -285,7 +302,12 @@ export default function Home() {
 							))}
 						</Box>
 
-						<Image  mr={[ '2', '4', '8', '16', '32' ]} py={{ base: '8', md: '32' }} alt="desk" src="/images/computer_desk.png" />
+						<Image
+							mr={[ '2', '4', '8', '16', '32' ]}
+							py={{ base: '8', md: '32' }}
+							alt="desk"
+							src="/images/computer_desk.png"
+						/>
 					</Flex>
 				</GridItem>
 				<GridItem
@@ -428,7 +450,14 @@ export default function Home() {
 				>
 					<Center>
 						<Flex flexDirection={{ md: 'row', base: 'column' }}>
-							<Image maxW="25rem" maxH="70vh" p="16"  ml={[ '2', '4', '8', '16', '32' ]} alt="desk" src="/images/person_board.png" />
+							<Image
+								maxW="25rem"
+								maxH="70vh"
+								p="16"
+								ml={[ '2', '4', '8', '16', '32' ]}
+								alt="desk"
+								src="/images/person_board.png"
+							/>
 							<Box mt={[ '2', '4', '8', '16', '16' ]} ml={[ '2', '4', '8', '16', '32' ]}>
 								<Heading mt="16" textAlign="left" mb="4">
 									Do you worry about
@@ -458,7 +487,7 @@ export default function Home() {
 					// colSpan={{base: 12, md:6}}
 					// bg={'linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)'}
 				>
-					<Heading my={[ '2', '4', '8', '16', '16' ]} textAlign="center">
+					<Heading id="courses" my={[ '2', '4', '8', '16', '16' ]} textAlign="center">
 						Have Any Questions?
 					</Heading>
 					<FaqList faqs={faqs} />
