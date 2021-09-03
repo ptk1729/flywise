@@ -329,6 +329,9 @@ export default function Home() {
 						<Box
 							transform={{ base: 'translate(0px, 0px)', md: 'translate(10px, 0px)' }}
 							minW="32%"
+							d="flex"
+							justifyContent="center"
+							alignItems="center"
 							// h="220px"
 							rounded="17px"
 							bg="linear-gradient(294.98deg, #6ADBDB 9.42%, #4080D3 98.9%)"
@@ -365,7 +368,9 @@ export default function Home() {
 						<Box
 							transform={{ base: 'translate(0px, 0px)', md: 'translate(-10px, 0px)' }}
 							minW="32%"
-							// h="220px"
+							d="flex"
+							justifyContent="center"
+							alignItems="center"
 							rounded="17px"
 							bg="linear-gradient(294.98deg, #6ADBDB 9.42%, #4080D3 98.9%)"
 						>
@@ -375,6 +380,8 @@ export default function Home() {
 								fontSize={[ 'md', '2xl', '2xl', '2xl', '3xl' ]}
 								px={[ '2', '1', '2', '3', '4' ]}
 								py={[ '2', '4', '8', '16', '16' ]}
+
+								
 							>
 								Admit from right top University
 							</Heading>
@@ -388,7 +395,9 @@ export default function Home() {
 						<Box
 							transform={{ base: 'translate(0px, 0px)', md: 'translate(10px, 0px)' }}
 							minW="32%"
-							// h="220px"
+							d="flex"
+							justifyContent="center"
+							alignItems="center"
 							rounded="17px"
 							bg="linear-gradient(294.98deg, #6ADBDB 9.42%, #4080D3 98.9%)"
 						>
@@ -424,7 +433,9 @@ export default function Home() {
 						<Box
 							transform={{ base: 'translate(0px, 0px)', md: 'translate(-10px, 0px)' }}
 							minW="32%"
-							// h="220px"
+							d="flex"
+							justifyContent="center"
+							alignItems="center"
 							rounded="17px"
 							bg="linear-gradient(294.98deg, #6ADBDB 9.42%, #4080D3 98.9%)"
 						>

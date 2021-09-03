@@ -13,14 +13,15 @@ function Footer() {
 						{[
 							{ link: 'Home', to: '/' },
 							{ link: 'About', to: '/' },
-							{ link: 'Services', to: '/' },
+							{ link: 'Services', to: '/#services' },
 							{ link: 'News', to: '/' },
 							{ link: 'Products', to: '/' }
 						].map((i, idx) => (
-							<Button
+							<Link
 								my={{base:"2", md:"2"}}
 								mx={{base:"0", md:"4"}}
 								// ={{base:"1", md:"4"}}
+								href={i.to}
 								_hover={{
 									color:"black",
 									bg:"blue.100"
@@ -28,15 +29,18 @@ function Footer() {
 								}}
 								_focus={{
 									color:"white",
-									bg:"blue.400"
+									bg:"blue.200"
 								}}
+								px="4"
+								py="2"
+								rounded="lg"
 								color="rgba(29, 29, 29, 1)"
 								colorScheme="blackAlpha"
 								variant="ghost"
 								key={idx}
 							>
 								{i.link}
-							</Button>
+							</Link>
 						))}
 					</Flex>
 				</Box>
