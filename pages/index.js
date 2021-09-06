@@ -521,8 +521,13 @@ export default function Home() {
                   </Text>
                 ))}
                 <Text maxW={{ base: "", md: "70%" }} my="16" fontWeight="400">
-                  Don’t worry, We guide you to sail through all these hurdles
-                  and live your dream life abroad!
+                  Our founders and mentors have personally faced/seen all these
+                  issues, navigated through them and are currently working at
+                  top product based companies in the US. Our mentors will work
+                  with you to build a vision, mission and identify objectives
+                  which will help in planning to get the best job abroad
+                  irrespective of your backgrounds (which is why you are going
+                  abroad).
                 </Text>
               </Box>
             </Flex>
