@@ -151,7 +151,7 @@ export default function Home() {
                   image: "/images/landing_card3.svg",
                   texts: [
                     "Profile building",
-                    "Test preparation",
+                    "Career roadmap",
                     "Professional networking",
                     "Interview training",
                     "Job referrals at top tech companies",
