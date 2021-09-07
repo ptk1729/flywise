@@ -47,7 +47,7 @@ export default function Home() {
               fontSize={["xl", "2xl", "3xl", "4xl", "5xl"]}
               color="#0DB3FB"
             >
-              platform that travels with you till you land your dream job
+              platform that travels with you till you land your dream job abroad
             </Heading>
           </Heading>
           {/* <Heading fontSize={[ 'xl', '2xl', '3xl', '3xl', '4xl' ]}>
@@ -160,7 +160,7 @@ export default function Home() {
               ].map((service, idx) => (
                 <Center key={idx}>
                   <Box
-                    minH="70vh"
+                    minH="50%"
                     w={{ base: "80%", md: "24rem" }}
                     my="4"
                     maxH="558px"
@@ -172,7 +172,9 @@ export default function Home() {
                     <Center>
                       <Image mb="4" maxH="40%" src={service.image} alt="main" />
                     </Center>
-                    <Heading my="4" fontSize="xl" />
+                    <Heading my="4" fontSize="xl">
+                      {service.title}
+                    </Heading>
                     {service.texts.map((i, idx) => (
                       <Flex alignItems="flex-start" key={idx}>
                         <Image mt="2" src="/images/tick.svg" alt="tick" />

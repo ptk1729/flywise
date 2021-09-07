@@ -420,7 +420,7 @@ function One() {
                 bg="rgba(240, 240, 240, 1)"
                 maxW="50%"
                 placeholder="Enter score"
-                type="number"
+                type="text"
               />
             </GridItem>
             <GridItem
@@ -451,7 +451,7 @@ function One() {
                 bg="rgba(240, 240, 240, 1)"
                 maxW="50%"
                 placeholder="Enter score"
-                type="number"
+                type="text"
               />
             </GridItem>
             <GridItem
@@ -482,7 +482,7 @@ function One() {
                 bg="rgba(240, 240, 240, 1)"
                 maxW="50%"
                 placeholder="Enter score"
-                type="number"
+                type="text"
               />
             </GridItem>
             <GridItem
