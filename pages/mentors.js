@@ -321,8 +321,8 @@ function MentorCard({ mentor }) {
 			<Center>
 				{/* <Flex> */}
 
-				<Image maxH="4rem" src={`/images/mentors/${mentor.image}.png`} alt={mentor.name} />
-				<Link target="_blank" rounded="full" transform="translate(-1rem, 1.1rem)" href="/mentors">
+				<Image maxH="6rem" src={`/images/mentors/${mentor.image}.png`} alt={mentor.name} />
+				<Link target="_blank" rounded="full" transform="translate(-1rem, 2.1rem)" href="/mentors">
 					<Image maxH="2rem" src={`/images/mentors/linkedin.png`} alt={mentor.name} />
 				</Link>
 				{/* </Flex> */}
