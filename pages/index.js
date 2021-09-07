@@ -1,51 +1,14 @@
-import {
-	Accordion,
-	Box,
-	Button,
-	Center,
-	Flex,
-	Grid,
-	GridItem,
-	Heading,
-	HStack,
-	Image,
-	Stack,
-	Text,
-	VStack
-} from '@chakra-ui/react';
+import { Box, Button, Center, Flex, Grid, GridItem, Heading, Image, Stack, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import FaqList from './common/faqs';
 import Footer from './common/footer';
 import Navbar from './common/navbar';
+import faqs from './../content/homeFaqs';
+
 export default function Home() {
 	// let bg = 'red';
 	let bg = 'transparent';
-	let faqs = [
-		{
-			ques: 'When will I have access to my course',
-			ans: `When will I have access to my course`
-		},
-		{
-			ques: 'When will I have access to my course',
-			ans: `When will I have access to my course`
-		},
-		{
-			ques: 'When will I have access to my course',
-			ans: `When will I have access to my course`
-		},
-		{
-			ques: 'When will I have access to my course',
-			ans: `When will I have access to my course`
-		},
-		{
-			ques: 'When will I have access to my course',
-			ans: `When will I have access to my course`
-		},
-		{
-			ques: 'When will I have access to my course',
-			ans: `When will I have access to my course`
-		}
-	];
+
 	return (
 		<Box>
 			<title>Flywise</title>
@@ -62,7 +25,7 @@ export default function Home() {
 					<Heading fontSize={[ 'xl', '2xl', '3xl', '4xl', '5xl' ]}>
 						India’s best overseas education
 						<Heading fontSize={[ 'xl', '2xl', '3xl', '4xl', '5xl' ]} color="#0DB3FB">
-							platform that travels with you till you land your dream job
+							platform that travels with you till you land your dream job abroad
 						</Heading>
 					</Heading>
 					{/* <Heading fontSize={[ 'xl', '2xl', '3xl', '3xl', '4xl' ]}>
@@ -86,8 +49,7 @@ export default function Home() {
 							color="white"
 							fontWeight="semibold"
 							px="6"
-							id="gradient"
-							colorScheme="blue"
+							id="gradient-anim"
 							// bg="linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)"
 							// _hover={{
 							// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
@@ -162,7 +124,7 @@ export default function Home() {
 									image: '/images/landing_card3.svg',
 									texts: [
 										'Profile building',
-										'Test preparation',
+										'Career roadmap',
 										'Professional networking',
 										'Interview training',
 										'Job referrals at top tech companies'
@@ -171,7 +133,7 @@ export default function Home() {
 							].map((service, idx) => (
 								<Center key={idx}>
 									<Box
-										minH="70vh"
+										minH="50%"
 										w={{ base: '80%', md: '24rem' }}
 										my="4"
 										maxH="558px"
@@ -183,7 +145,9 @@ export default function Home() {
 										<Center>
 											<Image mb="4" maxH="40%" src={service.image} alt="main" />
 										</Center>
-										<Heading my="4" fontSize="xl" />
+										<Heading my="4" fontSize="xl">
+											{service.title}
+										</Heading>
 										{service.texts.map((i, idx) => (
 											<Flex alignItems="flex-start" key={idx}>
 												<Image mt="2" src="/images/tick.svg" alt="tick" />
@@ -328,7 +292,10 @@ export default function Home() {
 						px={[ '0.4rem', '1rem', '2rem', '3rem', '4rem' ]}
 					>
 						<Box
-							transform={{ base: 'translate(0px, 0px)', md: 'translate(10px, 0px)' }}
+							transform={{
+								base: 'translate(0px, 0px)',
+								md: 'translate(10px, 0px)'
+							}}
 							minW="32%"
 							d="flex"
 							justifyContent="center"
@@ -367,7 +334,10 @@ export default function Home() {
 							</Text>
 						</Box>
 						<Box
-							transform={{ base: 'translate(0px, 0px)', md: 'translate(-10px, 0px)' }}
+							transform={{
+								base: 'translate(0px, 0px)',
+								md: 'translate(-10px, 0px)'
+							}}
 							minW="32%"
 							d="flex"
 							justifyContent="center"
@@ -381,8 +351,6 @@ export default function Home() {
 								fontSize={[ 'md', '2xl', '2xl', '2xl', '3xl' ]}
 								px={[ '2', '1', '2', '3', '4' ]}
 								py={[ '2', '4', '8', '16', '16' ]}
-
-								
 							>
 								Admit from right top University
 							</Heading>
@@ -394,7 +362,10 @@ export default function Home() {
 						px={[ '0.4rem', '1rem', '2rem', '3rem', '4rem' ]}
 					>
 						<Box
-							transform={{ base: 'translate(0px, 0px)', md: 'translate(10px, 0px)' }}
+							transform={{
+								base: 'translate(0px, 0px)',
+								md: 'translate(10px, 0px)'
+							}}
 							minW="32%"
 							d="flex"
 							justifyContent="center"
@@ -432,7 +403,10 @@ export default function Home() {
 							</Text>
 						</Box>
 						<Box
-							transform={{ base: 'translate(0px, 0px)', md: 'translate(-10px, 0px)' }}
+							transform={{
+								base: 'translate(0px, 0px)',
+								md: 'translate(-10px, 0px)'
+							}}
 							minW="32%"
 							d="flex"
 							justifyContent="center"
@@ -485,8 +459,11 @@ export default function Home() {
 									</Text>
 								))}
 								<Text maxW={{ base: '', md: '70%' }} my="16" fontWeight="400">
-									Don’t worry, We guide you to sail through all these hurdles and live your dream life
-									abroad!
+									Our founders and mentors have personally faced/seen all these issues, navigated
+									through them and are currently working at top product based companies in the US. Our
+									mentors will work with you to build a vision, mission and identify objectives which
+									will help in planning to get the best job abroad irrespective of your backgrounds
+									(which is why you are going abroad).
 								</Text>
 							</Box>
 						</Flex>
