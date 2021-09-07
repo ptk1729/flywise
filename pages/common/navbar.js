@@ -16,7 +16,9 @@ import {
 	Portal,
 	PopoverContent,
 	PopoverBody,
-	Text
+	Text,
+	GridItem,
+	useMediaQuery
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link';
@@ -141,11 +143,18 @@ const AllNavLinks = ({ outline }) => {
 };
 export default function Navbar({ outline }) {
 	const { isOpen, onOpen, onClose } = useDisclosure();
-
+	const [ isLargerThan769 ] = useMediaQuery('(min-width: 769px)');
 	return (
-		<Box boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)" px={4}>
+		<GridItem maxW="100vw" overflow="hidden" boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)" px={0}>
 			<title>{outline}</title>
-			<Flex px={[ '5', '10', '20', '30', '40' ]} h={32} alignItems={'center'} justifyContent={'space-between'}>
+			<Flex
+				overflow="hidden"
+				maxW="100vw"
+				px={[ '0', '10', '20', '30', '40' ]}
+				h={32}
+				alignItems={'center'}
+				justifyContent={'space-between'}
+			>
 				<HStack spacing={8} alignItems={'center'}>
 					<Box>
 						<NextLink href="/">
@@ -153,37 +162,27 @@ export default function Navbar({ outline }) {
 						</NextLink>
 					</Box>
 				</HStack>
-				<Center>
-					<HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
-						<AllNavLinks outline={outline} />
-					</HStack>
-				</Center>
+				{isLargerThan769 && (
+					<Center>
+						<HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
+							<AllNavLinks outline={outline} />
+						</HStack>
+					</Center>
+				)}
 				<Flex alignItems={'center'}>
 					<NextLink href="/contact-us">
 						<Button
 							variant={'solid'}
 							// colorScheme={'teal'}
-							size={'md'}
+							size={{ base: 'sm', md: 'md' }}
+							py={[ '2', '2', '2', '2', '2' ]}
 							color="white"
 							fontWeight="semibold"
-							px="6"
+							px={[ '2', '6', '6', '6', '6' ]}
 							id="gradient"
 							colorScheme="blue"
-							// transform=""
-							// bg="linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)"
-							// _hover={{
-							// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-							// }}
-							// _focus={{
-							// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-							// }}
-							// _active={{
-							// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-							// }}
 							mr={4}
 							rounded="full"
-
-							// leftIcon={<AddIcon />}
 						>
 							Contact Us
 						</Button>
@@ -205,6 +204,6 @@ export default function Navbar({ outline }) {
 					</Stack>
 				</Box>
 			) : null}
-		</Box>
+		</GridItem>
 	);
 }

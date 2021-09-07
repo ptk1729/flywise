@@ -184,22 +184,29 @@ function Mentors() {
 				{[
 					{
 						name: 'shubbham singh',
-						stars: 5,
-						avatar: 'avatar1',
+						uni: 'nyu',
+						avatar: 'avatar_big1',
 						text:
 							'“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”'
 					},
 					{
 						name: 'shubbham singh',
-						stars: 4,
-						avatar: 'avatar2',
+						uni: 'nyu',
+						avatar: 'avatar_big2',
 						text:
 							'“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”'
 					},
 					{
 						name: 'shubbham singh',
-						stars: 4,
-						avatar: 'avatar2',
+						uni: 'nyu',
+						avatar: 'avatar_big3',
+						text:
+							'“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”'
+					},
+					{
+						name: 'shubbham singh',
+						uni: 'nyu',
+						avatar: 'avatar_big4',
 						text:
 							'“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”'
 					}
@@ -212,38 +219,47 @@ function Mentors() {
 						// rounded="md"
 						pb="16"
 						px="8"
+						// px="2"
 						key={idx}
-						colSpan={[ '12', '12', '12', '4', '4' ]}
-						rowSpan={[ '12', '12', '6', '6', '6' ]}
+						colSpan={[ '12', '6', '6', '3', '3' ]}
+						rowSpan={'12'}
 					>
-						<Flex mx="8" mt="8">
-							<Image
-								transform="translate(2rem, -0.8rem)"
-								alt="avatar"
-								maxH="4rem"
-								src={`/images/mentors/${testimonial.avatar}.png`}
+						{/* <Flex mt="8"> */}
+						<Flex justifyContent="flex-end">
+
+						<Image
+							// transform="translate(2rem, -0.8rem)"
+							alt="avatar"
+							// maxW="80%"
+							
+							src={`/images/mentors/${testimonial.avatar}.png`}
 							/>
-							<Box>
-								<Flex pl="10" pb="2">
-									{[ 1, 2, 3, 4, 5 ].map((i, idx) => (
-										<StarIcon
-											mx="0.5"
-											key={idx}
-											color={i <= testimonial.stars ? '#EAD628' : '#C4C4C4'}
-										/>
-									))}
-								</Flex>
-								<Box rounded="lg" px="6" pb="8" bg="rgba(230, 246, 255, 1)">
-									<Text pl="4" fontWeight="600" fontSize="lg" pt="4">
-										{testimonial.name}
-									</Text>
-									<Text my="2">{testimonial.text}</Text>
-								</Box>
+							</Flex>
+						<Flex pr="2" justifyContent="flex-end">
+							<Box
+								rounded="lg"
+								w="66%"
+								// pb="3"
+								transform={[
+									'translate(0rem, -4.8rem)',
+									'translate(0rem, -3.8rem)',
+									'translate(0rem, -4.7rem)',
+									'translate(0rem, -3.9rem)',
+									'translate(0rem, -4.7rem)'
+								]}
+								bg="whiteAlpha.500"
+								backdropFilter="blur(5px)"
+								p="2"
+								border="2px solid white"
+							>
+								<Image src="/images/mentors/nyu.png" alt="nyu" />
 							</Box>
 						</Flex>
+						{/* </Flex> */}
+						<Text>{testimonial.text}</Text>
 					</GridItem>
 				))}
-				<GridItem px="16" pb="10" colSpan="12" bg="white" rowSpan="2">
+				{/* <GridItem px="16" pb="10" colSpan="12" bg="white" rowSpan="2">
 					<Flex justifyContent="flex-end">
 						<Button
 							_focus={{ boxShadow: 'none' }}
@@ -282,7 +298,7 @@ function Mentors() {
 							h="2"
 						/>
 					</Flex>
-				</GridItem>
+				</GridItem> */}
 			</Grid>
 
 			<Footer />

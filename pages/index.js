@@ -10,10 +10,14 @@ export default function Home() {
 	let bg = 'transparent';
 
 	return (
-		<Box>
+		<Box w="100vw">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<title>Flywise</title>
-			<Navbar outline="" />
+
 			<Grid overflow="hidden" maxW="100vw" templateRows="repeat(12, 1fr)" templateColumns="repeat(12, 1fr)">
+				<GridItem rowSpan={12} colSpan={12}>
+					<Navbar outline="" />
+				</GridItem>
 				<GridItem
 					py={[ '0.4rem', '1rem', '2rem', '3rem', '4rem' ]}
 					pl={[ '0.4rem', '1rem', '3rem', '6rem', '12rem' ]}
@@ -22,51 +26,53 @@ export default function Home() {
 					colSpan={[ 12, 12, 7, 7, 7 ]}
 					bg={bg}
 				>
-					<Heading fontSize={[ 'xl', '2xl', '3xl', '4xl', '5xl' ]}>
+					{/* <Heading fontSize={[ 'xl', '2xl', '3xl', '4xl', '5xl' ]}>
 						India’s best overseas education
 						<Heading fontSize={[ 'xl', '2xl', '3xl', '4xl', '5xl' ]} color="#0DB3FB">
 							platform that travels with you till you land your dream job abroad
 						</Heading>
-					</Heading>
-					{/* <Heading fontSize={[ 'xl', '2xl', '3xl', '3xl', '4xl' ]}>
+					</Heading> */}
+					<Heading mt="4" textAlign={{ base: 'center', md: 'left' }} fontSize={[ 'xl', '2xl', '3xl', '3xl', '4xl' ]}>
 						India’s best overseas education platform
 						<Heading fontSize={[ 'xl', '2xl', '3xl', '3xl', '4xl' ]} color="#0DB3FB">
 							that travels with you till you land your dream job
 						</Heading>
 					</Heading>
-					<Text my="4">
+					<Text textAlign={{ base: 'center', md: 'left' }} my="4">
 						Why do we go abroad? To study more, land on a good job, earn enough, and settle for a good life.
 						Right? Most of us dream of achieving this instantly as soon as we get an admission. But the real
 						journey starts when you land abroad.
 					</Text>
-					<Text my="4">
+					<Text textAlign={{ base: 'center', md: 'left' }} my="4">
 						We, at Flywise, want to make that journey as smooth as possible till you settle yourself well.
-					</Text> */}
-					<Link href="/profile-evaluation" passHref>
-						<Button
-							variant={'solid'}
-							size={'md'}
-							color="white"
-							fontWeight="semibold"
-							px="6"
-							id="gradient"
-							colorScheme="blue"
-							// bg="linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)"
-							// _hover={{
-							// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-							// }}
-							// _focus={{
-							// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-							// }}
-							// _active={{
-							// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-							// }}
-							mt="16"
-							rounded="full"
-						>
-							Free Profile Evaluation
-						</Button>
-					</Link>
+					</Text>
+					<Flex justifyContent={{ base: 'center', md: 'flex-start' }}>
+						<Link href="/profile-evaluation" passHref>
+							<Button
+								variant={'solid'}
+								size={'md'}
+								color="white"
+								fontWeight="semibold"
+								px="6"
+								id="gradient"
+								colorScheme="blue"
+								// bg="linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)"
+								// _hover={{
+								// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
+								// }}
+								// _focus={{
+								// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
+								// }}
+								// _active={{
+								// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
+								// }}
+								mt="6"
+								rounded="full"
+							>
+								Free Profile Evaluation
+							</Button>
+						</Link>
+					</Flex>
 				</GridItem>
 				<GridItem
 					pr={[ '0.4rem', '1rem', '3rem', '6rem', '12rem' ]}
@@ -133,7 +139,8 @@ export default function Home() {
 								}
 							].map((service, idx) => (
 								<Center key={idx}>
-									<Box rounded="md"
+									<Box
+										rounded="md"
 										h="100%"
 										w={{ base: '80%', md: '24rem' }}
 										my="4"
@@ -143,8 +150,7 @@ export default function Home() {
 										bg="white"
 										transition="all 0.3s"
 										_hover={{
-										boxShadow:"0px 0px 10px 10px rgba(220, 220, 220, 0.25)"
-
+											boxShadow: '0px 0px 10px 10px rgba(220, 220, 220, 0.25)'
 										}}
 										boxShadow="0px 0px 50px 23px rgba(220, 220, 220, 0.25)"
 									>
@@ -247,7 +253,7 @@ export default function Home() {
 					<Flex flexDirection={{ md: 'row', base: 'column' }}>
 						<Box
 							mt={[ '2', '4', '8', '16', '32' ]}
-							ml={[ '2', '4', '8', '16', '32' ]}
+							ml={[ '2', '4', '8', '16', '24' ]}
 							pl={[ '1', '1', '2', '4', '20' ]}
 						>
 							<Heading my="16" textAlign="center" mt="4">
@@ -272,13 +278,15 @@ export default function Home() {
 								</Flex>
 							))}
 						</Box>
-
-						<Image
-							mr={[ '2', '4', '8', '16', '32' ]}
-							py={{ base: '8', md: '32' }}
-							alt="desk"
-							src="/images/computer_desk.png"
-						/>
+						<Center w="100%">
+							<Image
+								mr={[ '2', '4', '8', '16', '40' ]}
+								maxW={[ '100%', '100%', '100%', '75%', '70%' ]}
+								py={{ base: '8', md: '32' }}
+								alt="desk"
+								src="/images/computer_desk.png"
+							/>
+						</Center>
 					</Flex>
 				</GridItem>
 				<GridItem
