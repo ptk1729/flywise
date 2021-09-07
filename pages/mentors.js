@@ -241,15 +241,46 @@ function Mentors() {
 								</Box>
 							</Box>
 						</Flex>
-
 					</GridItem>
 				))}
 				<GridItem px="16" pb="10" colSpan="12" bg="white" rowSpan="2">
 					<Flex justifyContent="flex-end">
-						<Button _focus={{boxShadow:"none"}} mx="1" id="gradient-anim" textAlign="center" px="3" h="2" />
-						<Button _focus={{boxShadow:"none"}} mx="1" id="gradient-anim" textAlign="center" px="20" h="2" />
-						<Button _focus={{boxShadow:"none"}} mx="1" id="gradient-anim" textAlign="center" px="3" h="2" />
-						<Button _focus={{boxShadow:"none"}} mx="1" id="gradient-anim" textAlign="center" px="3" h="2" />
+						<Button
+							_focus={{ boxShadow: 'none' }}
+							mx="1"
+							id="gradient"
+							colorScheme="blue"
+							textAlign="center"
+							px="3"
+							h="2"
+						/>
+						<Button
+							_focus={{ boxShadow: 'none' }}
+							mx="1"
+							id="gradient"
+							colorScheme="blue"
+							textAlign="center"
+							px="20"
+							h="2"
+						/>
+						<Button
+							_focus={{ boxShadow: 'none' }}
+							mx="1"
+							id="gradient"
+							colorScheme="blue"
+							textAlign="center"
+							px="3"
+							h="2"
+						/>
+						<Button
+							_focus={{ boxShadow: 'none' }}
+							mx="1"
+							id="gradient"
+							colorScheme="blue"
+							textAlign="center"
+							px="3"
+							h="2"
+						/>
 					</Flex>
 				</GridItem>
 			</Grid>

@@ -49,7 +49,8 @@ export default function Home() {
 							color="white"
 							fontWeight="semibold"
 							px="6"
-							id="gradient-anim"
+							id="gradient"
+							colorScheme="blue"
 							// bg="linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)"
 							// _hover={{
 							// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
@@ -94,7 +95,7 @@ export default function Home() {
 						Learn more about the services we offer{' '}
 					</Text>
 					<Center>
-						<Stack direction={{ base: 'column', md: 'row' }} spacing={{ base: '4', md: '8' }}>
+						<Stack pt="8" direction={{ base: 'column', md: 'row' }} spacing={{ base: '4', md: '8' }}>
 							{[
 								{
 									title: 'Pre-Admission support',
@@ -132,14 +133,19 @@ export default function Home() {
 								}
 							].map((service, idx) => (
 								<Center key={idx}>
-									<Box
-										minH="50%"
+									<Box rounded="md"
+										h="100%"
 										w={{ base: '80%', md: '24rem' }}
 										my="4"
 										maxH="558px"
 										maxW="425.03px"
 										p={[ '2', '4', '8', '16', '16' ]}
 										bg="white"
+										transition="all 0.3s"
+										_hover={{
+										boxShadow:"0px 0px 10px 10px rgba(220, 220, 220, 0.25)"
+
+										}}
 										boxShadow="0px 0px 50px 23px rgba(220, 220, 220, 0.25)"
 									>
 										<Center>
@@ -150,7 +156,7 @@ export default function Home() {
 										</Heading>
 										{service.texts.map((i, idx) => (
 											<Flex alignItems="flex-start" key={idx}>
-												<Image mt="2" src="/images/tick.svg" alt="tick" />
+												<Image mr="2" mt="1" h="4" src="/images/icons/tick2.png" alt="tick" />
 												<Text color="rgba(13, 179, 251, 1)" fontWeight="600">
 													{i}
 												</Text>

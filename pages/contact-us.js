@@ -93,16 +93,8 @@ function ContactUS() {
 					color="white"
 					fontWeight="semibold"
 					px="6"
-					bg="linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)"
-					_hover={{
-						bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-					}}
-					_focus={{
-						bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-					}}
-					_active={{
-						bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
-					}}
+					id="gradient"
+							colorScheme="blue"
 					my="19"
 					rounded="full"
 					>

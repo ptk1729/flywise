@@ -2,94 +2,130 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
+	padding: 0;
+	margin: 0;
+	font-family: 'Poppins', sans-serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
-.bottom-outline{
-  border-bottom: 2px solid black;
-  border-radius: 0;
+.bottom-outline {
+	border-bottom: 2px solid black;
+	border-radius: 0;
 }
-#gradient-anim{
-  background-image: linear-gradient(270deg, #6adbdb, #4080d3) !important;
-  background-size: 400% 400% !important;
+#gradient-anim {
+	background-image: linear-gradient(270deg, #6adbdb, #4080d3) !important;
+	background-size: 400% 400% !important;
 
-  -webkit-animation: gradient-animation 4s ease infinite !important;
-  -moz-animation: gradient-animation 4s ease infinite !important;
-  animation: gradient-animation 4s ease infinite !important;
+	-webkit-animation: gradient-animation 4s ease infinite !important;
+	-moz-animation: gradient-animation 4s ease infinite !important;
+	animation: gradient-animation 4s ease infinite !important;
 }
 
 @-webkit-keyframes gradient-animation {
-  0%{background-position:0% 72%}
-  50%{background-position:100% 29%}
-  100%{background-position:0% 72%}
+	0% {
+		background-position: 0% 72%;
+	}
+	50% {
+		background-position: 100% 29%;
+	}
+	100% {
+		background-position: 0% 72%;
+	}
 }
 @-moz-keyframes gradient-animation {
-  0%{background-position:0% 72%}
-  50%{background-position:100% 29%}
-  100%{background-position:0% 72%}
+	0% {
+		background-position: 0% 72%;
+	}
+	50% {
+		background-position: 100% 29%;
+	}
+	100% {
+		background-position: 0% 72%;
+	}
 }
 @keyframes gradient-animation {
-  0%{background-position:0% 72%}
-  50%{background-position:100% 29%}
-  100%{background-position:0% 72%}
+	0% {
+		background-position: 0% 72%;
+	}
+	50% {
+		background-position: 100% 29%;
+	}
+	100% {
+		background-position: 0% 72%;
+	}
 }
 
 .sticky {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+	top: 0;
 }
 #gradient {
-  position: relative;
-  
-  transition: all 0.5s;
+	position: relative;
+
+	transition: all 0.5s;
 }
 #gradient:hover {
-  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
-  background-size: 400%;
+	background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+	background-size: 400%;
 }
 #gradient2:hover {
-  background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);
-  background-size: 400%;
+	background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);
+	background-size: 400%;
 }
 #gradient:before,
 #gradient2:before {
-  content: "";
-  position: absolute;
-  background: inherit;
-  top: -5px;
-  right: -5px;
-  bottom: -5px;
-  left: -5px;
-  border-radius: 50px;
-  filter: blur(20px);
-  opacity: 0;
-  transition: all 0.5s;
+	content: "";
+	position: absolute;
+	background: inherit;
+	top: -5px;
+	right: -5px;
+	bottom: -5px;
+	left: -5px;
+	border-radius: 50px;
+	filter: blur(20px);
+	opacity: 0;
+	transition: all 0.5s;
 }
 #gradient:hover:before,
 #gradient2:hover:before {
-  opacity: 1;
-  z-index: -1;
+	opacity: 1;
+	z-index: -1;
 }
 #gradient:hover {
-  z-index: 1;
-  animation: glow 8s linear infinite;
+	z-index: 1;
+	animation: glow 8s linear infinite;
+}
+/* sdcsd */
+#gradient:focus {
+	background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+	background-size: 400%;
+}
+#gradient2:focus {
+	background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);
+	background-size: 400%;
+}
+#gradient:focus:before,
+#gradient2:focus:before {
+	opacity: 1;
+	z-index: -1;
+}
+#gradient:focus {
+	z-index: 1;
+	animation: glow 8s linear infinite;
 }
 @keyframes glow {
-  0% {
-    background-position: 0%;
-  }
-  100% {
-    background-position: 400%;
-  }
+	0% {
+		background-position: 0%;
+	}
+	100% {
+		background-position: 400%;
+	}
 }
