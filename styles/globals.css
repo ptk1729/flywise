@@ -73,7 +73,7 @@ a {
 	transition: all 0.5s;
 }
 #gradient:hover {
-	background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+	background: linear-gradient(90deg, #7fdfe0, #4080d3, #4080d3, #7fdfe0);
 	background-size: 400%;
 }
 #gradient2:hover {
@@ -105,7 +105,7 @@ a {
 }
 /* sdcsd */
 #gradient:focus {
-	background: linear-gradient(90deg, #7fdfe0, #7fdfe0, #4080d3, #4080d3);
+	background: linear-gradient(90deg, #7fdfe0, #4080d3, #4080d3, #7fdfe0);
 	background-size: 400%;
 }
 #gradient2:focus {
@@ -131,6 +131,11 @@ a {
 }
 
 .next-container {
-	background: rgb(255,255,255);
-background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9259259259259259) 52%, rgba(255,255,255,0) 100%);
+	background: rgb(255, 255, 255);
+	background: linear-gradient(
+		0deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 255, 255, 0.9259259259259259) 52%,
+		rgba(255, 255, 255, 0) 100%
+	);
 }
