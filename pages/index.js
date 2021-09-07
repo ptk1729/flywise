@@ -35,7 +35,7 @@ export default function Home() {
 					<Heading mt="4" textAlign={{ base: 'center', md: 'left' }} fontSize={[ 'xl', '2xl', '3xl', '3xl', '4xl' ]}>
 						India’s best overseas education platform
 						<Heading fontSize={[ 'xl', '2xl', '3xl', '3xl', '4xl' ]} color="#0DB3FB">
-							that travels with you till you land your dream job
+							that travels with you till you land your dream job abroad
 						</Heading>
 					</Heading>
 					<Text textAlign={{ base: 'center', md: 'left' }} my="4">
