@@ -26,7 +26,7 @@ function ContactUS() {
 					<Heading fontWeight="500" my="8" fontSize={[ 'md', 'lg', 'xl', '2xl', '3xl' ]}>
 						{`Send us your thoughts, questions, compliments, or resume-related haikus! We'd love to hear from you`}
 					</Heading>
-					<Link passHref>
+					<Link>
 						<Button
 							variant={'solid'}
 							size={'lg'}

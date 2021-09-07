@@ -145,7 +145,7 @@ export default function Navbar({ outline }) {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	const [ isLargerThan769 ] = useMediaQuery('(min-width: 769px)');
 	return (
-		<GridItem maxW="100vw" overflow="hidden" boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)" px={0}>
+		<Box maxW="100vw" overflow="hidden" boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)" px={0}>
 			<title>{outline}</title>
 			<Flex
 				overflow="hidden"
@@ -196,14 +196,18 @@ export default function Navbar({ outline }) {
 					onClick={isOpen ? onClose : onOpen}
 				/>
 			</Flex>
-
-			{isOpen ? (
-				<Box pb={4} display={{ md: 'none' }}>
+			<Box
+				overflow="hidden"
+				maxW="100vw"
+				
+			>{isOpen ? (
+				<Box maxW="200px" pb={4} display={{ md: 'none' }}>
 					<Stack as={'nav'} spacing={4}>
 						<AllNavLinks outline={outline} />
 					</Stack>
 				</Box>
-			) : null}
-		</GridItem>
+			) : null}</Box>
+			
+		</Box>
 	);
 }

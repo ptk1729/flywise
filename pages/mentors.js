@@ -80,16 +80,23 @@ const MENTORS = [
 ];
 function Mentors() {
 	return (
-		<Box>
+		<Box 
+		// w={{base:"100vw", md:''}}
+		 maxW={"100vw"}
+		>
 			{/* <title></title> */}
-			<Navbar outline="Mentors" />
+			
 			<Grid
 				bg="rgba(247, 247, 250, 1)"
 				overflow="hidden"
-				maxW="100vw"
+				// maxW="100vw"
 				templateRows="repeat(12, 1fr)"
 				templateColumns="repeat(12, 1fr)"
 			>
+				<GridItem rowSpan={12} colSpan={12}>
+					<Navbar outline="Mentors" />
+				</GridItem>
+				
 				<GridItem
 					mb="10rem"
 					// py={[ '0.4rem', '1rem', '2rem', '3rem', '4rem' ]}
@@ -115,7 +122,7 @@ function Mentors() {
 						textAlign="center"
 						px={[ '4', '8', '16', '16', '32' ]}
 						mx={[ '4', '8', '16', '16', '32' ]}
-						fontSize={[ 'lg', 'lg', 'xl', 'xl', '2xl' ]}
+						fontSize={[ 'md', 'lg', 'xl', 'xl', '2xl' ]}
 						py={[ '8', '8', '8', '12', '12' ]}
 						color="white"
 						fontWeight="400"

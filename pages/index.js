@@ -91,8 +91,8 @@ export default function Home() {
 					<Heading
 						id="services"
 						pt="3rem"
-						fontSize="5xl"
-						textShadow="0px 2px 5px rgba(0,0,0,0.4)"
+						fontSize={["3xl","3xl","4xl","4xl","5xl"]}
+						// textShadow="0px 2px 5px rgba(0,0,0,0.4)"
 						textAlign="center"
 					>
 						What we offer
@@ -256,7 +256,7 @@ export default function Home() {
 							ml={[ '2', '4', '8', '16', '24' ]}
 							pl={[ '1', '1', '2', '4', '20' ]}
 						>
-							<Heading my="16" textAlign="center" mt="4">
+							<Heading fontSize={["2xl","3xl","4xl","4xl","4xl"]} my="16" textAlign="center" mt="4">
 								We are specialized in below fields, fly with us!
 							</Heading>
 							{[
