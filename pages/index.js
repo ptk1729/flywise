@@ -86,7 +86,8 @@ export default function Home() {
 							color="white"
 							fontWeight="semibold"
 							px="6"
-							id="gradient-anim"
+							id="gradient"
+							colorScheme="blue"
 							// bg="linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)"
 							// _hover={{
 							// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
