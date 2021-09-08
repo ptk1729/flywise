@@ -202,7 +202,7 @@ function One() {
 						))}
 						<GridItem rowSpan={12} colSpan={15}>
 							<Center>
-								<Flex mt="16" justifyContent="center" position="fixed" bottom="0vh" width={"fit-content","fit-content","fit-content","100%"} backgroundColor="#ffffff">
+								<Flex mt="16" justifyContent="center" position="fixed" bottom="0vh" width={"fit-content","fit-content","fit-content","100%"} background= "linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9259259259259259) 80%, rgba(255,255,255,0) 100%)">
 									{/* <Button
 										mt="16"
 										color="white"
@@ -321,7 +321,7 @@ function One() {
 						))}
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Flex mt="16" className="" position="fixed" justifyContent="center" bottom="0vh" width={"fit-content","fit-content","fit-content","100%"} backgroundColor="#ffffff">
+								<Flex mt="16" className="" position="fixed" justifyContent="center" bottom="0vh" width={"fit-content","fit-content","fit-content","100%"} background= "linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9259259259259259) 80%, rgba(255,255,255,0) 100%)">
 									<Button
 										color="white"
 										px="8"
@@ -501,7 +501,7 @@ function One() {
 						</GridItem>
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Flex mt="16" position="fixed" bottom="0vh" justifyContent="center" width={"fit-content","fit-content","fit-content","100%"} backgroundColor="#ffffff">
+								<Flex mt="16" position="fixed" bottom="0vh" justifyContent="center" width={"fit-content","fit-content","fit-content","100%"} background= "linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9259259259259259) 80%, rgba(255,255,255,0) 100%)">
 									<Button
 										color="white"
 										px="8"
@@ -702,7 +702,7 @@ function One() {
 						</GridItem>
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Flex mt="16" position="fixed" bottom="0vh" justifyContent="center" width={"fit-content","fit-content","fit-content","100%"} backgroundColor="#ffffff">
+								<Flex mt="16" position="fixed" bottom="0vh" justifyContent="center" width={"fit-content","fit-content","fit-content","100%"} background= "linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9259259259259259) 80%, rgba(255,255,255,0) 100%)">
 									<Button
 										color="white"
 										px="8"
@@ -856,7 +856,10 @@ function One() {
 						</GridItem>{' '}
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Flex mt="16" position="fixed" bottom="1vh" justifyContent="center" width={"fit-content","fit-content","fit-content","100%"} backgroundColor="#ffffff">
+								<Flex mt="16" position="fixed" bottom="0vh" justifyContent="center" width={"fit-content","fit-content","fit-content","100%"} 
+								// background= "rgb(255,255,255)"
+								background= "linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9259259259259259) 80%, rgba(255,255,255,0) 100%)"
+								>
 									<Button
 										className="sticky"
 										color="white"
@@ -963,7 +966,7 @@ function One() {
 						))}
 						<GridItem rowSpan={12} colSpan={15}>
 							<Center>
-								<Flex mt="16" position="fixed" bottom="0vh" justifyContent="center" width={"fit-content","fit-content","fit-content","100%"} backgroundColor="#ffffff">
+								<Flex mt="16" position="fixed" bottom="0vh" justifyContent="center" width={"fit-content","fit-content","fit-content","100%"} background= "linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9259259259259259) 80%, rgba(255,255,255,0) 100%)">
 									<Button
 										color="white"
 										px="8"
