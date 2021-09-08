@@ -1,0 +1,13 @@
+.what{
+	position: fixed !important;
+	height: 80px;
+	width: 80px;
+	right: 10px;
+	background: transparent;
+	z-index: 50;
+	bottom: 10px;
+}
+.what img{
+	object-fit: contain;
+
+}
