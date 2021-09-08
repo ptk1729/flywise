@@ -26,7 +26,7 @@ import React from 'react';
 const Links = [
 	{ link: 'Test Prep', to: '/' },
 	{ link: 'Profile Evaluation', to: '/profile-evaluation' },
-	{ link: 'Services', to: '#services' },
+	{ link: 'Services', to: '/#services' },
 	{ link: 'Mentors', to: '/mentors' }
 	// { link: 'Destinations', to: '/destinations' },
 	// { link: 'Courses', to: '/' }
@@ -119,7 +119,7 @@ const AllNavLinks = ({ outline }) => {
 					</React.Fragment>
 				)}
 			</Popover>
-			<NavLink outline={''} to={'#courses'} link={'Courses'} />
+			<NavLink outline={''} to={'/#courses'} link={'Courses'} />
 			{/* <NLink href={}>
 				<Link
 					// className={props.link === props.outline ? `bottom-outline` : ``}
@@ -190,24 +190,31 @@ export default function Navbar({ outline }) {
 				</Flex>
 				<IconButton
 					size={'md'}
-					icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+					icon={isOpen ? <CloseIcon h="1.3rem" w="1.3rem" /> : <HamburgerIcon h="1.6rem" w="1.6rem" />}
 					aria-label={'Open Menu'}
 					display={{ md: 'none' }}
 					onClick={isOpen ? onClose : onOpen}
+					bg="transparent"
+					_hover={{
+						bg: 'transparent'
+					}}
+					_focus={{
+						bg: 'transparent'
+					}}
+					_active={{
+						bg: 'transparent'
+					}}
 				/>
 			</Flex>
-			<Box
-				overflow="hidden"
-				maxW="100vw"
-				
-			>{isOpen ? (
-				<Box maxW="200px" pb={4} display={{ md: 'none' }}>
-					<Stack as={'nav'} spacing={4}>
-						<AllNavLinks outline={outline} />
-					</Stack>
-				</Box>
-			) : null}</Box>
-			
+			<Box overflow="hidden" maxW="100vw">
+				{isOpen ? (
+					<Box pb={4} display={{ md: 'none' }}>
+						<Stack alignItems="center" as={'nav'} spacing={2}>
+							<AllNavLinks outline={outline} />
+						</Stack>
+					</Box>
+				) : null}
+			</Box>
 		</Box>
 	);
 }

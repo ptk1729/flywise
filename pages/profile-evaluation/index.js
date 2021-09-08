@@ -126,7 +126,7 @@ function One() {
 			<Progress boxShadow="md" color="#0DB3FB" bg="#B8E1F3" h="2" value={pe / 7 * 100} />
 
 			<Grid
-				px={{ base: '', md: '3rem' }}
+				px={[ '0', '0', '0', '0', '3rem' ]}
 				overflow="hidden"
 				maxW="100vw"
 				templateRows="repeat(12, 1fr)"
@@ -168,6 +168,7 @@ function One() {
 										}
 										rounded="lg"
 										p="4"
+										mx="3"
 										border={i === country ? '4px solid rgba(13, 179, 251, 1)' : '4px solid white'}
 										_hover={{ boxShadow: 'base' }}
 										boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)"
@@ -196,7 +197,7 @@ function One() {
 						))}
 						<GridItem rowSpan={12} colSpan={15}>
 							<Center>
-								<Flex position="fixed" bottom="5vh">
+								<Flex mt="16" position="fixed" bottom="0vh">
 									{/* <Button
 										mt="16"
 										color="white"
@@ -210,7 +211,6 @@ function One() {
 										Previous
 									</Button> */}
 									<Button
-										mt="16"
 										color="white"
 										px="8"
 										mb="4"
@@ -232,7 +232,7 @@ function One() {
 					<React.Fragment>
 						{' '}
 						<GridItem
-							p={[ '0.4rem', '1rem', '2rem', '3rem', '4rem' ]}
+							p={[ '0.4rem', '1rem', '2rem', '3rem', '2rem' ]}
 							rowSpan={12}
 							colSpan={15}
 							// bg={bg}
@@ -275,7 +275,9 @@ function One() {
 											)
 										}
 										rounded="lg"
-										p="4"
+										pl="4"
+										pt="4"
+										pb={{ base: '8', md: '4' }}
 										border={i === course ? '4px solid rgba(13, 179, 251, 1)' : '4px solid white'}
 										_hover={{ boxShadow: 'base' }}
 										boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)"
@@ -305,7 +307,11 @@ function One() {
 											mt="4"
 										>
 											{i.split(' (')[0]}
-											{i.split(' (')[1] && <Text fontWeight="semibold">({i.split(' (')[1]}</Text>}
+											{i.split(' (')[1] && (
+												<Text noOfLines="2" fontWeight="semibold">
+													({i.split(' (')[1]}
+												</Text>
+											)}
 										</Text>
 									</Box>
 								</Center>
@@ -313,9 +319,8 @@ function One() {
 						))}
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Flex className="" position="fixed" bottom="0vh">
+								<Flex mt="16" className="" position="fixed" bottom="0vh">
 									<Button
-										mt="16"
 										color="white"
 										px="8"
 										mb="4"
@@ -327,7 +332,6 @@ function One() {
 										Previous
 									</Button>
 									<Button
-										mt="16"
 										color="white"
 										px="8"
 										mb="4"
@@ -361,7 +365,7 @@ function One() {
 						{' '}
 						<GridItem
 							px={[ '0.4rem', '1rem', '2rem', '3rem', '4rem' ]}
-							py={[ '0.4rem', '1.5rem', '1rem', '1.5rem', '2rem' ]}
+							py={[ '0.4rem', '1.5rem', '1rem', '1.5rem', '1.5rem' ]}
 							rowSpan={12}
 							colSpan={15}
 							// bg={bg}
@@ -373,19 +377,17 @@ function One() {
 						<GridItem
 							// id="griditem"
 							py={4}
-							px={[ '4rem', '3rem', '2rem', '3rem', '4rem' ]}
+							pl={[ '4rem', '3rem', '2rem', '3rem', '4rem' ]}
 							rowSpan={7}
 							colSpan={[ 15, 15, 7, 7, 7 ]}
 							// bg={bg}
 						>
-							<Flex>
-								<Heading fontSize="3xl" fontWeight="500">
-									GRE Quant score
-								</Heading>
-								<Heading fontSize="3xl" fontWeight="500" color="red">
+							<Text fontSize={[ 'xl', 'xl', '2xl', '2xl', '3xl' ]} fontWeight="500">
+								GRE Quant score<Link _hover={{ textDecoration: 'none' }} color="red">
 									*
-								</Heading>
-							</Flex>
+								</Link>
+							</Text>
+
 							<Text
 								color="rgba(125, 125, 125, 1)"
 								py="4"
@@ -404,19 +406,19 @@ function One() {
 						<GridItem
 							// id="griditem"
 							py={4}
-							px={[ '4rem', '3rem', '2rem', '3rem', '4rem' ]}
+							pl={[ '4rem', '3rem', '2rem', '3rem', '4rem' ]}
 							rowSpan={7}
 							colSpan={[ 15, 15, 7, 7, 7 ]}
 							// bg={bg}
 						>
-							<Flex>
-								<Heading fontSize="3xl" fontWeight="500">
-									GRE Verbal score
-								</Heading>
-								<Heading fontSize="3xl" fontWeight="500" color="red">
+							
+								<Text fontSize={[ 'xl', 'xl', '2xl', '2xl', '3xl' ]} fontWeight="500">
+									GRE Verbal score<Link _hover={{textDecoration:"none"}} color="red">
 									*
-								</Heading>
-							</Flex>
+								</Link>
+								</Text>
+								
+							
 							<Text
 								color="rgba(125, 125, 125, 1)"
 								py="4"
@@ -434,20 +436,20 @@ function One() {
 						</GridItem>
 						<GridItem
 							// id="griditem"
-							py={4}
-							px={[ '4rem', '3rem', '2rem', '3rem', '4rem' ]}
+							pt={4}
+							pl={[ '4rem', '3rem', '2rem', '3rem', '4rem' ]}
 							rowSpan={7}
 							colSpan={[ 15, 15, 7, 7, 7 ]}
 							// bg={bg}
 						>
-							<Flex>
-								<Heading fontSize="3xl" fontWeight="500">
-									IELTS/TOEFL
-								</Heading>
-								<Heading fontSize="3xl" fontWeight="500" color="red">
+						
+								<Text fontSize={[ 'xl', 'xl', '2xl', '2xl', '3xl' ]} fontWeight="500">
+									IELTS/TOEFL<Link _hover={{textDecoration:"none"}} color="red">
 									*
-								</Heading>
-							</Flex>
+								</Link>
+								</Text>
+								
+					
 							<Text
 								color="rgba(125, 125, 125, 1)"
 								py="4"
@@ -466,18 +468,23 @@ function One() {
 						<GridItem
 							// key={i}
 							// id="griditem"
-							mb={{ base: '32', md: '4' }}
-							py={2}
-							px={[ '4rem', '3rem', '2rem', '3rem', '4rem' ]}
+							mb={{ base: '32', md: '8' }}
+							pt={2}
+							// mb={{base:"16", md:"16"}}
+							pl={[ '4rem', '3rem', '2rem', '3rem', '4rem' ]}
 							rowSpan={7}
 							colSpan={[ 15, 15, 7, 7, 7 ]}
 							// bg={bg}
 						>
-							<Flex>
-								<Heading fontSize="3xl" fontWeight="500">
-									Do you need GRE/IELTS/TOEFL training?
-								</Heading>
-							</Flex>
+							<Text lineHeight="1.2" fontSize={[ 'xl', 'xl', '2xl', '2xl', '3xl' ]} fontWeight="500">
+								Do you need GRE/IELTS/TOEFL training?<Link
+									_hover={{ textDecoration: 'none' }}
+									color="red"
+								>
+									*
+								</Link>
+							</Text>
+
 							<RadioGroup mt="2" onChange={setGreTraining} value={greTraining} defaultValue="yes">
 								<Stack spacing={2}>
 									<Radio size="lg" value="yes" colorScheme="blue">
@@ -494,9 +501,8 @@ function One() {
 						</GridItem>
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Flex position="fixed" bottom="5vh">
+								<Flex mt="16" position="fixed" bottom="0vh">
 									<Button
-										mt="16"
 										color="white"
 										px="8"
 										mb="4"
@@ -509,7 +515,6 @@ function One() {
 									</Button>
 									<Button
 										isDisabled={!greQuant || !greVerbal || !ieltsToefl}
-										mt="16"
 										color="white"
 										px="8"
 										mb="4"
@@ -700,9 +705,8 @@ function One() {
 						</GridItem>
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Flex position="fixed" bottom="5vh">
+								<Flex mt="16" position="fixed" bottom="0vh">
 									<Button
-										mt="16"
 										color="white"
 										px="8"
 										mb="4"
@@ -715,7 +719,6 @@ function One() {
 									</Button>
 									<Button
 										isDisabled={!workEx || !clgUni || !cgpa || !backlogs}
-										mt="16"
 										color="white"
 										px="8"
 										mb="4"
@@ -761,7 +764,8 @@ function One() {
 							<Flex mx="8" justifyContent="space-between" flexDirection={{ base: 'column', md: 'row' }}>
 								{[ 'Under 25 Lakhs', '25 - 35 Lakhs', 'Above 35 Lakhs', 'Other' ].map((i, idx) => (
 									<Box
-										my="4"
+										my="3"
+										mx="2"
 										onClick={() => setBudget(i)}
 										transition="all 0.3s"
 										bg={
@@ -772,7 +776,7 @@ function One() {
 											)
 										}
 										rounded="lg"
-										p="4"
+										p="3"
 										border={i === budget ? '4px solid rgba(13, 179, 251, 1)' : '4px solid white'}
 										_hover={{ boxShadow: 'base' }}
 										boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)"
@@ -780,7 +784,7 @@ function One() {
 									>
 										<Center>
 											<Image
-												maxH="135px"
+												maxH="100px"
 												src={
 													i !== budget ? (
 														`/images/budget_icon.png`
@@ -806,23 +810,22 @@ function One() {
 							</Flex>
 						</GridItem>
 						<GridItem mb={{ base: '28', md: '0' }} rowSpan={12} colSpan={15}>
-							<Center>
-								<Flex>
+							
+							
 									<Text
 										textAlign="center"
 										ml={{ base: '4', md: '4' }}
-										pb="4"
+										pb=""
 										pt="4"
 										fontSize="2xl"
 										fontWeight="500"
 									>
 										How are you going to fund your Master’s?
-										<Link fontSize="3xl" fontWeight="500" color="red">
-											*
-										</Link>
+										<Link _hover={{textDecoration:"none"}} color="red">
+									*
+								</Link>
 									</Text>
-								</Flex>
-							</Center>
+							
 
 							<Center>
 								<RadioGroup
@@ -857,10 +860,9 @@ function One() {
 						</GridItem>{' '}
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Flex position="fixed" bottom="1vh">
+								<Flex mt="16" position="fixed" bottom="1vh">
 									<Button
 										className="sticky"
-										mt="16"
 										color="white"
 										px="8"
 										// mb="4"
@@ -873,7 +875,6 @@ function One() {
 									</Button>
 									<Button
 										isDisabled={!fundMasters}
-										mt="16"
 										color="white"
 										px="8"
 										mb="4"
@@ -886,18 +887,6 @@ function One() {
 										Next
 									</Button>
 								</Flex>
-								{/* <Button
-									mt="16"
-									color="white"
-									px="8"
-									mb="4"
-									bg="rgba(13, 179, 251, 1)"
-									_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
-									_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
-									onClick={() => setPe(6)}
-								>
-									Next
-								</Button> */}
 							</Center>
 						</GridItem>{' '}
 					</React.Fragment>
@@ -941,6 +930,7 @@ function One() {
 										}
 										rounded="lg"
 										p="4"
+										mb={i === 'Other'?"16":"0"}
 										border={i === session ? '4px solid rgba(13, 179, 251, 1)' : '4px solid white'}
 										_hover={{ boxShadow: 'base' }}
 										boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)"
@@ -975,9 +965,8 @@ function One() {
 						))}
 						<GridItem rowSpan={12} colSpan={15}>
 							<Center>
-								<Flex position="fixed" bottom="5vh">
+								<Flex mt="16" position="fixed" bottom="0vh">
 									<Button
-										mt="16"
 										color="white"
 										px="8"
 										mb="4"
@@ -989,7 +978,6 @@ function One() {
 										Previous
 									</Button>
 									<Button
-										mt="16"
 										color="white"
 										px="8"
 										mb="4"

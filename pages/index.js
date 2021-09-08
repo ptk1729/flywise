@@ -1,5 +1,5 @@
-import { Box, Button, Center, Flex, Grid, GridItem, Heading, Image, Stack, Text } from '@chakra-ui/react';
-import Link from 'next/link';
+import { Box, Button, Center, Flex, Grid, GridItem, Heading, Image, Stack, Text, Link } from '@chakra-ui/react';
+import NLink from 'next/link';
 import FaqList from './common/faqs';
 import Footer from './common/footer';
 import Navbar from './common/navbar';
@@ -34,9 +34,9 @@ export default function Home() {
 					</Heading> */}
 					<Heading mt="4" textAlign={{ base: 'center', md: 'left' }} fontSize={[ 'xl', '2xl', '3xl', '3xl', '4xl' ]}>
 						India’s best overseas education platform
-						<Heading fontSize={[ 'xl', '2xl', '3xl', '3xl', '4xl' ]} color="#0DB3FB">
-							that travels with you till you land your dream job abroad
-						</Heading>
+						<Link _hover={{textDecoration:"none"}} fontWeight="bold" fontSize={[ 'xl', '2xl', '3xl', '3xl', '4xl' ]} color="#0DB3FB">
+							{" that travels with you till you land your dream job abroad"}
+						</Link>
 					</Heading>
 					<Text textAlign={{ base: 'center', md: 'left' }} my="4">
 						Why do we go abroad? To study more, land on a good job, earn enough, and settle for a good life.
@@ -47,7 +47,7 @@ export default function Home() {
 						We, at Flywise, want to make that journey as smooth as possible till you settle yourself well.
 					</Text>
 					<Flex justifyContent={{ base: 'center', md: 'flex-start' }}>
-						<Link href="/profile-evaluation" passHref>
+						<NLink href="/profile-evaluation" passHref>
 							<Button
 								variant={'solid'}
 								size={'md'}
@@ -71,7 +71,7 @@ export default function Home() {
 							>
 								Free Profile Evaluation
 							</Button>
-						</Link>
+						</NLink>
 					</Flex>
 				</GridItem>
 				<GridItem
@@ -459,7 +459,7 @@ export default function Home() {
 								src="/images/person_board.png"
 							/>
 							<Box mt={[ '2', '4', '8', '16', '16' ]} ml={[ '2', '4', '8', '16', '32' ]}>
-								<Heading mt="16" textAlign="left" mb="4">
+								<Heading mt="16" textAlign={{base:"center", md:"left"}} mb="4">
 									Do you worry about
 								</Heading>
 								{[
@@ -468,17 +468,20 @@ export default function Home() {
 									'switching from non-CS to CS branch?',
 									'not getting a job after masters?'
 								].map((i, idx) => (
-									<Text fontSize="xl" key={idx} color={'#17A2FB'} my="2" fontWeight="700">
+									<Text  textAlign={{base:"center", md:"left"}}  fontSize={{base:"md", md:"xl"}} key={idx} color={'#17A2FB'} my="2" fontWeight="700">
 										{i}{' '}
 									</Text>
 								))}
-								<Text maxW={{ base: '', md: '70%' }} my="16" fontWeight="400">
+								<Center>
+
+								<Text maxW={{ base: '80%', md: '70%' }} textAlign={{base:"center", md:"left"}} my="16" fontWeight="400">
 									Our founders and mentors have personally faced/seen all these issues, navigated
 									through them and are currently working at top product based companies in the US. Our
 									mentors will work with you to build a vision, mission and identify objectives which
 									will help in planning to get the best job abroad irrespective of your backgrounds
 									(which is why you are going abroad).
 								</Text>
+								</Center>
 							</Box>
 						</Flex>
 					</Center>

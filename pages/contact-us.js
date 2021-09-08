@@ -9,7 +9,8 @@ function ContactUS() {
 			<title>Flywise - Contact us</title>
 			<Navbar outline="Contact US" />
 			<Grid overflow="hidden" maxW="100vw" templateRows="repeat(12, 1fr)" templateColumns="repeat(12, 1fr)">
-				<GridItem zIndex="1"
+				<GridItem
+					zIndex="1"
 					py={[ '0.4rem', '1rem', '2rem', '3rem', '4rem' ]}
 					pl={[ '0.4rem', '1rem', '3rem', '6rem', '12rem' ]}
 					pr={[ '0.4rem', '1rem', '1rem', '2rem', '3rem' ]}
@@ -54,7 +55,12 @@ function ContactUS() {
 						</Button>
 					</Link>
 				</GridItem>
-				<GridItem zIndex="1" pr={[ '0.4rem', '1rem', '3rem', '6rem', '12rem' ]} rowSpan={12} colSpan={[ 12, 12, 5, 5, 5 ]}>
+				<GridItem
+					zIndex="1"
+					pr={[ '0.4rem', '1rem', '3rem', '6rem', '12rem' ]}
+					rowSpan={12}
+					colSpan={[ 12, 12, 5, 5, 5 ]}
+				>
 					<Image mt="16" src="/images/contact_us.png" alt="main" />
 				</GridItem>
 				<GridItem
@@ -63,46 +69,69 @@ function ContactUS() {
 					colSpan={12}
 					bg="linear-gradient(180deg, rgba(230, 246, 255, 0.6) 41.47%, rgba(255, 255, 255, 0) 100%)"
 					pt="32"
-                    zIndex="0"
-                    transform="translate(0,-3rem)"
-                    pb="8"
+					zIndex="0"
+					transform="translate(0,-3rem)"
+					pb="8"
 				>
-					
-						<Heading textAlign="center" color="rgba(156, 156, 156, 1)" fontSize="xl">
-							Want more information?
-						</Heading>
-                        <Heading pr={{base:"1rem", md:"2rem"}} my="8" textAlign="center">
-                        Ask us your questions or schedule a meeting
-						</Heading>
-                        <Center>
-
-                        <Box w={["15rem","22rem","36rem","44rem","50rem"]}>
-                            <Text mt="8" mb="2">Your name</Text>
-                            <Input bg="whiteAlpha.900" borderColor="blackAlpha.500" _hover={{borderColor:"blackAlpha.800"}}  focusBorderColor="black" placeholder="Your name" />
-                            <Text mt="8" mb="2">Your Email</Text>
-                            <Input bg="whiteAlpha.900" borderColor="blackAlpha.500" _hover={{borderColor:"blackAlpha.800"}}  focusBorderColor="black" placeholder="someone@email.com" />
-                            <Text mt="8" mb="2">Your message</Text>
-                            {/* < placeholder="Here is a sample placeholder" /> */}
-                            <Textarea bg="whiteAlpha.900" borderColor="blackAlpha.500" _hover={{borderColor:"blackAlpha.800"}}  resize={"vertical"} focusBorderColor="black" placeholder="Type your message......" />
-                        </Box>
-                        </Center>
-                        <Center>
-                        <Button
-					variant={'solid'}
-					size={'md'}
-					color="white"
-					fontWeight="semibold"
-					px="6"
-					id="gradient"
+					<Heading textAlign="center" color="rgba(156, 156, 156, 1)" fontSize="xl">
+						Want more information?
+					</Heading>
+					<Heading pr={{ base: '1rem', md: '2rem' }} my="8" textAlign="center">
+						Ask us your questions or schedule a meeting
+					</Heading>
+					<Center>
+						<Box w={[ '15rem', '22rem', '36rem', '44rem', '50rem' ]}>
+							<Text mt="8" mb="2">
+								Your name
+							</Text>
+							<Input
+								bg="whiteAlpha.900"
+								borderColor="blackAlpha.500"
+								_hover={{ borderColor: 'blackAlpha.800' }}
+								focusBorderColor="black"
+								placeholder="Your name"
+							/>
+							<Text mt="8" mb="2">
+								Your Email
+							</Text>
+							<Input
+								bg="whiteAlpha.900"
+								borderColor="blackAlpha.500"
+								_hover={{ borderColor: 'blackAlpha.800' }}
+								focusBorderColor="black"
+								placeholder="someone@email.com"
+							/>
+							<Text mt="8" mb="2">
+								Your message
+							</Text>
+							{/* < placeholder="Here is a sample placeholder" /> */}
+							<Textarea
+								bg="whiteAlpha.900"
+								borderColor="blackAlpha.500"
+								_hover={{ borderColor: 'blackAlpha.800' }}
+								resize={'vertical'}
+								focusBorderColor="black"
+								placeholder="Type your message......"
+							/>
+						</Box>
+					</Center>
+					<Center>
+						<Button
+							variant={'solid'}
+							size={'md'}
+							color="white"
+							fontWeight="semibold"
+							px="6"
+							id="gradient"
 							colorScheme="blue"
-					my="19"
-					rounded="full"
-					>
-					Send request
-				</Button>
-                        </Center>
+							my="19"
+							rounded="full"
+						>
+							Send request
+						</Button>
+					</Center>
 				</GridItem>
-                <Footer />
+				<Footer />
 			</Grid>
 		</Box>
 	);

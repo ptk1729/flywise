@@ -16,8 +16,16 @@ function FaqList({ faqs }) {
 		<Center>
 			<Accordion allowToggle>
 				{faqState.map((faq, idx) => (
-					<AccordionItem key={idx} border="1px solid #d6d6d6" rounded="lg" bg="#F6F7F8" my="4">
-						<h2>
+					<Center key={idx}>
+						<AccordionItem
+							mx="4"
+							maxW="70%"
+							
+							border="1px solid #d6d6d6"
+							rounded="lg"
+							bg="#F6F7F8"
+							my="4"
+						>
 							<AccordionButton
 								_focus={{ boxShadow: 'none' }}
 								rounded="lg"
@@ -30,11 +38,12 @@ function FaqList({ faqs }) {
 									{faq.ques ? faq.ques : ''}
 								</Box>
 							</AccordionButton>
-						</h2>
-						<AccordionPanel maxW={{ base: '20rem', md: '50rem' }} pb={4}>
-							{faq.ans ? faq.ans.map((line, idx) => <p key={idx}> {line}</p>) : ''}
-						</AccordionPanel>
-					</AccordionItem>
+
+							<AccordionPanel maxW={{ base: '20rem', md: '50rem' }} pb={4}>
+								{faq.ans ? faq.ans.map((line, idx) => <p key={idx}> {line}</p>) : ''}
+							</AccordionPanel>
+						</AccordionItem>
+					</Center>
 				))}
 			</Accordion>
 

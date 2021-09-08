@@ -19,48 +19,7 @@ a {
 	border-bottom: 2px solid black;
 	border-radius: 0;
 }
-#gradient-anim {
-	background-image: linear-gradient(270deg, #6adbdb, #4080d3) !important;
-	background-size: 400% 400% !important;
 
-	-webkit-animation: gradient-animation 4s ease infinite !important;
-	-moz-animation: gradient-animation 4s ease infinite !important;
-	animation: gradient-animation 4s ease infinite !important;
-}
-
-@-webkit-keyframes gradient-animation {
-	0% {
-		background-position: 0% 72%;
-	}
-	50% {
-		background-position: 100% 29%;
-	}
-	100% {
-		background-position: 0% 72%;
-	}
-}
-@-moz-keyframes gradient-animation {
-	0% {
-		background-position: 0% 72%;
-	}
-	50% {
-		background-position: 100% 29%;
-	}
-	100% {
-		background-position: 0% 72%;
-	}
-}
-@keyframes gradient-animation {
-	0% {
-		background-position: 0% 72%;
-	}
-	50% {
-		background-position: 100% 29%;
-	}
-	100% {
-		background-position: 0% 72%;
-	}
-}
 
 .sticky {
 	position: -webkit-sticky; /* Safari */
