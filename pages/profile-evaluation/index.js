@@ -202,7 +202,7 @@ function One() {
 						))}
 						<GridItem rowSpan={12} colSpan={15}>
 							<Center>
-								<Flex mt="16" position="fixed" bottom="0vh">
+								<Flex mt="16" justifyContent="center" position="fixed" bottom="0vh" width={"fit-content","fit-content","fit-content","100%"} backgroundColor="#ffffff">
 									{/* <Button
 										mt="16"
 										color="white"
@@ -219,6 +219,7 @@ function One() {
 										color="white"
 										px="8"
 										mb="4"
+										mt="4"
 										bg="rgba(13, 179, 251, 1)"
 										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
 										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
@@ -320,11 +321,12 @@ function One() {
 						))}
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Flex mt="16" className="" position="fixed" bottom="0vh">
+								<Flex mt="16" className="" position="fixed" justifyContent="center" bottom="0vh" width={"fit-content","fit-content","fit-content","100%"} backgroundColor="#ffffff">
 									<Button
 										color="white"
 										px="8"
 										mb="4"
+										mt="4"
 										bg="rgba(13, 179, 251, 1)"
 										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
 										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
@@ -336,6 +338,7 @@ function One() {
 										color="white"
 										px="8"
 										mb="4"
+										mt="4"
 										bg="rgba(13, 179, 251, 1)"
 										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
 										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
@@ -498,11 +501,12 @@ function One() {
 						</GridItem>
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Flex mt="16" position="fixed" bottom="0vh">
+								<Flex mt="16" position="fixed" bottom="0vh" justifyContent="center" width={"fit-content","fit-content","fit-content","100%"} backgroundColor="#ffffff">
 									<Button
 										color="white"
 										px="8"
 										mb="4"
+										mt="4"
 										bg="rgba(13, 179, 251, 1)"
 										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
 										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
@@ -515,6 +519,7 @@ function One() {
 										color="white"
 										px="8"
 										mb="4"
+										mt="4"
 										bg="rgba(13, 179, 251, 1)"
 										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
 										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
@@ -697,11 +702,12 @@ function One() {
 						</GridItem>
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Flex mt="16" position="fixed" bottom="0vh">
+								<Flex mt="16" position="fixed" bottom="0vh" justifyContent="center" width={"fit-content","fit-content","fit-content","100%"} backgroundColor="#ffffff">
 									<Button
 										color="white"
 										px="8"
 										mb="4"
+										mt="4"
 										bg="rgba(13, 179, 251, 1)"
 										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
 										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
@@ -714,6 +720,7 @@ function One() {
 										color="white"
 										px="8"
 										mb="4"
+										mt="4"
 										bg="rgba(13, 179, 251, 1)"
 										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
 										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
@@ -849,12 +856,13 @@ function One() {
 						</GridItem>{' '}
 						<GridItem rowSpan={15} colSpan={15}>
 							<Center>
-								<Flex mt="16" position="fixed" bottom="1vh">
+								<Flex mt="16" position="fixed" bottom="1vh" justifyContent="center" width={"fit-content","fit-content","fit-content","100%"} backgroundColor="#ffffff">
 									<Button
 										className="sticky"
 										color="white"
 										px="8"
 										// mb="4"
+										mt="4"
 										bg="rgba(13, 179, 251, 1)"
 										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
 										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
@@ -867,6 +875,7 @@ function One() {
 										color="white"
 										px="8"
 										mb="4"
+										mt="4"
 										bg="rgba(13, 179, 251, 1)"
 										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
 										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
@@ -954,11 +963,12 @@ function One() {
 						))}
 						<GridItem rowSpan={12} colSpan={15}>
 							<Center>
-								<Flex mt="16" position="fixed" bottom="0vh">
+								<Flex mt="16" position="fixed" bottom="0vh" justifyContent="center" width={"fit-content","fit-content","fit-content","100%"} backgroundColor="#ffffff">
 									<Button
 										color="white"
 										px="8"
 										mb="4"
+										mt="4"
 										bg="rgba(13, 179, 251, 1)"
 										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
 										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
@@ -970,6 +980,7 @@ function One() {
 										color="white"
 										px="8"
 										mb="4"
+										mt="4"
 										bg="rgba(13, 179, 251, 1)"
 										_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
 										_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
