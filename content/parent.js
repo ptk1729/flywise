@@ -12,7 +12,7 @@ const Parentdiv = ({ children }) => {
       <Fragment>{children}</Fragment>
       {path !== "/profile-evaluation" ? (
         <div className={classes.what}>
-          <Image src={Whats} />
+          <Image alt="whatsapp" src={Whats} />
         </div>
       ) : null}
     </div>

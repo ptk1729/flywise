@@ -6,6 +6,7 @@ import {
   Image,
   Link,
   Text,
+  Center
 } from "@chakra-ui/react";
 import React from "react";
 import NextLink from "next/link";
@@ -23,7 +24,7 @@ function Footer() {
           <Image maxH="4rem" alt="logo" src="/images/logo.svg" />
         </NextLink>
         <Box>
-          <Flex justifyContent="space-evenly">
+          <Flex flexDirection={{base:"column", md:"row" }} justifyContent="space-evenly">
             {[
               { link: "Home", to: "/" },
               { link: "About", to: "/" },
@@ -31,7 +32,11 @@ function Footer() {
               { link: "News", to: "/" },
               { link: "Products", to: "/" },
             ].map((i, idx) => (
-              <Link
+              <Center
+               key={idx}
+              >
+
+               <Link
                 my={{ base: "2", md: "2" }}
                 mx={{ base: "0", md: "4" }}
                 // ={{base:"1", md:"4"}}
@@ -50,10 +55,10 @@ function Footer() {
                 color="rgba(29, 29, 29, 1)"
                 colorScheme="blackAlpha"
                 variant="ghost"
-                key={idx}
-              >
+                >
                 {i.link}
               </Link>
+            </Center> 
             ))}
           </Flex>
         </Box>

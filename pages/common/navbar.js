@@ -189,6 +189,7 @@ export default function Navbar({ outline }) {
 					</NextLink>
 				</Flex>
 				<IconButton
+				mr="2"
 					size={'md'}
 					icon={isOpen ? <CloseIcon h="1.3rem" w="1.3rem" /> : <HamburgerIcon h="1.6rem" w="1.6rem" />}
 					aria-label={'Open Menu'}

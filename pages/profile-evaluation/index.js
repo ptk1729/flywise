@@ -20,7 +20,8 @@ import {
 	RadioGroup,
 	Stack,
 	Text,
-	VStack
+	VStack,
+	Tooltip
 } from '@chakra-ui/react';
 import axios from 'axios';
 import React, { useState } from 'react';
@@ -29,7 +30,7 @@ import Navbar from '../common/navbar';
 function One() {
 	const [ loading, setLoading ] = useState(false);
 	const [ success, setSuccess ] = useState(false);
-	const [ error, setError ] = useState(false);
+	const [ error, setError ] = useState('');
 
 	const [ country, setCountry ] = useState('USA');
 	const [ course, setCourse ] = useState('MS Computer science / Software engineering (Intensive coding)');
@@ -57,8 +58,8 @@ function One() {
 	function evaluateProfilePost(e) {
 		e.preventDefault();
 		setLoading(true);
-		setSuccess(false);
-		setError(false);
+		setSuccess('');
+		setError('');
 		let formData = new FormData();
 
 		formData.append('whichCountry', country);
@@ -105,16 +106,20 @@ function One() {
 			}
 		})
 			.then(res => {
-				console.log(res.data.error);
+				console.log(res.data);
 				if (res.data.error === 'ALl fields required') {
-					setError(true);
+					setError('All fields are required please try again');
 				} else {
-					setSuccess(true);
+					setSuccess('Profile Submitted');
 				}
 			})
 			.catch(err => {
-				console.log(err);
-				setError(true);
+				console.log(err.response.data.error);
+				if (err.response.data.error == 'This user has already applied for profile evaluation') {
+					setError('You have already applied');
+				} else {
+					setError('There was an error');
+				}
 			})
 			.finally(() => setLoading(false));
 	}
@@ -275,7 +280,7 @@ function One() {
 											)
 										}
 										rounded="lg"
-										pl="4"
+										px="4"
 										pt="4"
 										pb={{ base: '8', md: '4' }}
 										border={i === course ? '4px solid rgba(13, 179, 251, 1)' : '4px solid white'}
@@ -298,7 +303,7 @@ function One() {
 											/>
 										</Center>
 										<Text
-											h="6rem"
+											minH="6rem"
 											transition="all 0.2s ease-out"
 											color={i === course ? 'white' : 'black'}
 											textAlign="center"
@@ -307,11 +312,7 @@ function One() {
 											mt="4"
 										>
 											{i.split(' (')[0]}
-											{i.split(' (')[1] && (
-												<Text noOfLines="2" fontWeight="semibold">
-													({i.split(' (')[1]}
-												</Text>
-											)}
+											{i.split(' (')[1] && <Text fontWeight="semibold">({i.split(' (')[1]}</Text>}
 										</Text>
 									</Box>
 								</Center>
@@ -377,7 +378,7 @@ function One() {
 						<GridItem
 							// id="griditem"
 							py={4}
-							pl={[ '4rem', '3rem', '2rem', '3rem', '4rem' ]}
+							px={[ '2rem', '1.5rem', '1rem', '1.5rem', '2rem' ]}
 							rowSpan={7}
 							colSpan={[ 15, 15, 7, 7, 7 ]}
 							// bg={bg}
@@ -406,19 +407,17 @@ function One() {
 						<GridItem
 							// id="griditem"
 							py={4}
-							pl={[ '4rem', '3rem', '2rem', '3rem', '4rem' ]}
+							px={[ '2rem', '1.5rem', '1rem', '1.5rem', '2rem' ]}
 							rowSpan={7}
 							colSpan={[ 15, 15, 7, 7, 7 ]}
 							// bg={bg}
 						>
-							
-								<Text fontSize={[ 'xl', 'xl', '2xl', '2xl', '3xl' ]} fontWeight="500">
-									GRE Verbal score<Link _hover={{textDecoration:"none"}} color="red">
+							<Text fontSize={[ 'xl', 'xl', '2xl', '2xl', '3xl' ]} fontWeight="500">
+								GRE Verbal score<Link _hover={{ textDecoration: 'none' }} color="red">
 									*
 								</Link>
-								</Text>
-								
-							
+							</Text>
+
 							<Text
 								color="rgba(125, 125, 125, 1)"
 								py="4"
@@ -437,19 +436,17 @@ function One() {
 						<GridItem
 							// id="griditem"
 							pt={4}
-							pl={[ '4rem', '3rem', '2rem', '3rem', '4rem' ]}
+							px={[ '2rem', '1.5rem', '1rem', '1.5rem', '2rem' ]}
 							rowSpan={7}
 							colSpan={[ 15, 15, 7, 7, 7 ]}
 							// bg={bg}
 						>
-						
-								<Text fontSize={[ 'xl', 'xl', '2xl', '2xl', '3xl' ]} fontWeight="500">
-									IELTS/TOEFL<Link _hover={{textDecoration:"none"}} color="red">
+							<Text fontSize={[ 'xl', 'xl', '2xl', '2xl', '3xl' ]} fontWeight="500">
+								IELTS/TOEFL<Link _hover={{ textDecoration: 'none' }} color="red">
 									*
 								</Link>
-								</Text>
-								
-					
+							</Text>
+
 							<Text
 								color="rgba(125, 125, 125, 1)"
 								py="4"
@@ -471,7 +468,7 @@ function One() {
 							mb={{ base: '32', md: '8' }}
 							pt={2}
 							// mb={{base:"16", md:"16"}}
-							pl={[ '4rem', '3rem', '2rem', '3rem', '4rem' ]}
+							px={[ '2rem', '1.5rem', '1rem', '1.5rem', '2rem' ]}
 							rowSpan={7}
 							colSpan={[ 15, 15, 7, 7, 7 ]}
 							// bg={bg}
@@ -565,14 +562,12 @@ function One() {
 							colSpan={[ 15, 15, 7, 7, 7 ]}
 							// bg={bg}
 						>
-							<Flex>
-								<Heading pb="4" fontSize="3xl" fontWeight="500">
-									Any work experience?
-								</Heading>
-								<Heading fontSize="3xl" fontWeight="500" color="red">
+							<Text pb="4" fontSize="3xl" fontWeight="500">
+								Any work experience?<Link _hover={{ textDecoration: 'none' }} color="red">
 									*
-								</Heading>
-							</Flex>
+								</Link>
+							</Text>
+
 							{/* <Text
 								color="rgba(125, 125, 125, 1)"
 								py="4"
@@ -643,14 +638,11 @@ function One() {
 							colSpan={[ 15, 15, 7, 7, 7 ]}
 							// bg={bg}
 						>
-							<Flex>
-								<Heading pb="4" fontSize="3xl" fontWeight="500">
-									Number of backlogs
-								</Heading>
-								<Heading fontSize="3xl" fontWeight="500" color="red">
+							<Text pb="4" fontSize="3xl" fontWeight="500">
+								Number of backlogs<Link _hover={{ textDecoration: 'none' }} color="red">
 									*
-								</Heading>
-							</Flex>
+								</Link>
+							</Text>
 							{/* <Text
 								color="rgba(125, 125, 125, 1)"
 								py="4"
@@ -810,22 +802,19 @@ function One() {
 							</Flex>
 						</GridItem>
 						<GridItem mb={{ base: '28', md: '0' }} rowSpan={12} colSpan={15}>
-							
-							
-									<Text
-										textAlign="center"
-										ml={{ base: '4', md: '4' }}
-										pb=""
-										pt="4"
-										fontSize="2xl"
-										fontWeight="500"
-									>
-										How are you going to fund your Master’s?
-										<Link _hover={{textDecoration:"none"}} color="red">
+							<Text
+								textAlign="center"
+								ml={{ base: '4', md: '4' }}
+								pb=""
+								pt="4"
+								fontSize="2xl"
+								fontWeight="500"
+							>
+								How are you going to fund your Master’s?
+								<Link _hover={{ textDecoration: 'none' }} color="red">
 									*
 								</Link>
-									</Text>
-							
+							</Text>
 
 							<Center>
 								<RadioGroup
@@ -930,7 +919,7 @@ function One() {
 										}
 										rounded="lg"
 										p="4"
-										mb={i === 'Other'?"16":"0"}
+										mb={i === 'Other' ? '16' : '0'}
 										border={i === session ? '4px solid rgba(13, 179, 251, 1)' : '4px solid white'}
 										_hover={{ boxShadow: 'base' }}
 										boxShadow="0px 4px 20px rgba(0, 0, 0, 0.15)"
@@ -1033,7 +1022,7 @@ function One() {
 									isInvalid={userEmail.length > 0 ? !isEmail(userEmail) : false}
 									type="email"
 									value={userEmail}
-									onChange={e => setUserEmail(e.target.value)}
+									onChange={e => {setUserEmail(e.target.value); setSuccess(""); setError("")}}
 									py="3"
 									errorBorderColor="red.600"
 									focusBorderColor="#25BAFB"
@@ -1058,22 +1047,44 @@ function One() {
 						</GridItem>
 						<GridItem rowSpan={12} colSpan={15}>
 							<Center>
-								<Button
-									isLoading={loading}
-									isDisabled={loading || !tnC || !isEmail(userEmail) || !userPhone || !username}
-									mt="16"
-									color="white"
-									px="8"
-									mb="4"
-									bg="rgba(13, 179, 251, 1)"
-									_hover={{ bg: 'rgba(13, 179, 251, 0.9)' }}
-									_active={{ bg: 'rgba(13, 179, 251, 0.7)' }}
-									onClick={evaluateProfilePost}
+								<Tooltip
+									hasArrow
+									rounded="full"
+									colorScheme="red"
+									bg="red.200"
+									color="red.700"
+									label={error}
+									placement="top"
+									isOpen={error}
 								>
-									View Profile Evaluation Report
-								</Button>
+									<Button
+										isLoading={loading}
+										isDisabled={
+											loading || !tnC || !isEmail(userEmail) || !userPhone || !username || success
+										}
+										mt="16"
+										color="white"
+										px="8"
+										mb="4"
+										// size={{base:"sm", md:"md"}}
+
+										colorScheme={error ? 'red' : success ? 'green' : ''}
+										bg={error ? 'red' : success ? 'green' : 'rgba(13, 179, 251, 1)'}
+										_hover={{ bg: error ? 'red' : success ? 'green' : 'rgba(13, 179, 251, 0.9)' }}
+										_active={{ bg: error ? 'red' : success ? 'green' : 'rgba(13, 179, 251, 0.7)' }}
+										onClick={evaluateProfilePost}
+									>
+										{error ? (
+											'Try Again'
+										) : success ? (
+											'Profile submitted'
+										) : (
+											'View Profile Evaluation Report'
+										)}
+									</Button>
+								</Tooltip>
 							</Center>
-							{error && (
+							{/* {error && (
 								<Text textAlign="center" textSize={'md'} color="red.600">
 									There was an error Please try again.
 								</Text>
@@ -1082,7 +1093,7 @@ function One() {
 								<Text textAlign="center" textSize={'md'} color="green.600">
 									Profile submitted, please wait for our response.
 								</Text>
-							)}
+							)} */}
 						</GridItem>{' '}
 					</React.Fragment>
 				)}

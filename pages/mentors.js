@@ -148,11 +148,13 @@ function Mentors() {
 									_hover={{ boxShadow: 'xl', transform: 'scale(1.05)' }}
 									transition="all 0.3s"
 									mx="8"
+									// maxW="90%"
 									my={{ base: '6', md: '0' }}
 									rounded="2xl"
 									py="8"
 									key={idx}
-									minW="20rem"
+									w="20rem"
+									maxW="90%"
 									bg="linear-gradient(101.82deg, #4080D3 0%, #6ADBDB 105.94%)"
 								>
 									<Center>
