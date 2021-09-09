@@ -37,9 +37,9 @@ function One() {
 	const [ pe, setPe ] = useState(1);
 	const [ greTraining, setGreTraining ] = useState('yes');
 	const [ session, setSession ] = useState('Spring 2022');
-	const [ greQuant, setGreQuant ] = useState('');
-	const [ greVerbal, setGreVerbal ] = useState('');
-	const [ ieltsToefl, setIeltsToefl ] = useState('');
+	const [ greQuant, setGreQuant ] = useState(0);
+	const [ greVerbal, setGreVerbal ] = useState(0);
+	const [ ieltsToefl, setIeltsToefl ] = useState(0);
 	const [ workEx, setWorkEx ] = useState('less than 2 years');
 	const [ cgpa, setCgpa ] = useState(0);
 	const [ backlogs, setBacklogs ] = useState('');
@@ -396,16 +396,24 @@ function One() {
 								color="rgba(125, 125, 125, 1)"
 								py="4"
 							>{`Please write "Not taken yet" if you are yet to take GRE and "Not applicable" if you don't want to take GRE test`}</Text>
-							<Input
+							<NumberInput
 								value={greQuant}
-								onChange={e => setGreQuant(e.target.value)}
-								py="6"
+								onChange={e => setGreQuant(e)}
+								
 								focusBorderColor="#25BAFB"
 								bg="rgba(240, 240, 240, 1)"
 								maxW="50%"
+								min={130}
+								max={170}
 								placeholder="Enter score"
-								type="text"
-							/>
+								
+							>
+							<NumberInputField />
+								<NumberInputStepper>
+									<NumberIncrementStepper />
+									<NumberDecrementStepper />
+								</NumberInputStepper>
+							</NumberInput>
 						</GridItem>
 						<GridItem
 							// id="griditem"
@@ -425,16 +433,24 @@ function One() {
 								color="rgba(125, 125, 125, 1)"
 								py="4"
 							>{`Please write "Not taken yet" if you are yet to take GRE and "Not applicable" if you don't want to take GRE test`}</Text>
-							<Input
+							<NumberInput
 								value={greVerbal}
-								onChange={e => setGreVerbal(e.target.value)}
-								py="6"
+								onChange={e => setGreVerbal(e)}
+								
+								min={130}
+								max={170}
 								focusBorderColor="#25BAFB"
 								bg="rgba(240, 240, 240, 1)"
 								maxW="50%"
 								placeholder="Enter score"
-								type="text"
-							/>
+								
+							>
+							<NumberInputField />
+								<NumberInputStepper>
+									<NumberIncrementStepper />
+									<NumberDecrementStepper />
+								</NumberInputStepper>
+							</NumberInput>
 						</GridItem>
 						<GridItem
 							// id="griditem"
@@ -454,16 +470,23 @@ function One() {
 								color="rgba(125, 125, 125, 1)"
 								py="4"
 							>{`Please write "Not taken yet" if you are yet to take IELTS/TOEFL.`}</Text>
-							<Input
+							<NumberInput
 								value={ieltsToefl}
-								onChange={e => setIeltsToefl(e.target.value)}
-								py="6"
+								onChange={e => setIeltsToefl(e)}
+								max={9}
+								min={5}
 								focusBorderColor="#25BAFB"
 								bg="rgba(240, 240, 240, 1)"
 								maxW="50%"
 								placeholder="Enter score"
-								type="text"
-							/>
+								
+							>
+							<NumberInputField />
+								<NumberInputStepper>
+									<NumberIncrementStepper />
+									<NumberDecrementStepper />
+								</NumberInputStepper>
+							</NumberInput>
 						</GridItem>
 						<GridItem
 							// key={i}
@@ -632,7 +655,7 @@ function One() {
 								focusBorderColor="#25BAFB"
 								bg="rgba(240, 240, 240, 1)"
 								maxW="50%"
-								placeholder="Enter score"
+								placeholder="Enter Name"
 							/>
 						</GridItem>
 						<GridItem
@@ -659,7 +682,7 @@ function One() {
 								focusBorderColor="#25BAFB"
 								bg="rgba(240, 240, 240, 1)"
 								maxW="50%"
-								placeholder="Enter score"
+								placeholder="Enter"
 								type="number"
 							/>
 						</GridItem>

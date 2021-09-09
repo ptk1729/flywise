@@ -24,7 +24,7 @@ import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link';
 import React from 'react';
 const Links = [
-	{ link: 'Test Prep', to: '/' },
+	{ link: 'Test Prep', to: '/testprep' },
 	{ link: 'Profile Evaluation', to: '/profile-evaluation' },
 	{ link: 'Services', to: '/#services' },
 	{ link: 'Mentors', to: '/mentors' }
@@ -119,7 +119,7 @@ const AllNavLinks = ({ outline }) => {
 					</React.Fragment>
 				)}
 			</Popover>
-			<NavLink outline={''} to={'/#courses'} link={'Courses'} />
+			<NavLink outline={''} to={'/courses'} link={'Courses'} />
 			{/* <NLink href={}>
 				<Link
 					// className={props.link === props.outline ? `bottom-outline` : ``}
@@ -179,7 +179,7 @@ export default function Navbar({ outline }) {
 							color="white"
 							fontWeight="semibold"
 							px={[ '2', '6', '6', '6', '6' ]}
-							id="gradient"
+							
 							colorScheme="blue"
 							mr={4}
 							rounded="full"

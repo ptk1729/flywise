@@ -19,8 +19,8 @@ function FaqList({ faqs }) {
 					<Center key={idx}>
 						<AccordionItem
 							mx="4"
-							maxW="70%"
 							
+							width="100%"
 							border="1px solid #d6d6d6"
 							rounded="lg"
 							bg="#F6F7F8"
@@ -34,7 +34,7 @@ function FaqList({ faqs }) {
 							>
 								<AccordionIcon w={8} h={8} color="#23BAFB" />{' '}
 								{/* <Image mt="1" alt="arrow" src="/images/right_arrow.png" maxH="1rem" /> */}
-								<Box w={{ base: '20rem', md: '50rem' }} flex="1" textAlign="left">
+								<Box w={{ base: '20rem', md: '80rem' }} flex="1" textAlign="left" fontWeight="bold">
 									{faq.ques ? faq.ques : ''}
 								</Box>
 							</AccordionButton>
