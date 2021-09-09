@@ -11,7 +11,8 @@ const MENTORS = [
 		position: 'Software Engineer',
 		uni: 'California State University, Eastbay',
 		uniImage: 'CaliforniaStateUniversity,Eastbay',
-		company: 'oracle'
+		company: 'oracle',
+		link:'https://www.linkedin.com/in/pavankanjula/'
 	},
 	{
 		//2
@@ -20,7 +21,8 @@ const MENTORS = [
 		position: 'Sr Data Engineer',
 		uni: 'Rutgers University, New Jersey',
 		uniImage: 'RutgersUniversity,NewJersey',
-		company: 'compass'
+		company: 'compass',
+		link:"https://www.linkedin.com/in/rahul-narakula/"
 	},
 	{
 		//3
@@ -29,7 +31,8 @@ const MENTORS = [
 		position: 'Applied scientist',
 		uni: 'Northeastern University, Boston',
 		uniImage: 'NortheasternUniversity,Boston',
-		company: 'aws'
+		company: 'aws',
+		link:"https://www.linkedin.com/in/anannapaneni/"
 	},
 	{
 		//4
@@ -38,7 +41,8 @@ const MENTORS = [
 		position: 'Software Engineer',
 		uni: 'University of South Florida, Florida',
 		uniImage: 'UniversityofSouthFlorida,Florida',
-		company: 'amazon'
+		company: 'amazon',
+		link:"https://www.linkedin.com/in/reddy-sourabh-reddy/"
 	},
 	{
 		//5
@@ -47,7 +51,8 @@ const MENTORS = [
 		position: 'Sr Technical Program Manager',
 		uni: 'University of Hartford, Hartford',
 		uniImage: 'UniversityofHartford,Hartford',
-		company: 'playstation'
+		company: 'playstation',
+		link:"https://www.linkedin.com/in/puneethakanjula/"
 	},
 	{
 		//6
@@ -56,7 +61,8 @@ const MENTORS = [
 		position: 'Data Engineer',
 		uni: 'Southern Illinois University, Wisconsin',
 		uniImage: 'SouthernIllinoisUniversity,Wisconsin',
-		company: 'facebook'
+		company: 'facebook',
+		link:"https://www.linkedin.com/in/bipinreddy/"
 	},
 	{
 		//7
@@ -65,7 +71,8 @@ const MENTORS = [
 		position: 'Devops Engineer',
 		uni: 'California State University, Fullerton',
 		uniImage: 'CaliforniaStateUniversity,Fullerton',
-		company: 'playstation'
+		company: 'playstation',
+		link:"https://www.linkedin.com/in/vamshimylaram/"
 	},
 
 	{
@@ -75,7 +82,8 @@ const MENTORS = [
 		position: 'Software Engineer',
 		uni: 'Northeastern University, Boston',
 		uniImage: 'NortheasternUniversity,Boston',
-		company: 'amazon'
+		company: 'amazon',
+		link:"https://www.linkedin.com/in/kunalteeda"
 	}
 ];
 function Mentors() {
@@ -248,7 +256,7 @@ function MentorCard({ mentor }) {
 				{/* <Flex> */}
 
 				<Image maxH="6rem" src={`/images/mentors/${mentor.image}.png`} alt={mentor.name} />
-				<Link target="_blank" rounded="full" transform="translate(-1rem, 2.1rem)" href="/mentors">
+				<Link target="_blank" rounded="full" transform="translate(-1rem, 2.1rem)" href={`${mentor.link}`}>
 					<Image maxH="2rem" src={`/images/mentors/linkedin.png`} alt={mentor.name} />
 				</Link>
 				{/* </Flex> */}
