@@ -54,8 +54,9 @@ export default function Home() {
 								color="white"
 								fontWeight="semibold"
 								px="6"
-								id="gradient"
+								id="gradientt"
 								colorScheme="blue"
+								
 								// bg="linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)"
 								// _hover={{
 								// 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
@@ -176,13 +177,13 @@ export default function Home() {
 				</GridItem>
 				<GridItem
 					backgroundRepeat="no-repeat"
-					p={[ '1.5rem', '3rem', '4rem', '8rem', '15rem' ]}
+					p={[ '1.5rem', '3rem', '4rem', '8rem', '10em' ]}
 					rowSpan={12}
 					colSpan={12}
 					// backgroundImage="url(/images/paperplane.png)"
 				>
 					<Box h="100%" w="100%">
-						<Heading fontSize={[ '2xl', '2xl', '3xl', '4xl', '4xl' ]} my="4" textAlign="center">
+						<Heading fontSize={[ '2xl', '2xl', '3xl', '4xl', '4xl' ]} my="2" textAlign="center" mb="10">
 							Watch this video to better understand how Flywise helps students in their Career
 						</Heading>
 
@@ -253,10 +254,10 @@ export default function Home() {
 					<Flex flexDirection={{ md: 'row', base: 'column' }}>
 						<Box
 							mt={[ '2', '4', '8', '16', '32' ]}
-							ml={[ '2', '4', '8', '16', '24' ]}
+							ml={[ '2', '4', '8', '16', '44' ]}
 							pl={[ '1', '1', '2', '4', '20' ]}
 						>
-							<Heading fontSize={["2xl","3xl","4xl","4xl","4xl"]} my="16" textAlign="center" mt="4">
+							<Heading fontSize={["2xl","3xl","4xl","4xl","4xl"]} my="16" textAlign="center" mt="">
 								We are specialized in below fields, fly with us!
 							</Heading>
 							{[
@@ -265,14 +266,14 @@ export default function Home() {
 								'Business analytics',
 								'Information systems'
 							].map((i, idx) => (
-								<Flex my="4" ml="4" key={idx}>
+								<Flex my="4" ml="12" key={idx}>
 									<Image
 										filter="box-shadow(0px 39px 99px 0px rgba(0, 0, 0, 0.16))"
 										h="69px"
 										alt="icon"
 										src={`/images/icon${idx + 1}.png`}
 									/>
-									<Text my="5" ml="4" fontWeight="600">
+									<Text my="5" ml="4" fontWeight="600" fontSize={["1rem","1.2rem","1.3rem","1.4rem"]}>
 										{i}{' '}
 									</Text>
 								</Flex>
@@ -444,6 +445,8 @@ export default function Home() {
 				<GridItem
 					rowSpan={12}
 					colSpan={12}
+					
+					px={[ '2', '1', '4', '8', '16' ]}
 					// colSpan={{base: 12, md:6}}
 					mt="16"
 					bg={'linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)'}
@@ -454,11 +457,11 @@ export default function Home() {
 								maxW="25rem"
 								maxH="70vh"
 								p="16"
-								ml={[ '2', '4', '8', '16', '32' ]}
+								ml={[ '2', '4', '8', '16', '44' ]}
 								alt="desk"
 								src="/images/person_board.png"
 							/>
-							<Box mt={[ '2', '4', '8', '16', '16' ]} ml={[ '2', '4', '8', '16', '32' ]}>
+							<Box mt={[ '2', '4', '8', '16', '16' ]} ml={[ '2', '4', '8', '16', '12' ]}>
 								<Heading mt="16" textAlign={{base:"center", md:"left"}} mb="4">
 									Do you worry about
 								</Heading>
@@ -486,10 +489,92 @@ export default function Home() {
 						</Flex>
 					</Center>
 				</GridItem>
+				<GridItem py="8" colSpan="12" bg="white" rowSpan="12">
+					<Heading textAlign="center">Testimonials</Heading>
+				</GridItem>
+				{[
+					{
+						name: 'shubbham singh',
+						uni: 'nyu',
+						avatar: 'avatar_big1',
+						text:
+							'“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”'
+					},
+					{
+						name: 'shubbham singh',
+						uni: 'nyu',
+						avatar: 'avatar_big2',
+						text:
+							'“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”'
+					},
+					{
+						name: 'shubbham singh',
+						uni: 'nyu',
+						avatar: 'avatar_big3',
+						text:
+							'“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”'
+					},
+					{
+						name: 'shubbham singh',
+						uni: 'nyu',
+						avatar: 'avatar_big4',
+						text:
+							'“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”'
+					}
+				].map((testimonial, idx) => (
+					<GridItem
+						bg="white"
+						// boxShadow="base"
+						// _hover={{ boxShadow: 'lg' }}
+						transition="all 0.2s"
+						// rounded="md"
+						pb="16"
+						px="8"
+						// px="2"
+						key={idx}
+						colSpan={[ '12', '6', '6', '3', '3' ]}
+						rowSpan={'12'}
+					>
+						{/* <Flex mt="8"> */}
+						<Flex justifyContent="flex-end">
+
+						<Image
+							// transform="translate(2rem, -0.8rem)"
+							alt="avatar"
+							// maxW="80%"
+							
+							src={`/images/mentors/${testimonial.avatar}.png`}
+							/>
+							</Flex>
+						<Flex pr="2" justifyContent="flex-end">
+							<Box
+								rounded="lg"
+								w="66%"
+								// pb="3"
+								transform={[
+									'translate(0rem, -4.8rem)',
+									'translate(0rem, -3.8rem)',
+									'translate(0rem, -4.7rem)',
+									'translate(0rem, -3.9rem)',
+									'translate(0rem, -4.7rem)'
+								]}
+								bg="whiteAlpha.500"
+								backdropFilter="blur(5px)"
+								p="2"
+								border="2px solid white"
+							>
+								<Image src="/images/mentors/nyu.png" alt="nyu" />
+							</Box>
+						</Flex>
+						{/* </Flex> */}
+						<Text>{testimonial.text}</Text>
+					</GridItem>
+				))}
 				<GridItem
 					rowSpan={12}
 					colSpan={12}
 					pb="4rem"
+					width="100%"
 					// colSpan={{base: 12, md:6}}
 					// bg={'linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)'}
 				>

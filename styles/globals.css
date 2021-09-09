@@ -26,6 +26,29 @@ a {
 	position: sticky;
 	top: 0;
 }
+#gradientt{
+	position: relative;
+	background: linear-gradient(90deg, #7fdfe0, #4080d3, #4080d3, #7fdfe0);
+	background-size: 400%;
+	transition: all 0.5s;
+	z-index: 1;
+	animation: glow 8s linear infinite;
+}
+#gradientt:before{
+	content: "";
+	position: absolute;
+	background: inherit;
+	top: -5px;
+	right: -5px;
+	bottom: -5px;
+	left: -5px;
+	border-radius: 50px;
+	filter: blur(20px);
+	
+	transition: all 0.5s;
+	opacity: 1;
+	z-index: -1;
+}
 #gradient {
 	position: relative;
 

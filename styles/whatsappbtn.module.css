@@ -1,8 +1,8 @@
 .what{
 	position: fixed !important;
-	height: 80px;
-	width: 80px;
-	right: 10px;
+	height: 100px;
+	width: 100px;
+	right: 0px;
 	background: transparent;
 	z-index: 50;
 	bottom: 10px;
@@ -10,4 +10,44 @@
 .what img{
 	object-fit: contain;
 	filter: drop-shadow(0px 0px 1px rgba(18, 10, 19, 0.403));
+}
+.pnggg{
+	width:450px;
+	height:100%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.pnggg img{
+	object-fit: contain;
+}
+.godown{
+	font-size: 20px;
+	padding-top: 4px;
+	height:40px;
+	width: 40px;
+	border-radius: 20px;
+	background-color: white;
+	position: fixed;
+	bottom:90px;
+	right:20px;
+	z-index: 50;
+	
+	align-items: center;
+	justify-content: center;
+	display: none;
+
+}
+@media(max-width:500px){
+	.what{
+		height:80px;
+		width:80px;
+
+	}
+	.pnggg{
+		width: 340px;
+	}
+	.godown{
+		display: flex;
+	}
 }
