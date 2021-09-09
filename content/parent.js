@@ -14,7 +14,7 @@ const Parentdiv = ({ children }) => {
       <Fragment>{children}</Fragment>
       {path !== "/profile-evaluation" ? (
         <div className={classes.what}>
-        <a style={{ color: 'black' }} href="https://api.whatsapp.com/send?phone=19254459180&text=Hi There" target='_blank'>
+        <a style={{ color: 'black' }} href="https://api.whatsapp.com/send?phone=19254459180&text=Hey There" target='_blank'>
                       <Image alt="whatsapp" src={Whats} />
               </a>
           

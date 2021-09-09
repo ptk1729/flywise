@@ -10,19 +10,28 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import NextLink from "next/link";
+import InstragramIcon from "@material-ui/icons/Instagram";
+import FaceBookIcon from "@material-ui/icons/Facebook";
+import YoutubeIcon from "@material-ui/icons/YouTube"
+import LinkedinIcon from "@material-ui/icons/LinkedIn"
 
 function Footer() {
   // let date = new Date();
   return (
     <GridItem bg="rgba(230, 246, 255, 1)" rowSpan={12} colSpan={12}>
       <Flex
-        p={["1rem", "1rem", "2rem", "3rem", "4rem"]}
+        p={["1rem", "1rem", "2rem", "2rem", "2rem"]}
         flexDirection={{ base: "column", md: "row" }}
         justifyContent="space-between"
-      >
+        alignItems="center"
+      > 
+        <Flex flexDirection="column" alignItems="center">
         <NextLink href="/">
           <Image maxH="4rem" alt="logo" src="/images/logo.svg" />
+         
         </NextLink>
+        <Text textAlign="center"> 5600 monaghan way, antioc <br/> California, 94531</Text>
+        </Flex>
         <Box>
           <Flex flexDirection={{base:"column", md:"row" }} justifyContent="space-evenly">
             {[
@@ -92,7 +101,17 @@ function Footer() {
         </NextLink>
       </Flex>
       <hr />
-      <Text textAlign="center" color="rgba(153, 153, 153, 1)" py="8">
+      
+      <Text textAlign="center" fontSize="20px" color="rgba(123, 123, 123, 1)" p="2">
+      <YoutubeIcon fontSize="large" />  
+      <InstragramIcon fontSize="large"/>
+        <FaceBookIcon fontSize="large"/>
+        
+        <LinkedinIcon fontSize="large"/>
+    </Text>
+       
+     
+     <Text textAlign="center" color="rgba(153, 153, 153, 1)" py="4">
         Copyright © {new Date().getFullYear()}
       </Text>
     </GridItem>
