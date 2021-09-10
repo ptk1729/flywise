@@ -48,6 +48,8 @@ export default function Home() {
           pl={["0.5rem", "1rem", "3rem", "6rem", "12rem"]}
           pr={["0.5rem", "1rem", "1rem", "2rem", "3rem"]}
           rowSpan={12}
+		  mx="3"
+		  mr="7"
           colSpan={[12, 12, 7, 7, 7]}
           bg={bg}
         >
@@ -70,7 +72,7 @@ export default function Home() {
               fontSize={["2xl", "2xl", "3xl", "3xl", "4xl"]}
               color="#0DB3FB"
             >
-              <span className={classes.linkk1} data-aos-duration="1000" data-aos="fade-up">
+              <span className={classes.linkk1} data-aos-duration="1000" data-aos-delay="100" data-aos="fade-up">
                 {" "}
                 that
               </span>{" "}
@@ -90,6 +92,9 @@ export default function Home() {
           <Text
             textAlign={{ base: "center", md: "left" }}
             my="4"
+			mx="5"
+		  mr="5"
+			
             fontSize={{ base: "14px", md: "16px" }}
           >
             Why do we go abroad? To study more, land on a good job, earn enough,
@@ -100,6 +105,7 @@ export default function Home() {
           <Text
             textAlign={{ base: "center", md: "left" }}
             my="4"
+			mx="2"
             fontSize={{ base: "14px", md: "16px" }}
           >
             We, at Flywise, want to make that journey as smooth as possible till
@@ -138,6 +144,7 @@ export default function Home() {
           rowSpan={12}
           colSpan={[12, 12, 5, 5, 5]}
           bg={bg}
+		  
         >
           <Image mt="16" src="/images/landing_1.svg" alt="main" />
         </GridItem>
@@ -145,6 +152,8 @@ export default function Home() {
           px={["0.4rem", "1rem", "3rem", "6rem", "10rem"]}
           rowSpan={12}
           colSpan={12}
+		  mx="5"
+		  mr="5"
           bg={
             "linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)"
           }
@@ -250,12 +259,15 @@ export default function Home() {
           p={["1.5rem", "3rem", "4rem", "8rem", "10em"]}
           rowSpan={12}
           colSpan={12}
+		  mx="5"
+		  mr="5"
           // backgroundImage="url(/images/paperplane.png)"
         >
-          <Box h="100%" w="100%">
+          <Box h="100%" w="100%" >
             <Heading
               fontSize={["2xl", "2xl", "3xl", "4xl", "4xl"]}
-              my="2"
+              
+
               textAlign="center"
               mb="10"
             >
@@ -287,6 +299,7 @@ export default function Home() {
               border="8px"
               borderColor="rgba(66, 134, 211, 1)"
               rounded="3xl"
+			  
               boxShadow="xl"
               overflow="hidden"
             >
@@ -324,6 +337,8 @@ export default function Home() {
         <GridItem
           rowSpan={12}
           colSpan={12}
+		  mx="5"
+		  mr="5"
           // colSpan={{base: 12, md:6}}
           bg={
             "linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)"
@@ -379,6 +394,8 @@ export default function Home() {
           </Flex>
         </GridItem>
         <GridItem
+		mx="5"
+		  mr="5"
           rowSpan={12}
           colSpan={12}
           px={["0.4rem", "1rem", "3rem", "6rem", "12rem"]}
@@ -550,6 +567,8 @@ export default function Home() {
           </Flex>
         </GridItem>
         <GridItem
+		mx="5"
+		  mr="5"
           rowSpan={12}
           colSpan={12}
           px={["2", "1", "4", "8", "16"]}
@@ -565,13 +584,15 @@ export default function Home() {
                 maxW="25rem"
                 maxH="70vh"
                 p="16"
-                ml={["2", "4", "8", "16", "44"]}
+                ml={["0", "4", "8", "16", "44"]}
                 alt="desk"
                 src="/images/person_board.png"
               />
               <Box
                 mt={["2", "4", "8", "16", "16"]}
-                ml={["2", "4", "8", "16", "12"]}
+                ml={["0", "4", "8", "16", "12"]}
+				ml="5"
+		  
               >
                 <Heading
                   mt={{ base: "4", md: "16" }}
@@ -602,7 +623,7 @@ export default function Home() {
                   maxW={{ base: "90%", md: "70%" }}
                   textAlign={{ base: "center", md: "left" }}
                   my="12"
-                  mx="2"
+                  
                   fontWeight="400"
                 >
                   Our founders and mentors have personally faced/seen all these
@@ -707,6 +728,7 @@ export default function Home() {
           rowSpan={12}
           colSpan={12}
           pb="4rem"
+		 
           px={["0", "1", "4", "8", "16"]}
           width="100%"
           // colSpan={{base: 12, md:6}}
