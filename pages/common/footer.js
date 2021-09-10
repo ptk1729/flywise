@@ -30,7 +30,7 @@ function Footer() {
           <Image maxH="4rem" alt="logo" src="/images/logo.svg" />
          
         </NextLink>
-        <Text textAlign="center"> 5600 monaghan way, antioc <br/> California, 94531</Text>
+        <Text textAlign="center"> 5600 Monaghan way, Antioch <br/> California, 94531</Text>
         </Flex>
         <Box>
           <Flex flexDirection={{base:"column", md:"row" }} justifyContent="space-evenly">
@@ -91,7 +91,7 @@ function Footer() {
             // _active={{
             // 	bg: 'linear-gradient(289.85deg, #6ADBDB 20.37%, #4080D3 73.15%)'
             // }}
-            mr={4}
+            mr={0}
             rounded="full"
 
             // leftIcon={<AddIcon />}
@@ -103,10 +103,10 @@ function Footer() {
       <hr />
       
       <Text textAlign="center" fontSize="20px" color="rgba(123, 123, 123, 1)" py="2">
-      <YoutubeIcon fontSize="large" />  
-      <InstragramIcon fontSize="large"/>
+      <Link href="https://www.youtube.com/channel/UCBm5Y057pEW1jLjJhnoHcHA"><YoutubeIcon fontSize="large" /></Link>
+      <Link href="https://www.instagram.com/flywise_edu/"><InstragramIcon fontSize="large"/></Link>
         <FaceBookIcon fontSize="large"/>
-        <LinkedinIcon fontSize="large"/>
+       <Link href="https://www.linkedin.com/company/flywiseoverseas"> <LinkedinIcon fontSize="large"/></Link>
     </Text>
        
      

@@ -18,7 +18,7 @@ function FaqList({ faqs }) {
 				{faqState.map((faq, idx) => (
 					<Center key={idx}>
 						<AccordionItem
-							mx="4"
+							mx="2"
 							
 							width="100%"
 							border="1px solid #d6d6d6"
@@ -34,12 +34,12 @@ function FaqList({ faqs }) {
 							>
 								<AccordionIcon w={8} h={8} color="#23BAFB" />{' '}
 								{/* <Image mt="1" alt="arrow" src="/images/right_arrow.png" maxH="1rem" /> */}
-								<Box w={{ base: '20rem', md: '80rem' }} flex="1" textAlign="left" fontWeight="bold">
+								<Box w={{ base: '20rem', md: '55rem' }} flex="1" textAlign="left" fontWeight="bold" >
 									{faq.ques ? faq.ques : ''}
 								</Box>
 							</AccordionButton>
 
-							<AccordionPanel maxW={{ base: '20rem', md: '50rem' }} pb={4}>
+							<AccordionPanel maxW={{ base: '20rem', md: '55rem' }} pb={4} ml={{base:"30px"}}>
 								{faq.ans ? faq.ans.map((line, idx) => <p key={idx}> {line}</p>) : ''}
 							</AccordionPanel>
 						</AccordionItem>

@@ -43,12 +43,13 @@ function courses() {
         >
           <div className={classes.pnggg}>
             <Image objectFit="cotain" src={pngg} />
-
+            <br/>
             <Image src={ComingSoon} h="40px" w="100px" />
             <NLink href="/" passHref>
             <Button
               color="white"
               px="8"
+              py="5"
               mb="4"
               mt="8"
               bg="rgba(13, 179, 251, 1)"
