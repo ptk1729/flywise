@@ -8,7 +8,7 @@ import NLink from 'next/link';
 
 const Parentdiv = ({ children }) => {
   const path = useRouter().pathname;
-  console.log(path);
+ 
   return (
     <div>
       <Fragment>{children}</Fragment>

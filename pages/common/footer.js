@@ -102,16 +102,15 @@ function Footer() {
       </Flex>
       <hr />
       
-      <Text textAlign="center" fontSize="20px" color="rgba(123, 123, 123, 1)" p="2">
+      <Text textAlign="center" fontSize="20px" color="rgba(123, 123, 123, 1)" py="2">
       <YoutubeIcon fontSize="large" />  
       <InstragramIcon fontSize="large"/>
         <FaceBookIcon fontSize="large"/>
-        
         <LinkedinIcon fontSize="large"/>
     </Text>
        
      
-     <Text textAlign="center" color="rgba(153, 153, 153, 1)" py="4">
+     <Text textAlign="center" color="rgba(153, 153, 153, 1)" py="3">
         Copyright © {new Date().getFullYear()}
       </Text>
     </GridItem>

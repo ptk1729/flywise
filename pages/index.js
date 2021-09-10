@@ -4,8 +4,15 @@ import FaqList from './common/faqs';
 import Footer from './common/footer';
 import Navbar from './common/navbar';
 import faqs from './../content/homeFaqs';
+import { useEffect } from 'react';
+
+import classes from "../styles/whatsappbtn.module.css"
+import AOS from "aos";
 
 export default function Home() {
+	useEffect(()=>{
+		AOS.init();
+	},[])
 	// let bg = 'red';
 	let bg = 'transparent';
 
@@ -32,12 +39,14 @@ export default function Home() {
 							platform that travels with you till you land your dream job abroad
 						</Heading>
 					</Heading> */}
+					
 					<Heading mt="4" textAlign={{ base: 'center', md: 'left' }} fontSize={[ 'xl', '2xl', '3xl', '3xl', '4xl' ]}>
 						India’s best overseas education platform
-						<Link _hover={{textDecoration:"none"}} fontWeight="bold" fontSize={[ 'xl', '2xl', '3xl', '3xl', '4xl' ]} color="#0DB3FB">
+						<Link className={classes.linkk}  _hover={{textDecoration:"none"}} fontWeight="bold" fontSize={[ 'xl', '2xl', '3xl', '3xl', '4xl' ]} color="#0DB3FB">
 							{" that travels with you till you land your dream job abroad"}
 						</Link>
 					</Heading>
+					
 					<Text textAlign={{ base: 'center', md: 'left' }} my="4">
 						Why do we go abroad? To study more, land on a good job, earn enough, and settle for a good life.
 						Right? Most of us dream of achieving this instantly as soon as we get an admission. But the real
@@ -492,37 +501,29 @@ export default function Home() {
 				<GridItem py="8" colSpan="12" bg="white" rowSpan="12">
 					<Heading textAlign="center">Testimonials</Heading>
 				</GridItem>
+				
 				{[
 					{
-						name: 'shubbham singh',
-						uni: 'nyu',
-						avatar: 'avatar_big1',
+						name: 'Shubbham singh',
+						uni: 'University of South Florida',
+						avatar: 'Akhil.daggubati.jpg',
 						text:
-							'“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”'
+							'“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”',
+						img:"/images/mentors/floridaa.jpg"	
 					},
 					{
-						name: 'shubbham singh',
-						uni: 'nyu',
-						avatar: 'avatar_big2',
+						name: 'Preethi Rama',
+						uni: 'Cleveland State University',
+						avatar: 'Preethi.rama.jpeg',
 						text:
-							'“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”'
-					},
-					{
-						name: 'shubbham singh',
-						uni: 'nyu',
-						avatar: 'avatar_big3',
-						text:
-							'“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”'
-					},
-					{
-						name: 'shubbham singh',
-						uni: 'nyu',
-						avatar: 'avatar_big4',
-						text:
-							'“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”'
+							'“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”',
+						img:"/images/mentors/cleveland.jpg"	
 					}
 				].map((testimonial, idx) => (
 					<GridItem
+						marginLeft="auto"
+						marginRight="auto"
+						width="400px"
 						bg="white"
 						// boxShadow="base"
 						// _hover={{ boxShadow: 'lg' }}
@@ -532,7 +533,7 @@ export default function Home() {
 						px="8"
 						// px="2"
 						key={idx}
-						colSpan={[ '12', '6', '6', '3', '3' ]}
+						colSpan={[ '12', '6', '6', '6', '6' ]}
 						rowSpan={'12'}
 					>
 						{/* <Flex mt="8"> */}
@@ -542,32 +543,37 @@ export default function Home() {
 							// transform="translate(2rem, -0.8rem)"
 							alt="avatar"
 							// maxW="80%"
-							
-							src={`/images/mentors/${testimonial.avatar}.png`}
+							height="500px"
+							width="325.8px"
+							objectFit="cover"
+							src={`/images/mentors/${testimonial.avatar}`}
 							/>
 							</Flex>
 						<Flex pr="2" justifyContent="flex-end">
 							<Box
 								rounded="lg"
-								w="66%"
+								width="160px"
 								// pb="3"
 								transform={[
 									'translate(0rem, -4.8rem)',
 									'translate(0rem, -3.8rem)',
 									'translate(0rem, -4.7rem)',
 									'translate(0rem, -3.9rem)',
-									'translate(0rem, -4.7rem)'
+									'translate(0rem, -4.8rem)'
 								]}
-								bg="whiteAlpha.500"
-								backdropFilter="blur(5px)"
-								p="2"
-								border="2px solid white"
+								
+								height="65px"
+								
+								overflow="hidden"
 							>
-								<Image src="/images/mentors/nyu.png" alt="nyu" />
+								<Image objectFit="contain" borderRadius="10px" height="60px" width="160px" src={testimonial.img} alt="nyu" />
 							</Box>
 						</Flex>
 						{/* </Flex> */}
-						<Text>{testimonial.text}</Text>
+						<Text mt="-7">{testimonial.text}</Text>
+						<Text fontWeight="bold" fontSize="18px" mt="3" >{testimonial.name}</Text>
+						<Text fontWeight="bold" fontSize="12px" >Degree</Text>
+						<Text fontWeight="bold" fontSize="12px" >{testimonial.uni}</Text>
 					</GridItem>
 				))}
 				<GridItem
