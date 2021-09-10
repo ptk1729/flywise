@@ -114,7 +114,7 @@ const router=useRouter();
           >
             <div className={classes.pnggg}>
               <Image objectFit="cotain" src={pngg} />
-
+              <br/>
               <Image src={ComingSoon} h="40px" w="100px" />
               <div>
               <PinInput size={"xs","sm","md","lg"} variant="outline" type="number"  onComplete={(value)=>setOtp(value)} autofocus  >
@@ -129,6 +129,7 @@ const router=useRouter();
               <Button
                 color="white"
                 px="8"
+                py="5"
                 mb="4"
                 mt="8"
                 bg="rgba(13, 179, 251, 1)"

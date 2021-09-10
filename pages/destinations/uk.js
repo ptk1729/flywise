@@ -255,13 +255,13 @@ function UK() {
             </Flex>
           </Center>
 
-          <Text py="8" textAlign="center" color="white" fontSize="2xl">
+          <Text py="4" textAlign="center" color="white" fontSize={{base:"22px",md:"3xl",lg:"3xl"}}>
             Things to keep in mind as an international student in the USA :
           </Text>
           <Center>
             <UnorderedList>
               {student_life_tips.map((i, idx) => (
-                <ListItem key={idx} color="white" fontSize="2xl" my="8">
+                <ListItem key={idx} color="white" fontSize={{base:"1xl",md:"2xl",lg:"2xl"}} my="4">
                   {i}
                 </ListItem>
               ))}

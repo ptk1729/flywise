@@ -27,8 +27,8 @@ export default function Home() {
 				</GridItem>
 				<GridItem
 					py={[ '0.4rem', '1rem', '2rem', '3rem', '4rem' ]}
-					pl={[ '0.4rem', '1rem', '3rem', '6rem', '12rem' ]}
-					pr={[ '0.4rem', '1rem', '1rem', '2rem', '3rem' ]}
+					pl={[ '0.5rem', '1rem', '3rem', '6rem', '12rem' ]}
+					pr={[ '0.5rem', '1rem', '1rem', '2rem', '3rem' ]}
 					rowSpan={12}
 					colSpan={[ 12, 12, 7, 7, 7 ]}
 					bg={bg}
@@ -40,19 +40,19 @@ export default function Home() {
 						</Heading>
 					</Heading> */}
 					
-					<Heading mt="4" textAlign={{ base: 'center', md: 'left' }} fontSize={[ 'xl', '2xl', '3xl', '3xl', '4xl' ]}>
+					<Heading mt="4" textAlign={{ base: 'center', md: 'left' }} fontSize={[ '2xl', '2xl', '3xl', '3xl', '4xl' ]}>
 						India’s best overseas education platform
-						<Link className={classes.linkk}  _hover={{textDecoration:"none"}} fontWeight="bold" fontSize={[ 'xl', '2xl', '3xl', '3xl', '4xl' ]} color="#0DB3FB">
+						<Link className={classes.linkk}  _hover={{textDecoration:"none"}} fontWeight="bold" fontSize={[ '2xl', '2xl', '3xl', '3xl', '4xl' ]} color="#0DB3FB">
 							{" that travels with you till you land your dream job abroad"}
 						</Link>
 					</Heading>
 					
-					<Text textAlign={{ base: 'center', md: 'left' }} my="4">
+					<Text textAlign={{ base: 'center', md: 'left' }}  my="4" fontSize={{base:"14px",md:"16px"}}>
 						Why do we go abroad? To study more, land on a good job, earn enough, and settle for a good life.
 						Right? Most of us dream of achieving this instantly as soon as we get an admission. But the real
 						journey starts when you land abroad.
 					</Text>
-					<Text textAlign={{ base: 'center', md: 'left' }} my="4">
+					<Text textAlign={{ base: 'center', md: 'left' }} my="4" fontSize={{base:"14px",md:"16px"}}>
 						We, at Flywise, want to make that journey as smooth as possible till you settle yourself well.
 					</Text>
 					<Flex justifyContent={{ base: 'center', md: 'flex-start' }}>
@@ -263,10 +263,10 @@ export default function Home() {
 					<Flex flexDirection={{ md: 'row', base: 'column' }}>
 						<Box
 							mt={[ '2', '4', '8', '16', '32' ]}
-							ml={[ '2', '4', '8', '16', '44' ]}
+							ml={[ '0', '4', '8', '16', '44' ]}
 							pl={[ '1', '1', '2', '4', '20' ]}
 						>
-							<Heading fontSize={["2xl","3xl","4xl","4xl","4xl"]} my="16" textAlign="center" mt="">
+							<Heading fontSize={["2xl","3xl","4xl","4xl","4xl"]} my="16" mt="4" textAlign="center" >
 								We are specialized in below fields, fly with us!
 							</Heading>
 							{[
@@ -471,7 +471,7 @@ export default function Home() {
 								src="/images/person_board.png"
 							/>
 							<Box mt={[ '2', '4', '8', '16', '16' ]} ml={[ '2', '4', '8', '16', '12' ]}>
-								<Heading mt="16" textAlign={{base:"center", md:"left"}} mb="4">
+								<Heading mt={{base:"4",md:"16"}} textAlign={{base:"center", md:"left"}} mb="4">
 									Do you worry about
 								</Heading>
 								{[
@@ -484,16 +484,16 @@ export default function Home() {
 										{i}{' '}
 									</Text>
 								))}
-								<Center>
+								
 
-								<Text maxW={{ base: '80%', md: '70%' }} textAlign={{base:"center", md:"left"}} my="16" fontWeight="400">
+								<Text maxW={{ base: '100%', md: '70%' }}  textAlign={{base:"center", md:"left"}} my="12" fontWeight="400">
 									Our founders and mentors have personally faced/seen all these issues, navigated
 									through them and are currently working at top product based companies in the US. Our
 									mentors will work with you to build a vision, mission and identify objectives which
 									will help in planning to get the best job abroad irrespective of your backgrounds
 									(which is why you are going abroad).
 								</Text>
-								</Center>
+								
 							</Box>
 						</Flex>
 					</Center>
@@ -580,6 +580,7 @@ export default function Home() {
 					rowSpan={12}
 					colSpan={12}
 					pb="4rem"
+					px={[ '0', '1', '4', '8', '16' ]}
 					width="100%"
 					// colSpan={{base: 12, md:6}}
 					// bg={'linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)'}

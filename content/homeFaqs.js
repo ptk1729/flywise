@@ -33,7 +33,7 @@ let faqs = [
   {
     ques: "Does Flywise help me in getting a job after my masters?    ",
     ans: [
-      "YES, once you land abroad we will provide you a curated guide which includes",
+      "YES, once you land abroad we will provide you a curated guide which includes a roadmap to help you  get internships and prepare for job interviews.We take your resume reviews and prepare you with mock interviews by real Interviewers from top companies like Google, Facebook and Amazon.",
     ],
   },
   {

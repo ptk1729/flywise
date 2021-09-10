@@ -53,7 +53,7 @@ function One() {
   const onSignInSubmit = () => {
   
     configureRecaptcha();
-    const phoneNumber = userPhone;
+    const phoneNumber ="+91"+ userPhone;
     console.log(phoneNumber);
     const appVerifier = window.recaptchaVerifier;
     signInWithPhoneNumber(auth, phoneNumber, appVerifier)
@@ -491,14 +491,14 @@ function One() {
                   >
                     GRE Quant score
                     <Link _hover={{ textDecoration: "none" }} color="red">
-                      *
+                      
                     </Link>
                   </Text>
 
                   <Text
                     color="rgba(125, 125, 125, 1)"
                     py="4"
-                  >{`Please write "Not taken yet" if you are yet to take GRE and "Not applicable" if you don't want to take GRE test`}</Text>
+                  >{`Enter your score `}</Text>
                   <NumberInput
                     value={greQuant}
                     onChange={(e) => setGreQuant(e)}
@@ -530,14 +530,14 @@ function One() {
                   >
                     GRE Verbal score
                     <Link _hover={{ textDecoration: "none" }} color="red">
-                      *
+                      
                     </Link>
                   </Text>
 
                   <Text
                     color="rgba(125, 125, 125, 1)"
                     py="4"
-                  >{`Please write "Not taken yet" if you are yet to take GRE and "Not applicable" if you don't want to take GRE test`}</Text>
+                  >{`Enter your score`}</Text>
                   <NumberInput
                     value={greVerbal}
                     onChange={(e) => setGreVerbal(e)}
@@ -569,14 +569,14 @@ function One() {
                   >
                     IELTS/TOEFL
                     <Link _hover={{ textDecoration: "none" }} color="red">
-                      *
+                      
                     </Link>
                   </Text>
 
                   <Text
                     color="rgba(125, 125, 125, 1)"
                     py="4"
-                  >{`Please write "Not taken yet" if you are yet to take IELTS/TOEFL.`}</Text>
+                  >{`Enter you score`}</Text>
                   <NumberInput
                     value={ieltsToefl}
                     onChange={(e) => setIeltsToefl(e)}
@@ -1284,7 +1284,7 @@ function One() {
                       focusBorderColor="#25BAFB"
                       bg="rgba(240, 240, 240, 1)"
                       maxW="20em"
-                      placeholder="Enter number with country code"
+                      placeholder="Enter number"
                     />
                     <Checkbox
                       onChange={() => setTnC(!tnC)}
