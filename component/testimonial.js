@@ -4,7 +4,7 @@ import { Image } from '@chakra-ui/image'
 function testimonial(props) {
     return (
         <div className={classes.test}>
-        <div className={classes.images}>
+        <div className={classes.imagess}>
         <Image className={classes.testImg} src={props.img}/>
         <Image className={classes.logo} src={props.logo}/>
         </div>
@@ -18,4 +18,4 @@ function testimonial(props) {
     )
 }
 
-export default testimonial
+export default testimonial;

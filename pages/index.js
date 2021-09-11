@@ -649,11 +649,10 @@ export default function Home() {
           {
             name: "Akhil Daggubati",
             uni: "University of South Florida",
-			logo: "/images/icons/floridalogo.png",
+            logo: "/images/icons/floridalogo.png",
             avatar: "/images/mentors/Akhil.png",
             text: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”",
-        
-			degree:"Business analytics "
+            degree:"Business analytics "
           },
           {
             name: "Preethi Rama",
@@ -661,7 +660,7 @@ export default function Home() {
             avatar: "/images/mentors/Preethi.png",
             text: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”",
             logo:"/images/icons/clevelandlogo.png",
-			degree:"Information systems"
+			      degree:"Information systems"
           },
         ].map((testimonial, idx) => (
           <GridItem
@@ -688,63 +687,16 @@ export default function Home() {
 		  uni={testimonial.uni}
 		  name={testimonial.name}
 		  text={testimonial.text}
-		
+      id={idx}
 		  />
-            {/* <Flex mt="8"> */}
-            {/*<Flex justifyContent="flex-end">
-              <Image
-                // transform="translate(2rem, -0.8rem)"
-                alt="avatar"
-                // maxW="80%"
-                height="500px"
-                width="325.8px"
-                objectFit="cover"
-                src={`/images/mentors/${testimonial.avatar}`}
-              />
-            </Flex>
-            <Flex pr="2" justifyContent="flex-end">
-              <Box
-                rounded="lg"
-                width="160px"
-                // pb="3"
-                transform={[
-                  "translate(0rem, -4.8rem)",
-                  "translate(0rem, -3.8rem)",
-                  "translate(0rem, -4.7rem)",
-                  "translate(0rem, -3.9rem)",
-                  "translate(0rem, -4.8rem)",
-                ]}
-                height="65px"
-                overflow="hidden"
-              >
-                <Image
-                  objectFit="contain"
-                  borderRadius="10px"
-                  height="60px"
-                  width="160px"
-                  src={testimonial.img}
-                  alt="nyu"
-                />
-              </Box>
-            </Flex>
-            {/* </Flex> */}
-            {/*<Text mt="-7">{testimonial.text}</Text>
-            <Text fontWeight="bold" fontSize="18px" mt="3">
-              {testimonial.name}
-            </Text>
-            <Text fontWeight="bold" fontSize="12px">
-              Degree
-            </Text>
-            <Text fontWeight="bold" fontSize="12px">
-              {testimonial.uni}
-            </Text>*/}
+            
           </GridItem>
         ))}
         <GridItem
           rowSpan={12}
           colSpan={12}
           pb="4rem"
-		 
+         
           px={["0", "1", "4", "8", "16"]}
           width="100%"
           // colSpan={{base: 12, md:6}}
