@@ -17,11 +17,14 @@ import Footer from "./common/footer";
 import Navbar from "./common/navbar";
 import faqs from "./../content/homeFaqs";
 import { useEffect } from "react";
-
+import TestimonialCard from "../component/testimonial";
 import classes from "../styles/whatsappbtn.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import Preethi from "../public/images/mentors/Preethi.png";
+import Akhil from "../public/images/mentors/Akhil.png";
+import Florida from "../public/images/icons/floridalogo.png";
+import Cleveland from "../public/images/icons/clevelandlogo.png";
 export default function Home() {
   useEffect(() => {
     AOS.init();
@@ -644,38 +647,51 @@ export default function Home() {
 
         {[
           {
-            name: "Shubbham singh",
+            name: "Akhil Daggubati",
             uni: "University of South Florida",
-            avatar: "Akhil.daggubati.jpg",
+			logo: "/images/icons/floridalogo.png",
+            avatar: "/images/mentors/Akhil.png",
             text: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”",
-            img: "/images/mentors/floridaa.jpg",
+        
+			degree:"Business analytics "
           },
           {
             name: "Preethi Rama",
             uni: "Cleveland State University",
-            avatar: "Preethi.rama.jpeg",
+            avatar: "/images/mentors/Preethi.png",
             text: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”",
-            img: "/images/mentors/cleveland.jpg",
+            logo:"/images/icons/clevelandlogo.png",
+			degree:"Information systems"
           },
         ].map((testimonial, idx) => (
           <GridItem
             marginLeft="auto"
             marginRight="auto"
-            width="400px"
+            width={{base:"360px",md:"430px"}}
             bg="white"
+			
             // boxShadow="base"
             // _hover={{ boxShadow: 'lg' }}
             transition="all 0.2s"
             // rounded="md"
-            pb="16"
-            px="8"
+            pb="8"
+            
             // px="2"
             key={idx}
             colSpan={["12", "6", "6", "6", "6"]}
             rowSpan={"12"}
           >
+		  <TestimonialCard 
+		  img={testimonial.avatar}
+		  logo={testimonial.logo}
+		  degree={testimonial.degree}
+		  uni={testimonial.uni}
+		  name={testimonial.name}
+		  text={testimonial.text}
+		
+		  />
             {/* <Flex mt="8"> */}
-            <Flex justifyContent="flex-end">
+            {/*<Flex justifyContent="flex-end">
               <Image
                 // transform="translate(2rem, -0.8rem)"
                 alt="avatar"
@@ -712,7 +728,7 @@ export default function Home() {
               </Box>
             </Flex>
             {/* </Flex> */}
-            <Text mt="-7">{testimonial.text}</Text>
+            {/*<Text mt="-7">{testimonial.text}</Text>
             <Text fontWeight="bold" fontSize="18px" mt="3">
               {testimonial.name}
             </Text>
@@ -721,7 +737,7 @@ export default function Home() {
             </Text>
             <Text fontWeight="bold" fontSize="12px">
               {testimonial.uni}
-            </Text>
+            </Text>*/}
           </GridItem>
         ))}
         <GridItem
