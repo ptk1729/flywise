@@ -17,11 +17,14 @@ import Footer from "./common/footer";
 import Navbar from "./common/navbar";
 import faqs from "./../content/homeFaqs";
 import { useEffect } from "react";
-
+import TestimonialCard from "../component/testimonial";
 import classes from "../styles/whatsappbtn.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import Preethi from "../public/images/mentors/Preethi.png";
+import Akhil from "../public/images/mentors/Akhil.png";
+import Florida from "../public/images/icons/floridalogo.png";
+import Cleveland from "../public/images/icons/clevelandlogo.png";
 export default function Home() {
   useEffect(() => {
     AOS.init();
@@ -48,6 +51,8 @@ export default function Home() {
           pl={["0.5rem", "1rem", "3rem", "6rem", "12rem"]}
           pr={["0.5rem", "1rem", "1rem", "2rem", "3rem"]}
           rowSpan={12}
+		  mx="3"
+		  mr="7"
           colSpan={[12, 12, 7, 7, 7]}
           bg={bg}
         >
@@ -70,7 +75,7 @@ export default function Home() {
               fontSize={["2xl", "2xl", "3xl", "3xl", "4xl"]}
               color="#0DB3FB"
             >
-              <span className={classes.linkk1} data-aos-duration="1000" data-aos="fade-up">
+              <span className={classes.linkk1} data-aos-duration="1000" data-aos-delay="100" data-aos="fade-up">
                 {" "}
                 that
               </span>{" "}
@@ -90,6 +95,9 @@ export default function Home() {
           <Text
             textAlign={{ base: "center", md: "left" }}
             my="4"
+			mx="5"
+		  mr="5"
+			
             fontSize={{ base: "14px", md: "16px" }}
           >
             Why do we go abroad? To study more, land on a good job, earn enough,
@@ -100,6 +108,7 @@ export default function Home() {
           <Text
             textAlign={{ base: "center", md: "left" }}
             my="4"
+			mx="2"
             fontSize={{ base: "14px", md: "16px" }}
           >
             We, at Flywise, want to make that journey as smooth as possible till
@@ -138,6 +147,7 @@ export default function Home() {
           rowSpan={12}
           colSpan={[12, 12, 5, 5, 5]}
           bg={bg}
+		  
         >
           <Image mt="16" src="/images/landing_1.svg" alt="main" />
         </GridItem>
@@ -145,6 +155,8 @@ export default function Home() {
           px={["0.4rem", "1rem", "3rem", "6rem", "10rem"]}
           rowSpan={12}
           colSpan={12}
+		  mx="5"
+		  mr="5"
           bg={
             "linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)"
           }
@@ -250,12 +262,15 @@ export default function Home() {
           p={["1.5rem", "3rem", "4rem", "8rem", "10em"]}
           rowSpan={12}
           colSpan={12}
+		  mx="5"
+		  mr="5"
           // backgroundImage="url(/images/paperplane.png)"
         >
-          <Box h="100%" w="100%">
+          <Box h="100%" w="100%" >
             <Heading
               fontSize={["2xl", "2xl", "3xl", "4xl", "4xl"]}
-              my="2"
+              
+
               textAlign="center"
               mb="10"
             >
@@ -287,6 +302,7 @@ export default function Home() {
               border="8px"
               borderColor="rgba(66, 134, 211, 1)"
               rounded="3xl"
+			  
               boxShadow="xl"
               overflow="hidden"
             >
@@ -324,6 +340,8 @@ export default function Home() {
         <GridItem
           rowSpan={12}
           colSpan={12}
+		  mx="5"
+		  mr="5"
           // colSpan={{base: 12, md:6}}
           bg={
             "linear-gradient(180deg, #E6F6FF 41.47%, rgba(255, 255, 255, 0) 100%)"
@@ -379,6 +397,8 @@ export default function Home() {
           </Flex>
         </GridItem>
         <GridItem
+		mx="5"
+		  mr="5"
           rowSpan={12}
           colSpan={12}
           px={["0.4rem", "1rem", "3rem", "6rem", "12rem"]}
@@ -550,6 +570,8 @@ export default function Home() {
           </Flex>
         </GridItem>
         <GridItem
+		mx="5"
+		  mr="5"
           rowSpan={12}
           colSpan={12}
           px={["2", "1", "4", "8", "16"]}
@@ -565,13 +587,15 @@ export default function Home() {
                 maxW="25rem"
                 maxH="70vh"
                 p="16"
-                ml={["2", "4", "8", "16", "44"]}
+                ml={["0", "4", "8", "16", "44"]}
                 alt="desk"
                 src="/images/person_board.png"
               />
               <Box
                 mt={["2", "4", "8", "16", "16"]}
-                ml={["2", "4", "8", "16", "12"]}
+                ml={["0", "4", "8", "16", "12"]}
+				ml="5"
+		  
               >
                 <Heading
                   mt={{ base: "4", md: "16" }}
@@ -602,7 +626,7 @@ export default function Home() {
                   maxW={{ base: "90%", md: "70%" }}
                   textAlign={{ base: "center", md: "left" }}
                   my="12"
-                  mx="2"
+                  
                   fontWeight="400"
                 >
                   Our founders and mentors have personally faced/seen all these
@@ -623,90 +647,56 @@ export default function Home() {
 
         {[
           {
-            name: "Shubbham singh",
+            name: "Akhil Daggubati",
             uni: "University of South Florida",
-            avatar: "Akhil.daggubati.jpg",
+            logo: "/images/icons/floridalogo.png",
+            avatar: "/images/mentors/Akhil.png",
             text: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”",
-            img: "/images/mentors/floridaa.jpg",
+            degree:"Business analytics "
           },
           {
             name: "Preethi Rama",
             uni: "Cleveland State University",
-            avatar: "Preethi.rama.jpeg",
+            avatar: "/images/mentors/Preethi.png",
             text: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”",
-            img: "/images/mentors/cleveland.jpg",
+            logo:"/images/icons/clevelandlogo.png",
+			      degree:"Information systems"
           },
         ].map((testimonial, idx) => (
           <GridItem
             marginLeft="auto"
             marginRight="auto"
-            width="400px"
+            width={{base:"360px",md:"430px"}}
             bg="white"
+			
             // boxShadow="base"
             // _hover={{ boxShadow: 'lg' }}
             transition="all 0.2s"
             // rounded="md"
-            pb="16"
-            px="8"
+            pb="8"
+            
             // px="2"
             key={idx}
             colSpan={["12", "6", "6", "6", "6"]}
             rowSpan={"12"}
           >
-            {/* <Flex mt="8"> */}
-            <Flex justifyContent="flex-end">
-              <Image
-                // transform="translate(2rem, -0.8rem)"
-                alt="avatar"
-                // maxW="80%"
-                height="500px"
-                width="325.8px"
-                objectFit="cover"
-                src={`/images/mentors/${testimonial.avatar}`}
-              />
-            </Flex>
-            <Flex pr="2" justifyContent="flex-end">
-              <Box
-                rounded="lg"
-                width="160px"
-                // pb="3"
-                transform={[
-                  "translate(0rem, -4.8rem)",
-                  "translate(0rem, -3.8rem)",
-                  "translate(0rem, -4.7rem)",
-                  "translate(0rem, -3.9rem)",
-                  "translate(0rem, -4.8rem)",
-                ]}
-                height="65px"
-                overflow="hidden"
-              >
-                <Image
-                  objectFit="contain"
-                  borderRadius="10px"
-                  height="60px"
-                  width="160px"
-                  src={testimonial.img}
-                  alt="nyu"
-                />
-              </Box>
-            </Flex>
-            {/* </Flex> */}
-            <Text mt="-7">{testimonial.text}</Text>
-            <Text fontWeight="bold" fontSize="18px" mt="3">
-              {testimonial.name}
-            </Text>
-            <Text fontWeight="bold" fontSize="12px">
-              Degree
-            </Text>
-            <Text fontWeight="bold" fontSize="12px">
-              {testimonial.uni}
-            </Text>
+		  <TestimonialCard 
+		  img={testimonial.avatar}
+		  logo={testimonial.logo}
+		  degree={testimonial.degree}
+		  uni={testimonial.uni}
+		  name={testimonial.name}
+		  text={testimonial.text}
+      id={idx}
+		  />
+            
           </GridItem>
         ))}
         <GridItem
           rowSpan={12}
           colSpan={12}
           pb="4rem"
+         
           px={["0", "1", "4", "8", "16"]}
           width="100%"
           // colSpan={{base: 12, md:6}}

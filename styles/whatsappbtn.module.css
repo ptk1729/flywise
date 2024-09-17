@@ -47,6 +47,47 @@
 	animation: gayab 2s ease;
 	
 }
+.test{
+	height:650px;
+	width:430px;
+	background-color:   #F6F7F8;
+	padding:40px 50px;
+	border-radius: 10px;
+}
+.imagess{
+	position: relative;
+	height:350px;
+	width:330px;
+	margin-bottom: 20px;
+}
+
+.logo{
+	position: absolute;
+	bottom:0px;
+	right:0px;
+	height:50px;
+	width:140px;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+.text{
+	font-size: 14px;
+
+}
+.test h2{
+	font-size: 20px;
+	font-weight: 600;
+	color: #6ADBDB;
+	margin-top: 10px;
+
+}
+.degree{
+	font-size: 16px;
+	font-weight: 600;
+	margin-top: 5px;
+}
+
+
+
 .linkks2{
 	opacity: 1!important;
 	animation-delay: 1s;
@@ -76,5 +117,51 @@
 	}
 	.godown{
 		display: flex;
+	}
+	
+
+}
+@media(max-width: 450px){
+	.test{
+		height:600px;
+		width:360px;
+		
+		padding:30px 30px;
+		}
+	.imagess{
+		position: relative;
+		height:350px;
+		width:300px;
+		margin-bottom: 20px;
+	}
+	.testImg{
+		height:350px;
+		width:300px;
+		object-fit: cover;
+	}
+	
+	.logo{
+		position: absolute;
+		bottom:0px;
+		right:0px;
+		height:50px;
+		width:140px;
+		background-color: rgba(255, 255, 255, 0.7);
+	}
+	.text{
+		font-size: 12px;
+	
+	}
+	.test h2{
+		font-size: 18px;
+		font-weight: 600;
+		color: #6ADBDB;
+		margin-top: 10px;
+	
+	}
+	.degree{
+		font-size: 14px;
+		font-weight: 600;
+		margin-top: 5px;
 	}
 }
